@@ -337,6 +337,33 @@ h1 {
   background: #fff0ed;
 }
 
+.folder-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 6px 14px;
+  align-items: center;
+}
+
+.folder-card strong,
+.folder-card span {
+  display: block;
+}
+
+.folder-card span {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.folder-card em {
+  grid-row: 1 / span 2;
+  border-radius: 8px;
+  padding: 7px 10px;
+  color: var(--green-dark);
+  background: #e5f3ec;
+  font-style: normal;
+  font-weight: 900;
+}
+
 .feedback {
   margin-top: 18px;
   border-radius: 8px;
