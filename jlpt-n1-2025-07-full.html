@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>N1 Focus - Luyện thi JLPT N1</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="N1 Focus">
+        <span class="brand-mark">N1</span>
+        <span>
+          <strong>N1 Focus</strong>
+          <small>JLPT practice hub</small>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Điều hướng chính">
+        <a href="#practice">Luyện đề</a>
+        <a href="#deck">Flashcards</a>
+        <a href="#plan">Lộ trình</a>
+      </nav>
+      <button class="ghost-button" id="resetProgress" type="button">Làm mới tiến độ</button>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">日本語能力試験 N1</p>
+          <h1>Luyện thi N1 tập trung, có chấm điểm ngay.</h1>
+          <p class="hero-text">
+            Ôn từ vựng, ngữ pháp và đọc hiểu bằng các phiên luyện ngắn. Mỗi câu có giải thích tiếng Việt để bạn biết mình sai ở đâu.
+          </p>
+          <div class="hero-actions">
+            <a class="primary-button" href="#practice">Bắt đầu luyện</a>
+            <a class="secondary-button" href="#deck">Ôn nhanh từ vựng</a>
+          </div>
+        </div>
+        <div class="hero-panel" aria-label="Tổng quan tiến độ">
+          <div>
+            <span class="metric-value" id="accuracyMetric">0%</span>
+            <span class="metric-label">Độ chính xác</span>
+          </div>
+          <div>
+            <span class="metric-value" id="answeredMetric">0</span>
+            <span class="metric-label">Câu đã làm</span>
+          </div>
+          <div>
+            <span class="metric-value" id="streakMetric">0</span>
+            <span class="metric-label">Chuỗi đúng</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="practice">
+        <div class="section-heading">
+          <p class="eyebrow">Practice</p>
+          <h2>Luyện câu hỏi N1</h2>
+          <div class="filters" role="group" aria-label="Chọn kỹ năng">
+            <button class="filter active" type="button" data-filter="all">Tất cả</button>
+            <button class="filter" type="button" data-filter="vocab">Từ vựng</button>
+            <button class="filter" type="button" data-filter="grammar">Ngữ pháp</button>
+            <button class="filter" type="button" data-filter="reading">Đọc hiểu</button>
+          </div>
+        </div>
+
+        <article class="quiz-shell">
+          <div class="quiz-top">
+            <div>
+              <p class="quiz-type" id="questionType">Từ vựng</p>
+              <h3 id="questionText">Đang tải câu hỏi...</h3>
+            </div>
+            <span class="pill" id="questionCount">1/1</span>
+          </div>
+          <div class="passage" id="passage" hidden></div>
+          <div class="answers" id="answers"></div>
+          <div class="feedback" id="feedback" hidden></div>
+          <div class="quiz-actions">
+            <button class="secondary-button" id="prevQuestion" type="button">Câu trước</button>
+            <button class="primary-button" id="nextQuestion" type="button">Câu tiếp</button>
+          </div>
+        </article>
+      </section>
+
+      <section class="section two-column" id="deck">
+        <div class="section-heading compact">
+          <p class="eyebrow">Flashcards</p>
+          <h2>Ôn nhanh từ vựng và ngữ pháp</h2>
+          <p>Nhấn vào thẻ để lật nghĩa. Bộ mẫu này có thể mở rộng trực tiếp trong file dữ liệu.</p>
+        </div>
+        <div class="deck-grid" id="deckGrid"></div>
+      </section>
+
+      <section class="section" id="plan">
+        <div class="section-heading">
+          <p class="eyebrow">Study plan</p>
+          <h2>Lộ trình 4 tuần</h2>
+        </div>
+        <div class="plan-grid">
+          <div class="plan-item">
+            <span>Tuần 1</span>
+            <h3>Kanji và từ vựng lõi</h3>
+            <p>60-90 từ/ngày, ưu tiên cụm thường xuất hiện trong bài đọc báo chí và xã luận.</p>
+          </div>
+          <div class="plan-item">
+            <span>Tuần 2</span>
+            <h3>Ngữ pháp nâng cao</h3>
+            <p>Ôn mẫu câu biểu thị lập luận, nhượng bộ, giả định và đánh giá chủ quan.</p>
+          </div>
+          <div class="plan-item">
+            <span>Tuần 3</span>
+            <h3>Đọc hiểu tốc độ</h3>
+            <p>Luyện xác định luận điểm, thái độ tác giả và câu nối logic trong đoạn dài.</p>
+          </div>
+          <div class="plan-item">
+            <span>Tuần 4</span>
+            <h3>Đề mô phỏng</h3>
+            <p>Làm đề theo thời gian thật, ghi lại lỗi sai và ôn lại theo nhóm nguyên nhân.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Made for focused JLPT N1 practice. Thêm câu hỏi mới trong <code>script.js</code>.</p>
+    </footer>
+
+    <script src="script-2025-07-66.js?v=2"></script>
+  </body>
+</html>
