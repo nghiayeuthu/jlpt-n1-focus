@@ -515,6 +515,8 @@ function renderQuestion() {
     return;
   }
 
+  prevButton.hidden = false;
+  nextButton.hidden = false;
   const list = activeQuestions();
   if (!list.length) {
     questionType.textContent = "Chưa có câu hỏi";
@@ -559,6 +561,8 @@ function renderQuestion() {
 }
 
 function renderFolderDirectory() {
+  prevButton.hidden = true;
+  nextButton.hidden = true;
   questionType.textContent = "Thư mục đề";
   questionText.textContent = "Chọn thư mục để luyện đề";
   questionCount.textContent = `${examFolders.length} thư mục`;
