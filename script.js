@@ -672,3 +672,4 @@ document.querySelector("#resetProgress").addEventListener("click", () => {
 renderDeck();
 renderQuestion();
 updateMetrics();
+
