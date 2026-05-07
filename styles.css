@@ -458,6 +458,34 @@ h1 {
   gap: 14px;
 }
 
+.flashcard-shell {
+  display: grid;
+  grid-column: 1 / -1;
+  gap: 14px;
+}
+
+.deck-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.deck-tab {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 10px 13px;
+  color: var(--muted);
+  background: var(--white);
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.deck-tab.active {
+  border-color: var(--green);
+  color: white;
+  background: var(--green);
+}
+
 .flashcard,
 .plan-item {
   min-height: 180px;
@@ -471,19 +499,22 @@ h1 {
   cursor: pointer;
 }
 
-.flashcard-toggle {
-  min-height: 56px;
-  grid-column: 1 / -1;
-  border: 1px solid var(--green);
-  border-radius: 8px;
-  color: var(--green-dark);
-  background: #e5f3ec;
-  cursor: pointer;
-  font-weight: 900;
+.flashcard.single {
+  min-height: 240px;
 }
 
-.flashcard-toggle:hover {
-  background: #d8eee3;
+.flashcard-empty {
+  border-radius: 8px;
+  padding: 20px;
+  color: var(--muted);
+  background: var(--white);
+}
+
+.deck-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
 }
 
 .flashcard .jp {
