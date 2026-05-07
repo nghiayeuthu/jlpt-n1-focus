@@ -287,6 +287,12 @@ h1 {
   line-height: 1.35;
 }
 
+.kanji-target {
+  padding-bottom: 2px;
+  border-bottom: 3px solid var(--gold);
+  font-weight: 900;
+}
+
 .pill {
   flex: 0 0 auto;
   border-radius: 8px;
@@ -463,6 +469,21 @@ h1 {
 
 .flashcard {
   cursor: pointer;
+}
+
+.flashcard-toggle {
+  min-height: 56px;
+  grid-column: 1 / -1;
+  border: 1px solid var(--green);
+  border-radius: 8px;
+  color: var(--green-dark);
+  background: #e5f3ec;
+  cursor: pointer;
+  font-weight: 900;
+}
+
+.flashcard-toggle:hover {
+  background: #d8eee3;
 }
 
 .flashcard .jp {
