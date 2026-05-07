@@ -91,7 +91,6 @@ const exam202412Questions = [
 ];
 
 const remoteExams = [
-  { code: "202507", id: "exam-2025-07", title: "2025 tháng 7" },
   { code: "202407", id: "exam-2024-07", title: "2024 tháng 7" },
   { code: "202312", id: "exam-2023-12", title: "2023 tháng 12" },
   { code: "202307", id: "exam-2023-07", title: "2023 tháng 7" },
@@ -157,13 +156,59 @@ function convertRemoteExam(exam, data) {
 }
 
 async function loadRemoteExams() {
-  const loaded = await Promise.all(remoteExams.map(async (exam) => {
+  const remoteLoaded = await Promise.all(remoteExams.map(async (exam) => {
     const response = await fetch(`https://www.jlptpracticetest.com/api/test/n1/${exam.code}`);
     if (!response.ok) throw new Error(`Không tải được đề ${exam.title}`);
     const data = await response.json();
     return convertRemoteExam(exam, data);
   }));
-  questions.push(...loaded.flat());
+  const exam202507 = await loadLocal2025Exam();
+  questions.push(...exam202507, ...remoteLoaded.flat());
+}
+
+async function loadLocal2025Exam() {
+  const response = await fetch("script-2025-07-66-fix40.js?v=1");
+  if (!response.ok) throw new Error("Không tải được đề 2025 tháng 7");
+  const source = await response.text();
+  const match = source.match(/const exam202507Questions = \[([\s\S]*?)\n\];/);
+  if (!match) throw new Error("Không đọc được dữ liệu đề 2025 tháng 7");
+  const loaded = Function("q", `return [${match[1]}];`)(q);
+  patch2025Answers(loaded);
+  return loaded;
+}
+
+function patch2025Answers(list) {
+  const byNumber = (number) => list.find((item) => item.prompt.startsWith(`${number}.`));
+  const q35 = byNumber(35);
+  if (q35) {
+    q35.answer = 2;
+    q35.explanation = "責任を取らずに済むわけがない = không thể nào thoát khỏi việc chịu trách nhiệm.";
+  }
+
+  const q36 = byNumber(36);
+  if (q36) {
+    q36.prompt = "36. 高級車には憧れるが、私の給料では、宝くじに＿＿＿ ★ ＿＿＿ ＿＿＿一生買えそうにない。★に入る語は？";
+    q36.answer = 1;
+    q36.explanation = "正しい順序: 当たり / でも / しない / 限り. ★は2番目なので「でも」。";
+  }
+
+  const q46 = byNumber(46);
+  if (q46) {
+    q46.answer = 3;
+    q46.explanation = "病気の本体は見えにくいので、特徴的な症状を手がかりに根本原因を見つけ出すべきだという内容です.";
+  }
+
+  const q54 = byNumber(54);
+  if (q54) {
+    q54.answer = 0;
+    q54.explanation = "主観的判断に委ねられるものは、チーム一人一人の意見を尊重するという内容です.";
+  }
+
+  const q62 = byNumber(62);
+  if (q62) {
+    q62.answer = 0;
+    q62.explanation = "勝負に至るまでの苦悩を抱えつつ、戦いに臨んでいる棋士に魅力があるという内容です.";
+  }
 }
 
 function activeQuestions() {
