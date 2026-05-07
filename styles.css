@@ -304,6 +304,8 @@ h1 {
   color: #2d3c38;
   font-family: "Noto Sans JP", Inter, sans-serif;
   line-height: 1.8;
+  overflow-wrap: anywhere;
+  white-space: pre-line;
 }
 
 .answers {
@@ -538,5 +540,20 @@ h1 {
   .section-heading {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .quiz-top {
+    flex-direction: column;
+  }
+
+  .passage {
+    max-height: 52vh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    font-size: 15px;
+  }
+
+  .question-jump-grid {
+    grid-template-columns: repeat(auto-fill, minmax(38px, 1fr));
   }
 }
