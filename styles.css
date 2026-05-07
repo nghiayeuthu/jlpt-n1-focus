@@ -217,6 +217,7 @@ h1 {
 }
 
 .section {
+  scroll-margin-top: 92px;
   padding: 72px clamp(18px, 5vw, 72px);
   background: var(--paper);
 }
