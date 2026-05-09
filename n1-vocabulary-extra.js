@@ -4526,7 +4526,7 @@ window.n1VocabularyExtra = [
   ],
   [
     "意識",
-    "意識",
+    "いしき",
     "ý thức, cảm nhận, nhận biết được sự vật, sự việc"
   ],
   [
@@ -7566,7 +7566,7 @@ window.n1VocabularyExtra = [
   ],
   [
     "肩を持つ",
-    "肩を持つ",
+    "かたをもつ",
     "hộ, đứng về phía của ai đó"
   ],
   [
@@ -7576,12 +7576,12 @@ window.n1VocabularyExtra = [
   ],
   [
     "背景",
-    "背景",
+    "はいけい",
     "bối cảnh, nền tảng phía sau"
   ],
   [
     "胸が詰まる",
-    "胸が詰まる",
+    "むねがつまる",
     "ngực"
   ],
   [
