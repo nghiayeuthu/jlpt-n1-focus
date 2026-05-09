@@ -259,7 +259,142 @@ const n1Vocabulary = [
   ["考えさせられる", "かんがえさせられる", "khiến phải suy nghĩ"],
 ];
 
+const n2Vocabulary = [
+  ["把握", "はあく", "nắm bắt, hiểu rõ"],
+  ["憤り", "いきどおり", "sự phẫn nộ, tức giận"],
+  ["趣旨", "しゅし", "ý chính, mục đích chính"],
+  ["日夜", "にちや", "ngày đêm"],
+  ["励む", "はげむ", "nỗ lực, chuyên tâm"],
+  ["貫く", "つらぬく", "giữ vững, xuyên suốt"],
+  ["貧富", "ひんぷ", "giàu nghèo"],
+  ["再発", "さいはつ", "tái phát, lặp lại"],
+  ["防止", "ぼうし", "phòng tránh, ngăn chặn"],
+  ["対策", "たいさく", "biện pháp đối phó"],
+  ["培う", "つちかう", "vun đắp, bồi dưỡng"],
+  ["築く", "きずく", "xây dựng"],
+  ["練る", "ねる", "trau chuốt, lập kỹ"],
+  ["磨く", "みがく", "mài giũa, rèn luyện"],
+  ["とりわけ", "とりわけ", "đặc biệt là"],
+  ["当時", "とうじ", "thời điểm đó"],
+  ["転職", "てんしょく", "chuyển việc"],
+  ["念頭", "ねんとう", "trong đầu, điều đang nghĩ tới"],
+  ["念願", "ねんがん", "ước nguyện lâu nay"],
+  ["内心", "ないしん", "trong lòng"],
+  ["そわそわ", "そわそわ", "bồn chồn, đứng ngồi không yên"],
+  ["人材", "じんざい", "nhân lực, người tài"],
+  ["育成", "いくせい", "đào tạo, nuôi dưỡng"],
+  ["担う", "になう", "đảm nhiệm, gánh vác"],
+  ["披露", "ひろう", "trình diễn, công bố"],
+  ["腕前", "うでまえ", "tay nghề, trình độ"],
+  ["手間", "てま", "công sức, thời gian bỏ ra"],
+  ["発言", "はつげん", "phát biểu"],
+  ["議論", "ぎろん", "tranh luận"],
+  ["ためらう", "ためらう", "do dự, ngập ngừng"],
+  ["案じる", "あんじる", "lo lắng"],
+  ["予測", "よそく", "dự đoán"],
+  ["外れる", "はずれる", "trật, không đúng"],
+  ["人込み", "ひとごみ", "đám đông"],
+  ["渋滞", "じゅうたい", "tắc nghẽn"],
+  ["暗やみ", "くらやみ", "bóng tối"],
+  ["発生", "はっせい", "phát sinh, xảy ra"],
+  ["仕組み", "しくみ", "cơ chế, cấu trúc"],
+  ["記述", "きじゅつ", "mô tả, ghi chép"],
+  ["内容", "ないよう", "nội dung"],
+  ["確信", "かくしん", "niềm tin chắc chắn"],
+  ["証拠", "しょうこ", "bằng chứng"],
+  ["基準", "きじゅん", "tiêu chuẩn, căn cứ"],
+  ["方法", "ほうほう", "phương pháp"],
+  ["理由", "りゆう", "lý do"],
+  ["急がせる", "いそがせる", "hối thúc"],
+  ["待たせる", "またせる", "bắt chờ"],
+  ["困らせる", "こまらせる", "làm khó xử, gây phiền"],
+  ["処置", "しょち", "xử trí, biện pháp xử lý"],
+  ["拍子", "ひょうし", "ngay lúc, khoảnh khắc; nhịp"],
+  ["口出し", "くちだし", "xen vào, can thiệp bằng lời"],
+  ["反論", "はんろん", "phản bác"],
+  ["遠慮", "えんりょ", "ngại ngùng, giữ ý"],
+  ["私生活", "しせいかつ", "đời sống riêng tư"],
+  ["手続き", "てつづき", "thủ tục"],
+  ["窓口", "まどぐち", "quầy tiếp nhận"],
+  ["当てはめる", "あてはめる", "áp vào, áp dụng vào"],
+  ["少数", "しょうすう", "số ít"],
+  ["事例", "じれい", "trường hợp, ví dụ"],
+  ["一般化", "いっぱんか", "khái quát hóa"],
+  ["社会全体", "しゃかいぜんたい", "toàn xã hội"],
+  ["習慣", "しゅうかん", "thói quen, tập quán"],
+  ["取り入れる", "とりいれる", "đưa vào, áp dụng"],
+  ["捜査", "そうさ", "điều tra"],
+  ["怠る", "おこたる", "lơ là, bỏ bê"],
+  ["危機的", "ききてき", "mang tính khủng hoảng"],
+  ["根本的", "こんぽんてき", "căn bản, tận gốc"],
+  ["見直し", "みなおし", "xem xét lại"],
+  ["不可欠", "ふかけつ", "không thể thiếu"],
+  ["状況", "じょうきょう", "tình hình, hoàn cảnh"],
+  ["行動", "こうどう", "hành động"],
+  ["視線", "しせん", "ánh nhìn, tầm mắt"],
+  ["適切", "てきせつ", "phù hợp, thích đáng"],
+  ["不適切", "ふてきせつ", "không phù hợp"],
+  ["暗黙", "あんもく", "ngầm hiểu, không nói ra"],
+  ["公共性", "こうきょうせい", "tính công cộng"],
+  ["規範", "きはん", "quy phạm, chuẩn mực"],
+  ["認識", "にんしき", "nhận thức"],
+  ["導く", "みちびく", "dẫn dắt"],
+  ["営み", "いとなみ", "hoạt động sống, sinh hoạt"],
+  ["自然", "しぜん", "tự nhiên"],
+  ["土地", "とち", "vùng đất, địa phương"],
+  ["争う", "あらそう", "tranh giành, tranh chấp"],
+  ["仲良く", "なかよく", "hòa thuận"],
+  ["必要", "ひつよう", "cần thiết"],
+  ["明確", "めいかく", "rõ ràng"],
+  ["法律", "ほうりつ", "pháp luật"],
+  ["制度", "せいど", "chế độ, hệ thống"],
+  ["街角", "まちかど", "góc phố"],
+  ["路上", "ろじょう", "trên đường"],
+  ["共有", "きょうゆう", "chia sẻ, cùng có chung"],
+  ["押し付ける", "おしつける", "áp đặt"],
+  ["従う", "したがう", "tuân theo"],
+  ["判断", "はんだん", "phán đoán, quyết định"],
+  ["無意識", "むいしき", "vô thức"],
+  ["眺める", "ながめる", "ngắm nhìn"],
+  ["疑問", "ぎもん", "nghi vấn, thắc mắc"],
+  ["次第に", "しだいに", "dần dần"],
+  ["改めて", "あらためて", "một lần nữa, lại"],
+  ["振る舞い", "ふるまい", "cách cư xử, hành vi"],
+  ["許す", "ゆるす", "cho phép, tha thứ"],
+  ["結果", "けっか", "kết quả"],
+  ["取り決める", "とりきめる", "quy định, thỏa thuận"],
+  ["繰り返す", "くりかえす", "lặp lại"],
+  ["重要", "じゅうよう", "quan trọng"],
+  ["施設", "しせつ", "cơ sở, thiết bị"],
+  ["在学生", "ざいがくせい", "sinh viên đang học"],
+  ["公認", "こうにん", "được công nhận chính thức"],
+  ["団体", "だんたい", "đoàn thể, tổ chức"],
+  ["営利目的", "えいりもくてき", "mục đích lợi nhuận"],
+  ["利用", "りよう", "sử dụng"],
+  ["可否", "かひ", "được hay không"],
+  ["管理", "かんり", "quản lý"],
+  ["委員会", "いいんかい", "ủy ban"],
+  ["定員", "ていいん", "sức chứa, số người quy định"],
+  ["備え付け", "そなえつけ", "trang bị sẵn"],
+  ["借りる", "かりる", "mượn, thuê"],
+  ["代表者", "だいひょうしゃ", "người đại diện"],
+  ["設備", "せつび", "thiết bị, cơ sở vật chất"],
+  ["詳細", "しょうさい", "chi tiết"],
+  ["参照", "さんしょう", "tham khảo"],
+  ["提出先", "ていしゅつさき", "nơi nộp"],
+  ["期限", "きげん", "hạn, thời hạn"],
+  ["参加者", "さんかしゃ", "người tham gia"],
+  ["見込まれる", "みこまれる", "được dự tính, có khả năng"],
+  ["開催", "かいさい", "tổ chức, mở sự kiện"],
+  ["備品", "びひん", "trang thiết bị, vật dụng"],
+  ["借用", "しゃくよう", "mượn, vay dùng"],
+  ["希望", "きぼう", "mong muốn, nguyện vọng"],
+  ["予定", "よてい", "dự định, kế hoạch"],
+];
+
 const sortedN1Vocabulary = [...n1Vocabulary].sort((a, b) => b[0].length - a[0].length);
+const sortedN2Vocabulary = [...n2Vocabulary].sort((a, b) => b[0].length - a[0].length);
+const sortedStudyVocabulary = [...n1Vocabulary, ...n2Vocabulary].sort((a, b) => b[0].length - a[0].length);
 
 function labelFor(title, questionNumber) {
   if (questionNumber <= 25) return `${title} - Từ vựng`;
@@ -280,6 +415,30 @@ function n1EntriesForText(text, maxItems = 6) {
   return found;
 }
 
+function n2EntriesForText(text, maxItems = 6) {
+  const source = String(text || "");
+  const found = [];
+  sortedN2Vocabulary.forEach(([word, reading, meaning]) => {
+    if (found.length >= maxItems) return;
+    if (source.includes(word) && !found.some((item) => item.word === word)) {
+      found.push({ word, reading, meaning });
+    }
+  });
+  return found;
+}
+
+function studyEntriesForText(text, maxItems = 1) {
+  const source = String(text || "");
+  const found = [];
+  sortedStudyVocabulary.forEach(([word, reading, meaning]) => {
+    if (found.length >= maxItems) return;
+    if (source.includes(word) && !found.some((item) => item.word === word)) {
+      found.push({ word, reading, meaning });
+    }
+  });
+  return found;
+}
+
 function n1NotesForQuestion(item, group = null) {
   const textParts = [item.text, item.textHtml, item.passage, group?.passage, ...(item.options || [])];
   const entries = n1EntriesForText(textParts.join(" "), item.questionNumber >= 41 ? 6 : 4);
@@ -287,8 +446,15 @@ function n1NotesForQuestion(item, group = null) {
   return `\nTừ N1 cần nhớ: ${entries.map((entry) => `${entry.word}（${entry.reading}）= ${entry.meaning}`).join("; ")}.`;
 }
 
-function withN1Notes(baseExplanation, item, group = null) {
-  return `${baseExplanation}${n1NotesForQuestion(item, group)}`;
+function n2NotesForQuestion(item, group = null) {
+  const textParts = [item.text, item.textHtml, item.passage, group?.passage, ...(item.options || [])];
+  const entries = n2EntriesForText(textParts.join(" "), item.questionNumber >= 41 ? 8 : 5);
+  if (!entries.length) return "";
+  return `\nTừ N2 cần nhớ: ${entries.map((entry) => `${entry.word}（${entry.reading}）= ${entry.meaning}`).join("; ")}.`;
+}
+
+function withStudyNotes(baseExplanation, item, group = null) {
+  return `${baseExplanation}${n1NotesForQuestion(item, group)}${n2NotesForQuestion(item, group)}`;
 }
 
 function explanationForRemoteQuestion(exam, item, group) {
@@ -300,41 +466,41 @@ function explanationForRemoteQuestion(exam, item, group) {
 
   if (questionNumber <= 6) {
     base = `Đáp án: ${item.correctAnswer}. Cách đọc đúng trong câu là 「${correctText}」. Đây là dạng kiểm tra âm đọc kanji, nên hãy gắn cách đọc với cả cụm trong đề: ${prompt}`;
-    return withN1Notes(base, item, group);
+    return withStudyNotes(base, item, group);
   }
 
   if (questionNumber <= 13) {
     base = `Đáp án: ${item.correctAnswer}. Chỗ trống cần 「${correctText}」 để câu tự nhiên về nghĩa và cách kết hợp từ. Đặt vào câu sẽ thành: ${prompt.replace("（　）", `「${correctText}」`)}`;
-    return withN1Notes(base, item, group);
+    return withStudyNotes(base, item, group);
   }
 
   if (questionNumber <= 19) {
     base = `Đáp án: ${item.correctAnswer}. Trong ngữ cảnh này, từ/cụm được hỏi gần nghĩa nhất với 「${correctText}」. Các lựa chọn còn lại lệch sắc thái hoặc không khớp với ý của câu.`;
-    return withN1Notes(base, item, group);
+    return withStudyNotes(base, item, group);
   }
 
   if (questionNumber <= 25) {
     base = `Đáp án: ${item.correctAnswer}. Cách dùng đúng là câu có 「${correctText}」. Từ được hỏi phải đi với danh từ/động từ và tình huống tự nhiên như trong lựa chọn này; các câu khác dùng sai quan hệ nghĩa hoặc collocation.`;
-    return withN1Notes(base, item, group);
+    return withStudyNotes(base, item, group);
   }
 
   if (questionNumber <= 35) {
     base = `Đáp án: ${item.correctAnswer}. Mẫu đúng là 「${correctText}」. Khi đặt vào câu, cấu trúc ngữ pháp và sắc thái câu sẽ khớp nhất: ${prompt.replace("（　）", `「${correctText}」`)}`;
-    return withN1Notes(base, item, group);
+    return withStudyNotes(base, item, group);
   }
 
   if (questionNumber <= 40) {
     base = `Đáp án: ${item.correctAnswer}. Đây là bài sắp xếp câu có dấu ★. Hãy ghép các mảnh theo trật tự tự nhiên của tiếng Nhật, rồi lấy mảnh nằm ở vị trí ★; mảnh đúng là 「${correctText}」.`;
-    return withN1Notes(base, item, group);
+    return withStudyNotes(base, item, group);
   }
 
   if (questionNumber <= 44) {
     base = `Đáp án: ${item.correctAnswer}. Trong đoạn văn, chỗ này cần 「${correctText}」 để nối đúng mạch ý trước sau. Khi làm dạng này, ưu tiên quan hệ logic trong đoạn hơn là chỉ nhìn riêng một câu.`;
-    return withN1Notes(base, item, group);
+    return withStudyNotes(base, item, group);
   }
 
   base = `Đáp án: ${item.correctAnswer}. Theo nội dung đoạn đọc, lựa chọn đúng là 「${correctText}」. Đáp án này khớp trực tiếp với ý chính/chi tiết trong bài, còn các lựa chọn khác thường sai do nói quá, đổi chủ thể hoặc lệch điều kiện.`;
-  return withN1Notes(base, item, group);
+  return withStudyNotes(base, item, group);
 }
 
 function sourceMarkupToHtml(value) {
@@ -379,11 +545,11 @@ function targetFromQuestionText(question) {
 
   const meaningPrompt = prompt.match(/^\d+\.\s*(.+?)。意味が近いものは？/);
   if (meaningPrompt) {
-    const entries = n1EntriesForText(meaningPrompt[1], 1);
+    const entries = studyEntriesForText(meaningPrompt[1], 1);
     if (entries.length) return entries[0].word;
   }
 
-  const entries = n1EntriesForText(prompt, 1);
+  const entries = studyEntriesForText(prompt, 1);
   return entries.length ? entries[0].word : "";
 }
 
@@ -398,6 +564,13 @@ function addN1NotesToExplanation(question) {
   question.explanation += `\nTừ N1 cần nhớ: ${entries.map((entry) => `${entry.word}（${entry.reading}）= ${entry.meaning}`).join("; ")}.`;
 }
 
+function addN2NotesToExplanation(question) {
+  if (!question.explanation || question.explanation.includes("Từ N2 cần nhớ:")) return;
+  const entries = n2EntriesForText(`${question.prompt} ${question.passage || ""} ${question.options.join(" ")}`, question.skill === "reading" ? 8 : 5);
+  if (!entries.length) return;
+  question.explanation += `\nTừ N2 cần nhớ: ${entries.map((entry) => `${entry.word}（${entry.reading}）= ${entry.meaning}`).join("; ")}.`;
+}
+
 function enhanceQuestion(question) {
   if (!hasHighlightedPrompt(question) && !question.targetWord) {
     const target = targetFromQuestionText(question);
@@ -406,6 +579,7 @@ function enhanceQuestion(question) {
     }
   }
   addN1NotesToExplanation(question);
+  addN2NotesToExplanation(question);
   return question;
 }
 
