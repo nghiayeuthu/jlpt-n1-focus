@@ -697,7 +697,8 @@ function wrongOptionHint(item, correctText) {
 function readingExplanationForRemoteQuestion(item, group) {
   const correctText = item.options[Number(item.correctAnswer) - 1];
   if (item.explanation) {
-    return `Đáp án: ${item.correctAnswer}. ${compactText(item.explanation)}`;
+    const explanation = compactText(item.explanation);
+    return explanation.startsWith("Đáp án") ? explanation : `Đáp án: ${item.correctAnswer}. ${explanation}`;
   }
   const focus = readingQuestionFocus(item.text);
   const evidence = evidenceFromPassage(group?.passage || item.passage || "", correctText, item.text);
