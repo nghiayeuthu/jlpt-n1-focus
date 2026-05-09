@@ -156,14 +156,19 @@ function convertRemoteExam(exam, data) {
 }
 
 async function loadRemoteExams() {
-  const remoteLoaded = await Promise.all(remoteExams.map(async (exam) => {
+  const remoteLoaded = await Promise.allSettled(remoteExams.map(async (exam) => {
     const response = await fetch(`https://www.jlptpracticetest.com/api/test/n1/${exam.code}`);
     if (!response.ok) throw new Error(`Không tải được đề ${exam.title}`);
     const data = await response.json();
     return convertRemoteExam(exam, data);
   }));
-  const exam202507 = await loadLocal2025Exam();
-  questions.push(...exam202507, ...remoteLoaded.flat());
+  questions.push(...remoteLoaded.filter((item) => item.status === "fulfilled").flatMap((item) => item.value));
+
+  try {
+    questions.push(...await loadLocal2025Exam());
+  } catch (error) {
+    console.warn(error);
+  }
 }
 
 async function loadLocal2025Exam() {
