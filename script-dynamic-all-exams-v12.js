@@ -195,7 +195,9 @@ const kanjiTargets = {
 const n1Vocabulary = [
   ["絶叫", "ぜっきょう", "hét lớn, la thất thanh"],
   ["背後", "はいご", "phía sau, hậu cảnh"],
+  ["背景", "はいけい", "bối cảnh, nền tảng phía sau"],
   ["抱負", "ほうふ", "hoài bão, chí hướng"],
+  ["意識", "いしき", "ý thức, cảm nhận, nhận biết"],
   ["侮る", "あなどる", "coi thường, xem nhẹ"],
   ["筋道", "すじみち", "trình tự logic, mạch lý lẽ"],
   ["奔放", "ほんぽう", "phóng khoáng, không gò bó"],
