@@ -237,6 +237,32 @@ const n1Vocabulary = [
   ["崇高", "すうこう", "cao cả"],
   ["裁く", "さばく", "xét xử, phán xét"],
   ["胸中", "きょうちゅう", "trong lòng, tâm tư"],
+  ["躍進", "やくしん", "tiến bộ/vươn lên vượt bậc"],
+  ["遂行", "すいこう", "thực hiện đến cùng"],
+  ["凝縮", "ぎょうしゅく", "cô đọng, nén lại"],
+  ["健やか", "すこやか", "khỏe mạnh"],
+  ["中枢", "ちゅうすう", "trung khu, phần cốt lõi"],
+  ["否めない", "いなめない", "không thể phủ nhận"],
+  ["支障", "ししょう", "trở ngại, ảnh hưởng xấu"],
+  ["おびただしい", "おびただしい", "rất nhiều, vô số"],
+  ["絶大", "ぜつだい", "rất lớn, tuyệt đại"],
+  ["予断", "よだん", "dự đoán chủ quan, đoán trước"],
+  ["手際", "てぎわ", "sự khéo léo, cách xử lý nhanh gọn"],
+  ["無償", "むしょう", "miễn phí, không thù lao"],
+  ["打ち込む", "うちこむ", "chuyên tâm, dồn sức vào"],
+  ["率直", "そっちょく", "thẳng thắn"],
+  ["お手上げ", "おてあげ", "bó tay, không còn cách nào"],
+  ["格段", "かくだん", "vượt bậc, rõ rệt"],
+  ["いたって", "いたって", "rất, cực kỳ"],
+  ["一律", "いちりつ", "đồng loạt, như nhau"],
+  ["心構え", "こころがまえ", "tâm thế, sự chuẩn bị tinh thần"],
+  ["損なう", "そこなう", "làm tổn hại, làm hỏng"],
+  ["しがみつく", "しがみつく", "bám chặt, níu chặt"],
+  ["工面", "くめん", "xoay xở tiền bạc"],
+  ["がやがや", "がやがや", "ồn ào bởi nhiều tiếng nói chuyện"],
+  ["じわじわ", "じわじわ", "dần dần, từ từ lan ra"],
+  ["どろどろ", "どろどろ", "sền sệt, lầy nhầy; rối rắm"],
+  ["べたべた", "べたべた", "dính bết; bám dính khó chịu"],
   ["情報通", "じょうほうつう", "người thạo tin"],
   ["占有率", "せんゆうりつ", "tỷ lệ chiếm giữ/thị phần"],
   ["迂闊", "うかつ", "bất cẩn, sơ suất"],
@@ -474,6 +500,33 @@ function studyEntriesForText(text, maxItems = 1) {
   return found;
 }
 
+function entryForExactTerm(term) {
+  return sortedStudyVocabulary.find(([word]) => word === term);
+}
+
+function termMeaning(term) {
+  const entry = entryForExactTerm(term);
+  return entry ? `${entry[0]}（${entry[1]}）= ${entry[2]}` : `${term} = cần ghi nhớ nghĩa/cách dùng trong ngữ cảnh này`;
+}
+
+function optionMeanings(item) {
+  const notes = (item.options || [])
+    .map((option) => entryForExactTerm(option))
+    .filter(Boolean)
+    .map(([word, reading, meaning]) => `${word}（${reading}）= ${meaning}`);
+  return notes.length >= 2 ? ` Các lựa chọn cần phân biệt: ${notes.join("; ")}.` : "";
+}
+
+function remoteTargetWord(item) {
+  const html = item.textHtml || "";
+  const marked = html.match(/\[\[u\]\]([\s\S]*?)\[\[\/u\]\]/);
+  if (marked) return marked[1].replace(/\[\[[^\]]+\]\]/g, "").trim();
+  if (item.questionNumber >= 20 && item.questionNumber <= 25) return item.text.replace(/[「」]/g, "").trim();
+  const quoted = item.text.match(/「([^」]+)」/);
+  if (quoted) return quoted[1];
+  return "";
+}
+
 function n1NotesForQuestion(item, group = null) {
   const textParts = [item.text, item.textHtml, item.passage, group?.passage, ...(item.options || [])];
   const entries = n1EntriesForText(textParts.join(" "), item.questionNumber >= 41 ? 6 : 4);
@@ -505,17 +558,20 @@ function explanationForRemoteQuestion(exam, item, group) {
   }
 
   if (questionNumber <= 13) {
-    base = `Đáp án: ${item.correctAnswer}. Chỗ trống cần 「${correctText}」 để câu tự nhiên về nghĩa và cách kết hợp từ. Đặt vào câu sẽ thành: ${prompt.replace("（　）", `「${correctText}」`)}`;
+    base = `Đáp án: ${item.correctAnswer}. ${termMeaning(correctText)}. Chỗ trống cần từ này vì nó khớp trực tiếp với ý của câu: ${prompt.replace("（　）", `「${correctText}」`)}. Hãy học theo cụm trong câu, ví dụ 「${correctText}」 đi với mạch nghĩa xung quanh chỗ trống.${optionMeanings(item)}`;
     return withStudyNotes(base, item, group);
   }
 
   if (questionNumber <= 19) {
-    base = `Đáp án: ${item.correctAnswer}. Trong ngữ cảnh này, từ/cụm được hỏi gần nghĩa nhất với 「${correctText}」. Các lựa chọn còn lại lệch sắc thái hoặc không khớp với ý của câu.`;
+    const target = remoteTargetWord(item);
+    const targetNote = target ? `Từ/cụm được hỏi là 「${target}」. ` : "";
+    base = `Đáp án: ${item.correctAnswer}. ${targetNote}${termMeaning(correctText)}. Trong ngữ cảnh này, 「${target || "từ được hỏi"}」 gần nghĩa nhất với 「${correctText}」; các lựa chọn còn lại lệch sắc thái hoặc không khớp với ý của câu.`;
     return withStudyNotes(base, item, group);
   }
 
   if (questionNumber <= 25) {
-    base = `Đáp án: ${item.correctAnswer}. Cách dùng đúng là câu có 「${correctText}」. Từ được hỏi phải đi với danh từ/động từ và tình huống tự nhiên như trong lựa chọn này; các câu khác dùng sai quan hệ nghĩa hoặc collocation.`;
+    const target = remoteTargetWord(item);
+    base = `Đáp án: ${item.correctAnswer}. ${target ? `${termMeaning(target)}. ` : ""}Cách dùng đúng là câu có 「${correctText}」. Hãy nhớ cách dùng qua cả câu đúng này, vì nó cho thấy từ đi với danh từ/động từ và tình huống nào; các câu khác dùng sai quan hệ nghĩa hoặc collocation.`;
     return withStudyNotes(base, item, group);
   }
 
