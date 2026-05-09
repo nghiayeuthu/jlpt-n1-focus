@@ -422,6 +422,47 @@ const sortedN1Vocabulary = [...n1Vocabulary].sort((a, b) => b[0].length - a[0].l
 const sortedN2Vocabulary = [...n2Vocabulary].sort((a, b) => b[0].length - a[0].length);
 const sortedStudyVocabulary = [...n1Vocabulary, ...n2Vocabulary].sort((a, b) => b[0].length - a[0].length);
 
+const grammarPatterns = [
+  ["だけ", "chỉ/đến mức; trong mẫu 「Vるだけ無駄」 nghĩa là làm cũng vô ích"],
+  ["を受けて", "chịu tác động từ, dựa trên bối cảnh/sự kiện trước đó"],
+  ["なり", "vừa mới... thì ngay lập tức..."],
+  ["恐れがある以上", "vì có nguy cơ/khả năng xảy ra nên không thể không xử lý"],
+  ["ほどの", "đến mức, tới mức"],
+  ["ところだが", "đang muốn/đáng lẽ muốn... nhưng"],
+  ["とは", "thể hiện sự ngạc nhiên: thật không ngờ là..."],
+  ["という", "nghe nói/là rằng; dùng để dẫn thông tin"],
+  ["があってはならない", "không được phép có/chuyện đó không được xảy ra"],
+  ["なんかでいいんですか", "người như tôi/em có ổn không; cách nói khiêm nhường"],
+  ["かつ", "hơn nữa, đồng thời; nối hai trạng thái/cách làm cùng đúng"],
+  ["極まりない", "cực kỳ, hết sức; thường dùng với đánh giá tiêu cực"],
+  ["ように思われる", "có vẻ như, được cảm thấy là"],
+  ["とあっては", "nếu đã là/vì là tình huống đặc biệt như vậy thì"],
+  ["言わせると", "theo cách nói/nhìn nhận của ai đó"],
+  ["かと思いきや", "cứ tưởng là... nhưng trái lại/bất ngờ là..."],
+  ["ものなら", "nếu có thể...; thường nói điều khó thực hiện"],
+  ["ことには", "nếu không... thì; điều kiện tiên quyết"],
+  ["を最後に", "kể từ/lấy lần đó làm lần cuối"],
+  ["を皮切りに", "mở đầu bằng..., bắt đầu từ..."],
+  ["に沿って", "theo, dựa theo"],
+  ["浴びようとも", "dù có bị hứng chịu/nhận... đi nữa"],
+  ["あったらあったで", "nếu có thì lại phát sinh chuyện theo kiểu có"],
+  ["知らされておらず", "không được thông báo nên..."],
+  ["としか言いようがない", "chỉ có thể nói là..."],
+  ["わけではない", "không hẳn là, không có nghĩa là"],
+  ["ずにはいられない", "không thể không..., buộc phải... do cảm xúc"],
+  ["次第", "ngay sau khi..."],
+  ["にわたって", "trải suốt/phạm vi kéo dài qua..."],
+  ["をめぐって", "xoay quanh vấn đề..."],
+  ["反面", "mặt khác, trái lại ở một khía cạnh"],
+  ["によって", "do, bởi; tùy theo"],
+  ["それどころか", "không những không vậy, trái lại còn..."],
+  ["それにもかかわらず", "mặc dù vậy, tuy thế mà"],
+  ["かのように", "như thể là..."],
+  ["だって", "ngay cả..., đến cả...; dùng để nêu ví dụ nhấn mạnh"],
+  ["でさえ", "ngay cả, đến cả"],
+  ["といっても", "nói là... nhưng thực ra/nhưng cũng chỉ..."],
+];
+
 function labelFor(title, questionNumber) {
   if (questionNumber <= 25) return `${title} - Từ vựng`;
   if (questionNumber <= 40) return `${title} - Ngữ pháp`;
@@ -517,6 +558,27 @@ function optionMeanings(item) {
   return notes.length >= 2 ? ` Các lựa chọn cần phân biệt: ${notes.join("; ")}.` : "";
 }
 
+function grammarMeaning(pattern) {
+  const source = String(pattern || "");
+  const found = grammarPatterns.find(([key]) => source.includes(key) || key.includes(source));
+  return found ? `Mẫu ngữ pháp 「${pattern}」 = ${found[1]}.` : `Mẫu ngữ pháp 「${pattern}」 cần hiểu theo chức năng nối ý trong câu; hãy ghi nhớ cả câu hoàn chỉnh để nắm sắc thái.`;
+}
+
+function grammarOptionNotes(item) {
+  const notes = (item.options || [])
+    .map((option) => {
+      const found = grammarPatterns.find(([key]) => String(option).includes(key) || key.includes(String(option)));
+      return found ? `「${option}」= ${found[1]}` : "";
+    })
+    .filter(Boolean);
+  return notes.length >= 2 ? ` Phân biệt nhanh: ${notes.join("; ")}.` : "";
+}
+
+function vocabularyUsageExplanation(target, correctText) {
+  const targetNote = target ? `${termMeaning(target)}. ` : "";
+  return `${targetNote}Câu đúng là: 「${correctText}」. Dịch ý phần cần học: dùng 「${target || "từ này"}」 trong câu này là tự nhiên vì nó đi đúng với ngữ cảnh và quan hệ từ trong câu. Các lựa chọn khác thường sai do dùng sai collocation, sai đối tượng đi kèm hoặc lệch nghĩa.`;
+}
+
 function remoteTargetWord(item) {
   const html = item.textHtml || "";
   const marked = html.match(/\[\[u\]\]([\s\S]*?)\[\[\/u\]\]/);
@@ -571,22 +633,22 @@ function explanationForRemoteQuestion(exam, item, group) {
 
   if (questionNumber <= 25) {
     const target = remoteTargetWord(item);
-    base = `Đáp án: ${item.correctAnswer}. ${target ? `${termMeaning(target)}. ` : ""}Cách dùng đúng là câu có 「${correctText}」. Hãy nhớ cách dùng qua cả câu đúng này, vì nó cho thấy từ đi với danh từ/động từ và tình huống nào; các câu khác dùng sai quan hệ nghĩa hoặc collocation.`;
+    base = `Đáp án: ${item.correctAnswer}. ${vocabularyUsageExplanation(target, correctText)}`;
     return withStudyNotes(base, item, group);
   }
 
   if (questionNumber <= 35) {
-    base = `Đáp án: ${item.correctAnswer}. Mẫu đúng là 「${correctText}」. Khi đặt vào câu, cấu trúc ngữ pháp và sắc thái câu sẽ khớp nhất: ${prompt.replace("（　）", `「${correctText}」`)}`;
+    base = `Đáp án: ${item.correctAnswer}. ${grammarMeaning(correctText)} Câu hoàn chỉnh: ${prompt.replace("（　）", `「${correctText}」`)}. Cách hiểu: hãy nhìn phần trước và sau chỗ trống để xác định quan hệ logic như nguyên nhân, điều kiện, nhượng bộ, mức độ hoặc dẫn lời.${grammarOptionNotes(item)}`;
     return withStudyNotes(base, item, group);
   }
 
   if (questionNumber <= 40) {
-    base = `Đáp án: ${item.correctAnswer}. Đây là bài sắp xếp câu có dấu ★. Hãy ghép các mảnh theo trật tự tự nhiên của tiếng Nhật, rồi lấy mảnh nằm ở vị trí ★; mảnh đúng là 「${correctText}」.`;
+    base = `Đáp án: ${item.correctAnswer}. Đây là bài sắp xếp câu có dấu ★. Mảnh đúng ở vị trí ★ là 「${correctText}」. ${grammarMeaning(correctText)} Hãy ghép theo trật tự tự nhiên của tiếng Nhật: cụm bổ nghĩa đứng trước danh từ/động từ chính, trợ từ đi sau cụm nó đánh dấu, rồi mới lấy mảnh nằm ở vị trí ★.${grammarOptionNotes(item)}`;
     return withStudyNotes(base, item, group);
   }
 
   if (questionNumber <= 44) {
-    base = `Đáp án: ${item.correctAnswer}. Trong đoạn văn, chỗ này cần 「${correctText}」 để nối đúng mạch ý trước sau. Khi làm dạng này, ưu tiên quan hệ logic trong đoạn hơn là chỉ nhìn riêng một câu.`;
+    base = `Đáp án: ${item.correctAnswer}. ${grammarMeaning(correctText)} Trong đoạn văn, chỗ này cần 「${correctText}」 để nối đúng mạch ý trước sau. Khi làm dạng này, hãy dịch quan hệ giữa hai câu: bổ sung, đối lập, nhượng bộ, nguyên nhân hay ví dụ; đừng chỉ nhìn riêng một câu.${grammarOptionNotes(item)}`;
     return withStudyNotes(base, item, group);
   }
 
