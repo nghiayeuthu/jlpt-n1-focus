@@ -429,6 +429,23 @@ const sortedN1Vocabulary = [...n1Vocabulary].sort((a, b) => b[0].length - a[0].l
 const sortedN2Vocabulary = [...n2Vocabulary].sort((a, b) => b[0].length - a[0].length);
 const sortedStudyVocabulary = [...n1Vocabulary, ...n2Vocabulary].sort((a, b) => b[0].length - a[0].length);
 
+const supplementalVocabAnswers = [
+  ["適応", "てきおう", "thích nghi"], ["掲げて", "かかげて", "đề ra, giương lên"], ["踏襲", "とうしゅう", "kế thừa, đi theo đường lối cũ"], ["足止め", "あしどめ", "bị kẹt lại, bị giữ chân"], ["へとへと", "へとへと", "kiệt sức"], ["払拭", "ふっしょく", "xóa tan, quét sạch"], ["とっさに", "とっさに", "ngay lập tức, theo phản xạ"],
+  ["根底", "こんてい", "nền tảng, gốc rễ"], ["返上", "へんじょう", "trả lại; hy sinh/nghỉ mà vẫn làm"], ["取り次いで", "とりついで", "chuyển máy, nối liên lạc"], ["交錯", "こうさく", "đan xen, lẫn lộn"], ["難航", "なんこう", "gặp khó khăn, tiến triển trắc trở"], ["がやがや", "がやがや", "ồn ào tiếng người nói"], ["足手まとい", "あしでまとい", "vướng chân, gánh nặng cho người khác"],
+  ["自立", "じりつ", "tự lập"], ["還元", "かんげん", "hoàn lại, trả lại lợi ích"], ["どんより", "どんより", "âm u, nặng nề"], ["ネック", "ネック", "điểm nghẽn, trở ngại"], ["発散", "はっさん", "giải tỏa, phát tán"], ["まぎらわしい", "まぎらわしい", "dễ nhầm lẫn"], ["行き届いて", "いきとどいて", "chu đáo, kỹ lưỡng đến từng chỗ"],
+  ["腐敗", "ふはい", "thối rữa; mục nát"], ["粗い", "あらい", "thô, không mịn"], ["粘膜", "ねんまく", "niêm mạc"], ["寿命", "じゅみょう", "tuổi thọ"], ["戒める", "いましめる", "răn dạy, cảnh cáo"], ["誓約書", "せいやくしょ", "bản cam kết"],
+  ["フォロー", "フォロー", "hỗ trợ, đỡ lời"], ["念願", "ねんがん", "ước nguyện từ lâu"], ["本音", "ほんね", "lòng thật, ý nghĩ thật"], ["やんわり", "やんわり", "nhẹ nhàng, mềm mỏng"], ["当", "とう", "này, hiện tại, thuộc về chúng tôi"], ["綿密な", "めんみつな", "tỉ mỉ, kỹ lưỡng"],
+  ["委託", "いたく", "ủy thác"], ["清々しい", "すがすがしい", "sảng khoái"], ["工面", "くめん", "xoay xở tiền bạc"], ["ぞんざい", "ぞんざい", "cẩu thả, thô lỗ"], ["うなだれて", "うなだれて", "cúi gằm đầu"], ["打撃", "だげき", "đòn giáng, thiệt hại lớn"],
+  ["風潮", "ふうちょう", "xu hướng xã hội"], ["もたらす", "もたらす", "mang lại, gây ra"], ["撤回", "てっかい", "rút lại, thu hồi"], ["補填", "ほてん", "bù đắp, bù lỗ"], ["コンスタントに", "コンスタントに", "đều đặn, ổn định"], ["ずばり", "ずばり", "thẳng thừng, trúng ngay trọng tâm"],
+  ["維持", "いじ", "duy trì"], ["普及", "ふきゅう", "phổ biến, lan rộng"], ["紛らわしい", "まぎらわしい", "dễ nhầm"], ["兆し", "きざし", "dấu hiệu, điềm báo"], ["収容", "しゅうよう", "chứa, tiếp nhận"], ["冴える", "さえる", "tỉnh táo, sắc bén"], ["痛烈", "つうれつ", "gay gắt, mạnh mẽ"], ["完結", "かんけつ", "kết thúc trọn vẹn"], ["脆い", "もろい", "dễ vỡ, yếu"],
+  ["根こそぎ", "ねこそぎ", "toàn bộ, sạch không còn gì"], ["没頭", "ぼっとう", "chìm đắm, tập trung hoàn toàn"], ["締結", "ていけつ", "ký kết"], ["懸念", "けねん", "lo ngại"], ["やつれて", "やつれて", "tiều tụy"], ["奮闘", "ふんとう", "nỗ lực chiến đấu"], ["不慮", "ふりょ", "bất ngờ, ngoài ý muốn"],
+  ["一任", "いちにん", "ủy thác toàn quyền"], ["却下", "きゃっか", "bác bỏ, không chấp nhận"], ["可決", "かけつ", "thông qua"], ["保留", "ほりゅう", "bảo lưu, để lại chưa quyết"], ["円滑に", "えんかつに", "trôi chảy, suôn sẻ"], ["堅実な", "けんじつな", "vững chắc, thận trọng"], ["多角的な", "たかくてきな", "đa góc độ"], ["精力的に", "せいりょくてきに", "một cách năng nổ"],
+  ["合意", "ごうい", "đồng thuận"], ["基盤", "きばん", "nền tảng"], ["支障", "ししょう", "trở ngại"], ["教訓", "きょうくん", "bài học"], ["打診", "だしん", "thăm dò ý kiến"], ["手配", "てはい", "sắp xếp, chuẩn bị"], ["発覚", "はっかく", "bị phát giác"], ["究明", "きゅうめい", "làm rõ, truy cứu"], ["表明", "ひょうめい", "bày tỏ, công bố"], ["言及", "げんきゅう", "đề cập"],
+  ["急遽", "きゅうきょ", "gấp, đột ngột"], ["頻繁に", "ひんぱんに", "thường xuyên"], ["愛着", "あいちゃく", "sự gắn bó"], ["逸材", "いつざい", "nhân tài hiếm có"], ["強硬に", "きょうこうに", "cứng rắn"], ["忠実に", "ちゅうじつに", "trung thành, sát với"], ["熟知", "じゅくち", "biết rõ"], ["無謀", "むぼう", "liều lĩnh"], ["気がかり", "きがかり", "điều lo lắng"], ["見返り", "みかえり", "đổi lại, sự đáp lại"],
+  ["逸脱", "いつだつ", "đi chệch, lệch khỏi"], ["障る", "さわる", "gây ảnh hưởng xấu"], ["駆使", "くし", "vận dụng thành thạo"], ["駆けつけた", "かけつけた", "chạy vội tới"], ["見かけた", "みかけた", "nhìn thấy thoáng qua"], ["報じた", "ほうじた", "đưa tin"], ["催されて", "もよおされて", "được tổ chức"], ["施されて", "ほどこされて", "được thực hiện/áp dụng"], ["立て替えて", "たてかえて", "trả thay trước"], ["食い込んだ", "くいこんだ", "ăn sâu vào, chen vào"],
+  ["がらりと", "がらりと", "thay đổi hẳn"], ["ぎくしゃく", "ぎくしゃく", "gượng gạo, không trôi chảy"], ["くよくよ", "くよくよ", "lo nghĩ mãi"], ["じめじめ", "じめじめ", "ẩm ướt; u ám"], ["すべすべ", "すべすべ", "trơn láng"], ["すんなり", "すんなり", "suôn sẻ, dễ dàng"], ["ずっしりと", "ずっしりと", "nặng trĩu"], ["せかせかと", "せかせかと", "vội vàng, hấp tấp"], ["そわそわ", "そわそわ", "bồn chồn"], ["てきぱきと", "てきぱきと", "nhanh nhẹn, gọn gàng"], ["てっきり", "てっきり", "cứ đinh ninh là"], ["とりわけ", "とりわけ", "đặc biệt là"], ["むしょうに", "むしょうに", "vô cùng, không hiểu sao rất"], ["めきめき", "めきめき", "tiến bộ nhanh chóng"]
+];
+
 const grammarPatterns = [
   ["だけ", "chỉ/đến mức; trong mẫu 「Vるだけ無駄」 nghĩa là làm cũng vô ích"],
   ["を受けて", "chịu tác động từ, dựa trên bối cảnh/sự kiện trước đó"],
@@ -553,12 +570,53 @@ function studyEntriesForText(text, maxItems = 1) {
 }
 
 function entryForExactTerm(term) {
-  return sortedStudyVocabulary.find(([word]) => word === term);
+  const source = String(term || "").trim();
+  return supplementalVocabAnswers.find(([word]) => word === source) || sortedStudyVocabulary.find(([word]) => word === source);
+}
+
+function vocabAnswerForms(term) {
+  const source = String(term || "").trim();
+  const forms = new Set([source]);
+  [
+    [/に$/, ""],
+    [/な$/, ""],
+    [/と$/, ""],
+    [/して$/, ""],
+    [/されて$/, ""],
+    [/られて$/, ""],
+    [/れて$/, "れる"],
+    [/って$/, "う"],
+    [/んで$/, "む"],
+    [/いで$/, "ぐ"],
+    [/して$/, "する"],
+    [/した$/, "する"],
+    [/た$/, "る"],
+    [/て$/, "る"],
+  ].forEach(([pattern, replacement]) => {
+    if (pattern.test(source)) forms.add(source.replace(pattern, replacement));
+  });
+  return [...forms].filter(Boolean);
+}
+
+function lookupVocabAnswer(term) {
+  for (const form of vocabAnswerForms(term)) {
+    const entry = entryForExactTerm(form) || sortedStudyVocabulary.find(([word]) => word === form);
+    if (entry) return { word: term, base: entry[0], reading: entry[1], meaning: entry[2] };
+  }
+  if (/^[ぁ-んァ-ンー]+$/.test(term)) return { word: term, base: term, reading: term, meaning: "xem nghĩa theo cụm trong câu" };
+  return null;
 }
 
 function termMeaning(term) {
-  const entry = entryForExactTerm(term);
-  return entry ? `${entry[0]}（${entry[1]}）= ${entry[2]}` : `${term} = cần ghi nhớ nghĩa/cách dùng trong ngữ cảnh này`;
+  const entry = lookupVocabAnswer(term);
+  return entry ? `${entry.word}（${entry.reading}）= ${entry.meaning}` : `${term} = cần ghi nhớ nghĩa/cách dùng trong ngữ cảnh này`;
+}
+
+function answerMeaningLine(term) {
+  const entry = lookupVocabAnswer(term);
+  if (!entry) return `Đáp án đúng: 「${term}」. Cần ghi nhớ nghĩa/cách dùng của từ này trong cả cụm câu.`;
+  const baseNote = entry.base !== term ? `, gốc: ${entry.base}` : "";
+  return `Đáp án đúng: 「${term}」（${entry.reading}）= ${entry.meaning}${baseNote}.`;
 }
 
 function optionMeanings(item) {
@@ -573,6 +631,15 @@ function grammarMeaning(pattern) {
   const source = String(pattern || "");
   const found = grammarPatterns.find((entry) => grammarKeys(entry).some((key) => source.includes(key) || key.includes(source)));
   return found ? `Mẫu ngữ pháp 「${pattern}」 = ${found[1]}.` : `Mẫu ngữ pháp 「${pattern}」 cần hiểu theo chức năng nối ý trong câu; hãy ghi nhớ cả câu hoàn chỉnh để nắm sắc thái.`;
+}
+
+function grammarAnswerLine(pattern) {
+  const source = String(pattern || "");
+  const found = grammarPatterns.find((entry) => grammarKeys(entry).some((key) => source.includes(key) || key.includes(source)));
+  if (found) {
+    return `Đáp án ngữ pháp: 「${pattern}」. Mẫu 「${found[0]}」 nghĩa là: ${found[1]}.`;
+  }
+  return `Đáp án ngữ pháp: 「${pattern}」. Hãy đọc cả cụm này trong câu để xác định quan hệ ý nghĩa; phần sau giải thích cách nối.`;
 }
 
 function grammarOptionNotes(item) {
@@ -731,7 +798,7 @@ function explanationForRemoteQuestion(exam, item, group) {
   }
 
   if (questionNumber <= 13) {
-    base = `Đáp án: ${item.correctAnswer}. ${termMeaning(correctText)}. Chỗ trống cần từ này vì nó khớp trực tiếp với ý của câu: ${prompt.replace("（　）", `「${correctText}」`)}. Hãy học theo cụm trong câu, ví dụ 「${correctText}」 đi với mạch nghĩa xung quanh chỗ trống.${optionMeanings(item)}`;
+    base = `Đáp án: ${item.correctAnswer}. ${answerMeaningLine(correctText)} Chỗ trống cần từ này vì nó khớp trực tiếp với ý của câu: ${prompt.replace("（　）", `「${correctText}」`)}. Hãy học theo cụm trong câu, ví dụ 「${correctText}」 đi với mạch nghĩa xung quanh chỗ trống.${optionMeanings(item)}`;
     return withStudyNotes(base, item, group);
   }
 
@@ -749,19 +816,19 @@ function explanationForRemoteQuestion(exam, item, group) {
   }
 
   if (questionNumber <= 35) {
-    base = `Đáp án: ${item.correctAnswer}. ${grammarMeaning(correctText)} Câu hoàn chỉnh: ${prompt.replace("（　）", `「${correctText}」`)}. Cách hiểu: hãy nhìn phần trước và sau chỗ trống để xác định quan hệ logic như nguyên nhân, điều kiện, nhượng bộ, mức độ hoặc dẫn lời.${grammarOptionNotes(item)}`;
+    base = `Đáp án: ${item.correctAnswer}. ${grammarAnswerLine(correctText)} Câu hoàn chỉnh: ${prompt.replace("（　）", `「${correctText}」`)}. Cách hiểu: hãy nhìn phần trước và sau chỗ trống để xác định quan hệ logic như nguyên nhân, điều kiện, nhượng bộ, mức độ hoặc dẫn lời.${grammarOptionNotes(item)}`;
     return withStudyNotes(base, item, group);
   }
 
   if (questionNumber <= 40) {
     const fullOrder = item.starOrder || item.correctOrder || item.fullOrder || item.order || "";
     const orderNote = fullOrder ? ` Thứ tự đúng: ${fullOrder}.` : " Khi có dữ liệu thứ tự đầy đủ từ file đáp án, phần này sẽ hiện thêm dòng “Thứ tự đúng”.";
-    base = `Đáp án: ${item.correctAnswer}. Đây là bài sắp xếp câu có dấu ★. Mảnh đúng ở vị trí ★ là 「${correctText}」.${orderNote} ${grammarMeaning(correctText)} Hãy ghép theo trật tự tự nhiên của tiếng Nhật: cụm bổ nghĩa đứng trước danh từ/động từ chính, trợ từ đi sau cụm nó đánh dấu, rồi mới lấy mảnh nằm ở vị trí ★.${grammarOptionNotes(item)}`;
+    base = `Đáp án: ${item.correctAnswer}. Đây là bài sắp xếp câu có dấu ★. Mảnh đúng ở vị trí ★ là 「${correctText}」. ${grammarAnswerLine(correctText)}${orderNote} Hãy ghép theo trật tự tự nhiên của tiếng Nhật: cụm bổ nghĩa đứng trước danh từ/động từ chính, trợ từ đi sau cụm nó đánh dấu, rồi mới lấy mảnh nằm ở vị trí ★.${grammarOptionNotes(item)}`;
     return withStudyNotes(base, item, group);
   }
 
   if (questionNumber <= 44) {
-    base = `Đáp án: ${item.correctAnswer}. ${grammarMeaning(correctText)} Trong đoạn văn, chỗ này cần 「${correctText}」 để nối đúng mạch ý trước sau. Khi làm dạng này, hãy dịch quan hệ giữa hai câu: bổ sung, đối lập, nhượng bộ, nguyên nhân hay ví dụ; đừng chỉ nhìn riêng một câu.${grammarOptionNotes(item)}`;
+    base = `Đáp án: ${item.correctAnswer}. ${grammarAnswerLine(correctText)} Trong đoạn văn, chỗ này cần 「${correctText}」 để nối đúng mạch ý trước sau. Khi làm dạng này, hãy dịch quan hệ giữa hai câu: bổ sung, đối lập, nhượng bộ, nguyên nhân hay ví dụ; đừng chỉ nhìn riêng một câu.${grammarOptionNotes(item)}`;
     return withStudyNotes(base, item, group);
   }
 
@@ -851,6 +918,21 @@ function addN1GrammarNotesToExplanation(question) {
   question.explanation += `\nNgữ pháp N1 cần nhớ: ${entries.map((entry) => `「${entry.pattern}」= ${entry.meaning}`).join("; ")}.`;
 }
 
+function prependAnswerDetail(question) {
+  if (!question.explanation) return;
+  const number = questionNumber(question);
+  const correctText = question.options?.[question.answer] || "";
+  if (!correctText) return;
+
+  if (number >= 7 && number <= 13 && !question.explanation.includes("Đáp án đúng:")) {
+    question.explanation = `${answerMeaningLine(correctText)} ${question.explanation}`;
+  }
+
+  if (number >= 26 && number <= 44 && !question.explanation.includes("Đáp án ngữ pháp:")) {
+    question.explanation = `${grammarAnswerLine(correctText)} ${question.explanation}`;
+  }
+}
+
 function enhanceQuestion(question) {
   if (!hasHighlightedPrompt(question) && !question.targetWord) {
     const target = targetFromQuestionText(question);
@@ -861,6 +943,7 @@ function enhanceQuestion(question) {
   if (question.skill === "reading" && (!question.explanation || !question.explanation.includes("Đáp án"))) {
     question.explanation = readingExplanationForLocalQuestion(question);
   }
+  prependAnswerDetail(question);
   addN1GrammarNotesToExplanation(question);
   addN1NotesToExplanation(question);
   addN2NotesToExplanation(question);
