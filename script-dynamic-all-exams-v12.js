@@ -1,6 +1,6 @@
 const questions = [];
 
-function q(type, label, prompt, options, answer, explanation, passageText = "", htmlPrompt = "") {
+function q(type, label, prompt, options, answer, explanation, passageText = "", htmlPrompt = "", meta = {}) {
   return {
     type,
     label,
@@ -12,6 +12,7 @@ function q(type, label, prompt, options, answer, explanation, passageText = "", 
     passage: passageText,
     folder: type.startsWith("exam-") ? type : "",
     skill: skillFromLabel(label),
+    ...meta,
   };
 }
 
@@ -35,7 +36,7 @@ const exam202412Questions = [
   q("exam-2024-12", "2024 tháng 12 - Từ vựng", "10. 台風で電車の到着が大幅に遅れたため、駅でしばらく（　）された。", ["息抜き", "棚上げ", "待ち伏せ", "足止め"], 3, "足止めされる = bị kẹt lại, không đi tiếp được."),
   q("exam-2024-12", "2024 tháng 12 - Từ vựng", "11. 今日は試合で一日中走り続けたので、疲れて（　）になった。", ["めちゃめちゃ", "へとへと", "どろどろ", "ぐちゃぐちゃ"], 1, "へとへと = kiệt sức."),
   q("exam-2024-12", "2024 tháng 12 - Từ vựng", "12. 工場の誘致について、市長が丁寧に説明し、住民の不安の（　）に努めた。", ["払拭", "喪失", "破棄", "排斥"], 0, "不安を払拭する = xua tan lo lắng."),
-  q("exam-2024-12", "2024 tháng 12 - Từ vựng", "13. 階段でつまずいて転びそうになったので、（　）隣にいた友人の腕をつかんだ。", ["じきに", "いまに", "とっさに", "とっくに"], 0, "参照答案は1。PDFの語形は要確認。"),
+  q("exam-2024-12", "2024 tháng 12 - Từ vựng", "13. 階段でつまずいて転びそうになったので、（　）隣にいた友人の腕をつかんだ。", ["じきに", "いまに", "とっさに", "とっくに"], 2, "Đáp án: とっさに = ngay lập tức, phản xạ trong khoảnh khắc. Câu nói bị vấp cầu thang sắp ngã nên theo phản xạ nắm lấy tay bạn bên cạnh."),
   q("exam-2024-12", "2024 tháng 12 - Từ vựng", "14. 社長は小林部長の手腕を高く評価しているようだ。意味が近いものは？", ["経験", "能力", "考え", "人柄"], 1, "手腕 = năng lực, khả năng xử lý."),
   q("exam-2024-12", "2024 tháng 12 - Từ vựng", "15. 時間をロスしてしまった。意味が近いものは？", ["間違えて", "無駄にして", "かいて", "延長して"], 1, "ロスする = lãng phí, mất mát."),
   q("exam-2024-12", "2024 tháng 12 - Từ vựng", "16. 確認がおろそかになっていた。意味が近いものは？", ["めんどうく", "困難に", "遅く", "いいかげん"], 3, "おろそか = qua loa, không cẩn thận."),
@@ -54,41 +55,41 @@ const exam202412Questions = [
   q("exam-2024-12", "2024 tháng 12 - Ngữ pháp", "29. 第三者が不正にアクセスされる（　）、やむを得ない。", ["しかない以上", "しかない反面", "恐れがある以上", "恐れがある反面"], 2, "恐れがある以上 = vì có nguy cơ nên..."),
   q("exam-2024-12", "2024 tháng 12 - Ngữ pháp", "30. 昨日行った美術館は、一日では（　）作品が展示されていた。", ["見きれないほどの", "見ずにはいられないほどの", "見きれないといった", "見ずにはいられないといった"], 0, "見きれないほどの = nhiều đến mức không xem hết."),
   q("exam-2024-12", "2024 tháng 12 - Ngữ pháp", "31. 引っ越しを控えているので、余計な出費を（　）、旅行に行くことにした。", ["押さえたら押えたで", "抑えられるものなら", "抑えるには抑えずに", "抑えたいところだが"], 3, "〜たいところだが = muốn... nhưng."),
-  q("exam-2024-12", "2024 tháng 12 - Ngữ pháp", "32. その小学生は、高校レベルの数学の問題をすらすらと（　）。", ["解けるとは", "解けるものなら", "解いたまでだ", "解いてみせた"], 0, "驚いたことに + とは = thật bất ngờ là..."),
+  q("exam-2024-12", "2024 tháng 12 - Ngữ pháp", "32. その小学生は、高校レベルの数学の問題をすらすらと（　）。", ["解けるとは", "解けるものなら", "解いたまでだ", "解いてみせた"], 3, "解いてみせた = đã giải được một cách xuất sắc/cho thấy khả năng làm được. Câu có 驚いたことに và すらすらと nên cần diễn tả việc em học sinh tiểu học giải trôi chảy bài toán cấp ba."),
   q("exam-2024-12", "2024 tháng 12 - Ngữ pháp", "33. 専門家の話では、かつてこの地域一帯は海だった（　）。", ["という", "といえる", "といった", "といわれる"], 0, "話では〜という = theo lời thì..."),
   q("exam-2024-12", "2024 tháng 12 - Ngữ pháp", "34. 親の経済状況によって、子どもの教育機会が奪われること（　）。", ["があるわけではない", "であるわけではない", "があってはならない", "であってはならない"], 2, "〜があってはならない = không được phép xảy ra."),
   q("exam-2024-12", "2024 tháng 12 - Ngữ pháp", "35. 青木「やりたいです。でも、私（　）」先生「もちろん」", ["だったらいいんですか", "なんかでいいんですか", "だったらいいんでしょう", "なんかでいいんでしょうか"], 1, "私なんかでいいんですか = người như em có được không ạ?"),
-  q("exam-2024-12", "2024 tháng 12 - Ngữ pháp", "36. 昨日はとても寒く、＿＿＿ ＿＿＿ ★ ＿＿＿ずっと雪が降っていた。★に入る語は？", ["が", "こそ", "積もらなかった", "午前中"], 0, "参照答案: 1."),
-  q("exam-2024-12", "2024 tháng 12 - Ngữ pháp", "37. この映画はあまりにも正直で＿＿＿ ＿＿＿ ★ ＿＿＿、コメディー作品だ。★に入る語は？", ["真面目すぎる", "周りの人々とのトラブルが絶えない", "がゆえに", "男の日常を描いた"], 1, "参照答案: 2."),
-  q("exam-2024-12", "2024 tháng 12 - Ngữ pháp", "38. ＿＿＿ ＿＿＿ ★ ＿＿＿読みやすいように、ビジネス理論を漫画で解説したものが多い。★に入る語は？", ["堅苦しいものと思われがちだが", "抵抗がある人にも", "一般的にビジネス書というと", "ビジネス書に"], 3, "参照答案: 4."),
-  q("exam-2024-12", "2024 tháng 12 - Ngữ pháp", "39. 渋滞の中を＿＿＿ ＿＿＿ ★ ＿＿＿遊園地に入る前から疲れてしまった。★に入る語は？", ["今度は", "3時間運転して", "駐車場が混雑していて", "ようやくついたと思ったら"], 0, "参照答案: 1."),
-  q("exam-2024-12", "2024 tháng 12 - Ngữ pháp", "40. 商品やサービスが＿＿＿ ＿＿＿ ★ ＿＿＿ない。★に入る語は？", ["売れるも売れないも", "その存在が", "知られないことには", "どんなに良い物でも"], 2, "参照答案: 3."),
+  q("exam-2024-12", "2024 tháng 12 - Ngữ pháp", "36. 昨日はとても寒く、＿＿＿ ＿＿＿ ★ ＿＿＿ずっと雪が降っていた。★に入る語は？", ["が", "こそ", "積もらなかった", "午前中"], 0, "Thứ tự đúng: 積もり / こそ / しなかった / が / 午前中ずっと雪が降っていた. ★ là vị trí thứ 3 nên đáp án là「が」. Mẫu「AこそしなかったがB」= tuy không đến mức A nhưng B vẫn xảy ra.", "", "", { starOrder: "積もり / こそ / しなかった / が / 午前中ずっと雪が降っていた" }),
+  q("exam-2024-12", "2024 tháng 12 - Ngữ pháp", "37. この映画はあまりにも正直で＿＿＿ ＿＿＿ ★ ＿＿＿、コメディー作品だ。★に入る語は？", ["真面目すぎる", "周りの人々とのトラブルが絶えない", "がゆえに", "男の日常を描いた"], 1, "Thứ tự đúng: 真面目すぎる / がゆえに / 周りの人々とのトラブルが絶えない / 男の日常を描いた. ★ là vị trí thứ 3 nên đáp án là「周りの人々とのトラブルが絶えない」. 「がゆえに」= chính vì..., nêu nguyên nhân.", "", "", { starOrder: "真面目すぎる / がゆえに / 周りの人々とのトラブルが絶えない / 男の日常を描いた" }),
+  q("exam-2024-12", "2024 tháng 12 - Ngữ pháp", "38. ＿＿＿ ＿＿＿ ★ ＿＿＿読みやすいように、ビジネス理論を漫画で解説したものが多い。★に入る語は？", ["堅苦しいものと思われがちだが", "抵抗がある人にも", "一般的にビジネス書というと", "ビジネス書に"], 3, "Thứ tự đúng: 一般的にビジネス書というと / 堅苦しいものと思われがちだが / ビジネス書に / 抵抗がある人にも / 読みやすいように. ★ là vị trí thứ 3 nên đáp án là「ビジネス書に」. Cụm「ビジネス書に抵抗がある人にも」bổ nghĩa cho「読みやすいように」.", "", "", { starOrder: "一般的にビジネス書というと / 堅苦しいものと思われがちだが / ビジネス書に / 抵抗がある人にも" }),
+  q("exam-2024-12", "2024 tháng 12 - Ngữ pháp", "39. 渋滞の中を＿＿＿ ＿＿＿ ★ ＿＿＿遊園地に入る前から疲れてしまった。★に入る語は？", ["今度は", "3時間運転して", "駐車場が混雑していて", "ようやくついたと思ったら"], 0, "Thứ tự đúng: 3時間運転して / ようやくついたと思ったら / 今度は / 駐車場が混雑していて. ★ là vị trí thứ 3 nên đáp án là「今度は」. 「ようやく〜と思ったら、今度は〜」= vừa tưởng cuối cùng đã xong thì lại đến chuyện khác.", "", "", { starOrder: "3時間運転して / ようやくついたと思ったら / 今度は / 駐車場が混雑していて" }),
+  q("exam-2024-12", "2024 tháng 12 - Ngữ pháp", "40. 商品やサービスが＿＿＿ ＿＿＿ ★ ＿＿＿ない。★に入る語は？", ["売れるも売れないも", "その存在が", "知られないことには", "どんなに良い物でも"], 2, "Thứ tự đúng: どんなに良い物でも / その存在が / 知られないことには / 売れるも売れないもない. ★ là vị trí thứ 3 nên đáp án là「知られないことには」. 「〜ないことには」= nếu không... thì không thể bàn đến/chưa thể xảy ra.", "", "", { starOrder: "どんなに良い物でも / その存在が / 知られないことには / 売れるも売れないもない" }),
   q("exam-2024-12", "2024 tháng 12 - Ngữ pháp đoạn văn", "41. 文中の（41）に入る最もよいものは？", ["気を使えばしない", "気を使ってなどいない", "気を使わせられはしない", "気を使わせてなどいない"], 2, "参照答案: 3.", "寂しい片耳。落としたピアスをめぐる随筆。編集者たちへの動揺、落ち込み、失敗への思いが述べられる。"),
   q("exam-2024-12", "2024 tháng 12 - Ngữ pháp đoạn văn", "42. 文中の（42）に入る最もよいものは？", ["それによって", "そればかりでなく", "それどころか", "それにもかかわらず"], 3, "参照答案: 4.", "同じ文章。三、四年ぶりの落とし物であり、自分でも珍しいほど落ち込んだという流れ。"),
   q("exam-2024-12", "2024 tháng 12 - Ngữ pháp đoạn văn", "43. 文中の（43）に入る最もよいものは？", ["承知していれば", "承知していて", "承知していたのか", "承知していたかのように"], 0, "参照答案: 1.", "自分の迂闊さを承知していれば、という文脈。"),
   q("exam-2024-12", "2024 tháng 12 - Ngữ pháp đoạn văn", "44. 文中の（44）に入る最もよいものは？", ["なら", "だって", "でさえ", "といっても"], 1, "参照答案: 2.", "ピアスでさえ/だって、最近たまたま落とさない日々が続いていただけ、という文脈。"),
-  q("exam-2024-12", "2024 tháng 12 - Đọc hiểu", "45. 筆者によると、「情報通」とはどのような人か。", ["幅広い分野で人並み以上の情報をもっている人。", "何が自分にとって必要な情報かをよく理解している人。", "誰が必要な情報をもっているかをよく把握している人。", "情報をもっている人を見つけて、問題解決ができる人。"], 2, "参照答案: 3.", "『情報通』とは、多くの場合、情報そのものではなく情報に通じた人を知っている人だという短文。"),
-  q("exam-2024-12", "2024 tháng 12 - Đọc hiểu", "46. 手の感覚について、実験からどのようなことが分かったか。", ["熱いお湯や冷たい水につけ続けていると、温度が感じられなくなる。", "同じぬるま湯でも、直前の経験により感じ方が変わる。", "冷たい水に慣れると熱いお湯もぬるく感じる。", "手の感覚は左右で常に違う意味を受け取る。"], 3, "参照答案: 4。選択肢文はPDFから要精査。", "冷水・熱湯・ぬるま湯を使う有名な感覚実験についての短文。"),
-  q("exam-2024-12", "2024 tháng 12 - Đọc hiểu", "47. 読解短文（1）の問い。", ["選択肢1", "選択肢2", "選択肢3", "選択肢4"], 0, "参照答案: 1. PDFの長文選択肢は今後精査予定。"),
-  q("exam-2024-12", "2024 tháng 12 - Đọc hiểu", "48. 読解短文（2）の問い。", ["選択肢1", "選択肢2", "選択肢3", "選択肢4"], 1, "参照答案: 2. PDFの長文選択肢は今後精査予定。"),
-  q("exam-2024-12", "2024 tháng 12 - Đọc hiểu", "49. 読解中文（1）の問い。", ["選択肢1", "選択肢2", "選択肢3", "選択肢4"], 3, "参照答案: 4."),
-  q("exam-2024-12", "2024 tháng 12 - Đọc hiểu", "50. 読解中文（1）の問い。", ["選択肢1", "選択肢2", "選択肢3", "選択肢4"], 1, "参照答案: 2."),
-  q("exam-2024-12", "2024 tháng 12 - Đọc hiểu", "51. 読解中文（2）の問い。", ["選択肢1", "選択肢2", "選択肢3", "選択肢4"], 1, "参照答案: 2."),
-  q("exam-2024-12", "2024 tháng 12 - Đọc hiểu", "52. 読解中文（2）の問い。", ["選択肢1", "選択肢2", "選択肢3", "選択肢4"], 3, "参照答案: 4."),
-  q("exam-2024-12", "2024 tháng 12 - Đọc hiểu", "53. 読解中文（3）の問い。", ["選択肢1", "選択肢2", "選択肢3", "選択肢4"], 1, "参照答案: 2."),
-  q("exam-2024-12", "2024 tháng 12 - Đọc hiểu", "54. 読解中文（3）の問い。", ["選択肢1", "選択肢2", "選択肢3", "選択肢4"], 2, "参照答案: 3."),
-  q("exam-2024-12", "2024 tháng 12 - Đọc hiểu", "55. 読解中文（4）の問い。", ["選択肢1", "選択肢2", "選択肢3", "選択肢4"], 2, "参照答案: 3."),
-  q("exam-2024-12", "2024 tháng 12 - Đọc hiểu", "56. 読解中文（4）の問い。", ["選択肢1", "選択肢2", "選択肢3", "選択肢4"], 0, "参照答案: 1."),
-  q("exam-2024-12", "2024 tháng 12 - Đọc hiểu", "57. 読解長文の問い。", ["選択肢1", "選択肢2", "選択肢3", "選択肢4"], 1, "参照答案: 2."),
-  q("exam-2024-12", "2024 tháng 12 - Đọc hiểu", "58. 読解長文の問い。", ["選択肢1", "選択肢2", "選択肢3", "選択肢4"], 2, "参照答案: 3."),
-  q("exam-2024-12", "2024 tháng 12 - Đọc hiểu", "59. 読解長文の問い。", ["選択肢1", "選択肢2", "選択肢3", "選択肢4"], 0, "参照答案: 1."),
-  q("exam-2024-12", "2024 tháng 12 - Đọc hiểu", "60. 統合理解 A/B の問い。", ["選択肢1", "選択肢2", "選択肢3", "選択肢4"], 3, "参照答案: 4."),
-  q("exam-2024-12", "2024 tháng 12 - Đọc hiểu", "61. 統合理解 A/B の問い。", ["選択肢1", "選択肢2", "選択肢3", "選択肢4"], 2, "参照答案: 3."),
-  q("exam-2024-12", "2024 tháng 12 - Đọc hiểu", "62. 主張理解の問い。", ["選択肢1", "選択肢2", "選択肢3", "選択肢4"], 1, "参照答案: 2."),
-  q("exam-2024-12", "2024 tháng 12 - Đọc hiểu", "63. 主張理解の問い。", ["選択肢1", "選択肢2", "選択肢3", "選択肢4"], 2, "参照答案: 3."),
-  q("exam-2024-12", "2024 tháng 12 - Đọc hiểu", "64. 主張理解の問い。", ["選択肢1", "選択肢2", "選択肢3", "選択肢4"], 3, "参照答案: 4."),
-  q("exam-2024-12", "2024 tháng 12 - Đọc hiểu", "65. 情報検索の問い。", ["選択肢1", "選択肢2", "選択肢3", "選択肢4"], 0, "参照答案: 1."),
-  q("exam-2024-12", "2024 tháng 12 - Đọc hiểu", "66. 情報検索の問い。", ["選択肢1", "選択肢2", "選択肢3", "選択肢4"], 0, "参照答案: 1."),
+  q("exam-2024-12", "2024 tháng 12 - Đọc hiểu", "45. 筆者によると、「情報通」とはどのような人か。", ["幅広い分野で人並み以上の情報をもっている人。", "何が自分にとって必要な情報かをよく理解している人。", "誰が必要な情報をもっているかをよく把握している人。", "情報をもっている人を見つけて、問題解決ができる人。"], 2, "Đáp án 3. 「情報通」ở đây không phải là người tự biết mọi thông tin, mà là người biết ai đang nắm thông tin cần thiết. Trong bài có ví dụ kiểu “vấn đề này thì hỏi ông/bà X là biết”, nên trọng tâm là nắm rõ người nào có thông tin.", "『情報通』とは、多くの場合、情報そのものではなく情報に通じた人を知っている人だという短文。"),
+  q("exam-2024-12", "2024 tháng 12 - Đọc hiểu", "46. 手の感覚について、実験からどのようなことが分かったか。", ["熱いお湯や冷たい水につけ続けていると、温度が感じられなくなる。", "冷たい水のあとより熱いお湯のあとにつけたほうが、ぬるま湯を温かく感じる。", "先につけていた水やお湯の温度より、ぬるま湯の温度のほうが低いと感じる。", "先につけていた水やお湯の温度によって、ぬるま湯の温度の感じ方が変わる。"], 3, "Đáp án 4. Hai tay cùng vào nước ấm nhưng cảm giác khác nhau do trước đó một tay quen nước lạnh, một tay quen nước nóng. Vì vậy điểm chính là cảm giác phụ thuộc vào nhiệt độ đã tiếp xúc trước đó.", "人間の感覚がいかにあてにならないかを示す実験。片手を冷たい水、もう片手を熱いお湯につけた後、両手を同じぬるま湯に入れると、それぞれ感じ方が変わる。"),
+  q("exam-2024-12", "2024 tháng 12 - Đọc hiểu", "47. 自動運転車の登場について、筆者はどのように考えているか。", ["安全や便利さも重要だが、自分で運転する楽しさは失いたくない。", "安全性と娯楽性の共存が望ましいが、実現は難しい。", "娯楽性がなくなるが、安全や便利さのためには許容せざるをえない。", "娯楽性を犠牲にしてまで、運転の自動化を進めてはいけない。"], 0, "Đáp án 1. Tác giả thừa nhận an toàn và tiện lợi quan trọng, nhưng không muốn niềm vui tự lái biến mất. Câu cuối nói vẫn muốn tin rằng có cách để an toàn và tính giải trí cùng tồn tại.", "自動車が自動運転になると単なる移動手段となり、自分で運転する楽しさが失われるかもしれない。安全性・利便性との引き換えになるとしても、筆者は安全性と娯楽性が両立する解があると信じたいと述べている。"),
+  q("exam-2024-12", "2024 tháng 12 - Đọc hiểu", "48. 筆者は、翻訳のどのような点が音楽の演奏と似ていると述べているか。", ["原作を丹念にたどっても、作家の世界観が再現されない可能性がある点。", "同じ原作を翻訳しても、出来上がった翻訳が多様になりうる点。", "翻訳家の個性により、異なる作家の作品でも似た印象になりうる点。", "翻訳家次第で、さまざまな世界観が生み出される可能性がある点。"], 1, "Đáp án 2. Bài so sánh dịch thuật với biểu diễn âm nhạc: cùng một bản gốc/bản nhạc nhưng qua từng người dịch/người diễn sẽ tạo ra kết quả khác nhau.", "翻訳は、楽譜をもとに演奏家が音楽を奏でることに似ている。同じ原作を扱っても、翻訳家の解釈や言葉の選び方によって、出来上がる翻訳は一つではなく多様になる。"),
+  q("exam-2024-12", "2024 tháng 12 - Đọc hiểu", "49. ライオンの子育てについて、本文の内容に合うものはどれか。", ["生後すぐに、群れの中で雌が交代で育てる。", "生後一か月あまり過ぎると、経験豊富な年長の雌が育てる。", "歩けるようになるまで、群れの中で母親が育てる。", "歩けるようになると、群れの雌が協力して育てる。"], 3, "Đáp án 4. Bài nói con non lúc mới sinh được mẹ nuôi, nhưng khi đi được thì được đưa vào bầy và các con cái cùng chăm sóc.", "ライオンの群れでは、赤ちゃんは最初しばらく母親だけに育てられる。しかし歩けるようになると群れに連れてこられ、複数の雌が協力して育てる。"),
+  q("exam-2024-12", "2024 tháng 12 - Đọc hiểu", "50. 共同生活の利点について、筆者はどのように述べているか。", ["壮年期のライオンの経験を育児と狩りに生かすことができる。", "年齢に応じて役割を分担することで、育児と狩りが両立できる。", "群れの中での役割分担が明確になり、個々のライオンの負担が減る。", "若いライオンが育児も狩りも経験することで、どんな役割もできるようになる。"], 1, "Đáp án 2. Tác giả nêu các cá thể cái ở độ tuổi khác nhau có ưu thế khác nhau; nhờ vậy bầy vừa nuôi con vừa đi săn được.", "若い雌はすばしこく、壮年期の雌は経験豊富で、老いた雌も場面によって役立つ。群れで暮らすことで育児と狩りの問題をうまく解決している。"),
+  q("exam-2024-12", "2024 tháng 12 - Đọc hiểu", "51. 取材中に会話がスムーズに進まないことについて、筆者はどのように述べているか。", ["取材を受けている人は、間を取りながら話さなければならないという気持ちにさせられる。", "取材を受けている人は、考えをまとめたり振り返ったりしながら内容が深められる。", "取材を受けている人は、内容をまとめて分かりやすく伝えるための準備ができる。", "取材を受けている人は、自分のせいだと考えて自ら会話を進めようとする。"], 1, "Đáp án 2. Bài nói khoảng dừng trong hội thoại giúp người được phỏng vấn có thời gian sắp xếp suy nghĩ, nhìn lại, từ đó làm nội dung sâu hơn.", "筆者は取材を受けることが多い。会話がスムーズでないことを失敗と考えがちだが、言葉がすぐ出ない時間には、考えをまとめたり振り返ったりする余裕が生まれると述べている。"),
+  q("exam-2024-12", "2024 tháng 12 - Đọc hiểu", "52. 筆者の考えに合うのはどれか。", ["自分に対して多面的な見方ができれば、ほかの人の失敗や欠点にも寛容になる。", "欠点だと思えることを改善できれば、自分の能力が発揮できるようになる。", "本来の力を発揮するためには、自分の欠点ではなく長所を探すのがいい。", "失敗や欠点だと思っていても、捉え方次第で長所になり得る。"], 3, "Đáp án 4. Kết luận của đoạn là những điều tưởng như thất bại hay khuyết điểm cũng có ý nghĩa, đổi cách nhìn có thể biến chúng thành điểm mạnh.", "同じ文章。筆者は、苦手・失敗・欠点のように見えることも、見方を変えると長所になり得ると述べている。"),
+  q("exam-2024-12", "2024 tháng 12 - Đọc hiểu", "53. 筆者によると、パッケージのリニューアルで難しいのはどのような時か。", ["パッケージの変更に伴って、ファンが商品への愛着を失った時。", "パッケージの変更を望まないファンが多いのに、変更せざるを得ない時。", "新しいファンを獲得するには、パッケージの変更が不可欠だと分かった時。", "ファンの賛否が分からない状況で、パッケージを変更しなければならない時。"], 1, "Đáp án 2. Bài nói khi sản phẩm quen thuộc bắt buộc phải đổi mới, khảo sát thường cho kết quả fan cũ thích mẫu cũ hơn, nên đó là tình huống khó.", "商品パッケージのデザイナーの文章。定番商品のリニューアルでは、今までのファンは旧デザインに愛着があるため、調査で「今までの方がよい」が多く出ることがある。"),
+  q("exam-2024-12", "2024 tháng 12 - Đọc hiểu", "54. マーケティング調査の結果について、筆者はどのように考えているか。", ["一部の消費者の意見として、うまく生かすべきだ。", "否定的な意見を積極的に取り入れて商品開発に生かすべきだ。", "消費者の反応が変わっていくことを考慮して分析するべきだ。", "過去の結果と合わせて、消費者の好みの変化を読み取るべきだ。"], 2, "Đáp án 3. Tác giả nói ban đầu người tiêu dùng có thể chưa chấp nhận, nhưng rồi quen với thiết kế mới, nên cần nhìn con số khảo sát trong sự thay đổi theo thời gian.", "同じ文章。筆者は、最初は違和感があっても新しいデザインに見慣れてくるため、調査結果は短期的な反応だけで判断してはいけないと述べている。"),
+  q("exam-2024-12", "2024 tháng 12 - Đọc hiểu", "55. 本文中の「そのとき」とは、どのようなときか。", ["自然が豊かさを回復して利用できるようになるとき。", "自然を人間の都合に合わせるのに適したとき。", "自然の恵みを受けるのに適した状態になるとき。", "自然の変化が感じられるようになるとき。"], 2, "Đáp án 3. 「そのとき」trong bài là thời điểm tự nhiên đã đến trạng thái phù hợp để con người nhận lấy lợi ích, ví dụ mùa trồng, mùa hái, mùa khai thác.", "上野村で暮らして覚えた「待つ」という感覚について。農業、山菜、木材など、自然の恵みは人間の都合だけでは得られず、適した時機を待つ必要がある。"),
+  q("exam-2024-12", "2024 tháng 12 - Đọc hiểu", "56. 筆者によると、村の人たちの人間関係はどのようにつくられたか。", ["自然との関係と同様に、相手の行動を見ながら時機を捉えて働きかける。", "自然の変化を捉えるように、相手の変化を待って働きかける。", "自然の影響を受けやすい人々の動きを理解し、タイミングよく働きかける。", "自然の変化を待つのと同様に、相手からの働きかけを焦らずに待つ。"], 0, "Đáp án 1. Bài nối cách sống với tự nhiên sang quan hệ con người: không ép theo ý mình, mà quan sát đối phương và chọn đúng thời cơ để tác động.", "同じ文章。自然との関係で学んだ「待つ」感覚は人間関係にも生かされ、相手の動きを見ながらちょうどよいタイミングで働きかけると説明されている。"),
+  q("exam-2024-12", "2024 tháng 12 - Đọc hiểu", "57. 筆者が述べる「教育における新鮮さ」の説明として合うものはどれか。", ["知識や技術の高さよりも人格の良さの方が重視される。", "知識や技術が十分でなくても、良い結果を生むことがある。", "経験知の豊富なベテランより、若く未熟な方が好かれやすい。", "経験を積み技術が上がっても、仕事の質が良くなるとは限らない。"], 1, "Đáp án 2. Tác giả nói trong giáo dục, sự non kinh nghiệm đôi khi lại tạo căng thẳng tích cực và gắn kết với học sinh, dù kiến thức/kỹ thuật chưa đủ.", "教育の仕事では、初年度の教師や新しい気持ちで臨む教師の授業が、生徒と濃い縁を結ぶことがある。未熟でも十分準備し情熱を持つと、新鮮さがプラスに働く。"),
+  q("exam-2024-12", "2024 tháng 12 - Đọc hiểu", "58. 筆者によると、初年度の教師の緊張感は学生たちにどのように影響するか。", ["積極的に授業に参加し、教師の緊張感を和らげようとする。", "教師の立場を理解し、生徒らしい態度で授業を受けようとする。", "教師と一緒に授業を作っているのだという気持ちになる。", "教師と緊張感が共有でき、心を開いていいのだと思うようになる。"], 2, "Đáp án 3. Sự căng thẳng của giáo viên truyền sang học sinh, tạo cảm giác cùng tham gia và cùng làm nên tiết học.", "同じ文章。教師が quá quen tay thì quan hệ có thể thành một bên phục vụ, một bên được phục vụ; còn căng thẳng tích cực khiến học sinh có cảm giác cùng xây dựng bài học. "),
+  q("exam-2024-12", "2024 tháng 12 - Đọc hiểu", "59. 筆者によると、教育を仕事にしている人間にとって大切なことは何か。", ["経験に満足することなく、自ら変化し続けようとすること。", "新鮮さを失わないために、自ら新しい知識や技術を身につけること。", "自らの足りなさを補いつつ、情熱を持って接すること。", "自らの未熟さを隠さずに、学ぶ側が一体感を得やすくすること。"], 0, "Đáp án 1. Kết luận là giữ lại ưu điểm của kinh nghiệm nhưng không đánh mất sự mới mẻ, tức không tự mãn với kinh nghiệm và tiếp tục thay đổi.", "同じ文章。経験を重ねる良さはあるが、型どおりの教え方に慣れすぎると新鮮さを失う。教育では新鮮さを保つことが重要だと述べられる。"),
+  q("exam-2024-12", "2024 tháng 12 - Đọc hiểu", "60. AとBに共通して述べられている、指示待ちになる理由は何か。", ["周囲の期待を理解していないこと。", "自信がなく、自主的に仕事を進めることができないこと。", "上司がいつも丁寧にやり方を教えてくれること。", "上司にいわれたことを行うのが仕事だと思っていること。"], 3, "Đáp án 4. Cả A và B đều nói người cấp dưới có thể nghĩ vai trò của mình chỉ là làm theo chỉ thị của cấp trên.", "Aは、指示待ちの部下は上司の指示に従うことが自分の役目だと考えている場合が多いと述べる。Bも、部下が「上司の言う通りにするのが仕事」と思い込むケースを説明している。"),
+  q("exam-2024-12", "2024 tháng 12 - Đọc hiểu", "61. 指示待ちになっている部下や後輩の対応のしかたについて、AとBはどのように述べているか。", ["AもBも、自分なりのやり方を考えて提案させるといいと述べている。", "AもBも、仕事の目的を伝え、やるべきことを一緒に考えるといいと述べている。", "Aは仕事の目的と全体像を理解させるといいと述べ、Bは自分でできそうなことはまず一人で考えさせるといいと述べている。", "Aはほかの仕事とのかかわりを教えるといいと述べ、Bはやり方がすでに分かっている仕事を与え自分自身でやらせるといいと述べている。"], 2, "Đáp án 3. A nhấn mạnh cho hiểu mục đích và bức tranh tổng thể của công việc; B nhấn mạnh khi được hỏi thì yêu cầu cấp dưới tự nghĩ phương án trước.", "同じ統合理解。Aは仕事の目的と全体像を教えること、Bは「一度、自分なりの案を考えてみて」と促すことを述べている。"),
+  q("exam-2024-12", "2024 tháng 12 - Đọc hiểu", "62. 筆者によると、人々は脳科学に何を期待しているか。", ["複雑な脳の仕組みをわかりやすく説明してくれること。", "どうすれば自分が幸せに生きられるかを教えてくれること。", "人間の感情や思考や行動の扱い方を教えてくれること。", "人間にとって幸せな人生とは何かを客観的に示してくれること。"], 1, "Đáp án 2. Bài nói nhiều người kỳ vọng khoa học não bộ sẽ cho mình bí quyết để sống cuộc đời tốt đẹp/hạnh phúc hơn.", "脳科学ブームについての文章。脳科学は人間の感情や思考を扱うため、幸せな人生のノウハウを提供してくれるように見える、と筆者は述べる。"),
+  q("exam-2024-12", "2024 tháng 12 - Đọc hiểu", "63. 脳科学について、筆者の考えに合うのはどれか。", ["個人の人生に適用するには、普遍的な法則を見つけなければならない。", "人の脳の機能をすべて解明できたとしても、普遍的な法則にたどり着けない。", "普遍的な法則にたどり着いたとしても、人生の個々の事柄には応用できない。", "普遍的な法則に到達するには、人生の個々の事柄を解き明かさなければならない。"], 2, "Đáp án 3. Tác giả nói ngay cả khi khoa học đạt đến quy luật phổ quát, nó vẫn bất lực trước tính cá biệt, một lần duy nhất của từng sự việc trong đời người.", "同じ文章。筆者は、脳科学が進歩しても人生の個別性や一回性に適用して予言することは難しいと述べている。"),
+  q("exam-2024-12", "2024 tháng 12 - Đọc hiểu", "64. 筆者が言いたいことは何か。", ["科学が証明した事実は、個人や社会の価値観に影響を与える恐れがある。", "科学だけでなく個人や社会の価値観を考慮したうえで、未来を選ぶ必要がある。", "科学は個人や社会の価値観を扱えず、人類が望む未来の実現には役に立たない。", "科学は事実を対象とするものであり、個人や社会の価値観を扱うものではない。"], 3, "Đáp án 4. Luận điểm chính là khoa học xử lý sự thật/hiện tượng khách quan, còn việc cái gì có giá trị, có nên làm hay không thuộc về giá trị quan.", "同じ文章。科学は事実を記述する道具にはなるが、価値観の問題そのものを解決するものではない、という主張。"),
+  q("exam-2024-12", "2024 tháng 12 - Đọc hiểu", "65. サイさんに支給される助成金はいくらになるか。", ["交通費10,000円と宿泊費6,000円を2泊分。", "交通費10,000円と宿泊費6,000円を3泊分。", "交通費12,000円と宿泊費7,000円を2泊分。", "交通費12,000円と宿泊費7,000円を3泊分。"], 0, "Đáp án 1. Quy định hỗ trợ tối đa交通費10,000円 và宿泊費 mỗi đêm tối đa6,000円, tối đa2 đêm. Dù ghi chú của サイさん là 12,000円 và 7,000円 x 3 đêm, phần được nhận chỉ là mức trần.", "緑川大学のボランティア活動助成金案内。交通費は1回につき10,000円を上限、宿泊費は1泊6,000円を上限として2泊分まで支給対象。"),
+  q("exam-2024-12", "2024 tháng 12 - Đọc hiểu", "66. ジムさんは1月10日に日帰りでボランティア活動を行う予定である。活動終了後に必ず提出しなければならないものは何で、いつまでに提出しなければならないか。", ["AとBとCで、3月10日までに提出する。", "AとBとCで、3月24日までに提出する。", "AとBとCとDで、3月10日までに提出する。", "AとBとCとDで、3月24日までに提出する。"], 0, "Đáp án 1. Hoạt động ngày 1/10 thì hạn thông thường là trong vòng 2 tháng, tức 3/10. Đi về trong ngày nên không bắt buộc nộp領収書宿泊費; bộ bắt buộc là A, B, C.", "同じ案内。提出書類はA申請書、B振込口座届、C活動証明書。D領収書は宿泊費がある場合などに必要。提出期限は活動終了後2か月以内、ただし年度内最終期限は3月24日。"),
 ];
 
 const remoteExams = [
@@ -119,6 +120,7 @@ const remoteExams = [
   { path: "exam-201112.json", id: "exam-2011-12", title: "2011 tháng 12" },
   { path: "exam-201107.json", id: "exam-2011-07", title: "2011 tháng 7" },
   { path: "exam-201012.json", id: "exam-2010-12", title: "2010 tháng 12" },
+  { path: "exam-201007.json", id: "exam-2010-07", title: "2010 tháng 7" },
 ];
 
 const examFolders = [
@@ -151,6 +153,7 @@ const examFolders = [
   { id: "exam-2011-12", title: "2011 tháng 12", subtitle: "Đề JLPT N1 - 文字・語彙, 文法, 読解" },
   { id: "exam-2011-07", title: "2011 tháng 7", subtitle: "Đề JLPT N1 - 文字・語彙, 文法, 読解" },
   { id: "exam-2010-12", title: "2010 tháng 12", subtitle: "Đề JLPT N1 - 文字・語彙, 文法, 読解" },
+  { id: "exam-2010-07", title: "2010 tháng 7", subtitle: "Đề JLPT N1 - 文字・語彙, 文法, 読解" },
 ];
 
 questions.push(...exam202412Questions);
@@ -284,6 +287,10 @@ const n1Vocabulary = [
   ["失われる", "うしなわれる", "bị mất đi"],
   ["考えさせられる", "かんがえさせられる", "khiến phải suy nghĩ"],
 ];
+
+if (Array.isArray(window.n1VocabularyExtra)) {
+  n1Vocabulary.push(...window.n1VocabularyExtra);
+}
 
 const n2Vocabulary = [
   ["把握", "はあく", "nắm bắt, hiểu rõ"],
@@ -463,6 +470,10 @@ const grammarPatterns = [
   ["といっても", "nói là... nhưng thực ra/nhưng cũng chỉ..."],
 ];
 
+const n1GrammarPatterns = Array.isArray(window.n1GrammarExtra) ? window.n1GrammarExtra : [];
+grammarPatterns.push(...n1GrammarPatterns);
+const sortedN1GrammarPatterns = [...n1GrammarPatterns].sort((a, b) => String(b[0]).length - String(a[0]).length);
+
 function labelFor(title, questionNumber) {
   if (questionNumber <= 25) return `${title} - Từ vựng`;
   if (questionNumber <= 40) return `${title} - Ngữ pháp`;
@@ -560,18 +571,40 @@ function optionMeanings(item) {
 
 function grammarMeaning(pattern) {
   const source = String(pattern || "");
-  const found = grammarPatterns.find(([key]) => source.includes(key) || key.includes(source));
+  const found = grammarPatterns.find((entry) => grammarKeys(entry).some((key) => source.includes(key) || key.includes(source)));
   return found ? `Mẫu ngữ pháp 「${pattern}」 = ${found[1]}.` : `Mẫu ngữ pháp 「${pattern}」 cần hiểu theo chức năng nối ý trong câu; hãy ghi nhớ cả câu hoàn chỉnh để nắm sắc thái.`;
 }
 
 function grammarOptionNotes(item) {
   const notes = (item.options || [])
     .map((option) => {
-      const found = grammarPatterns.find(([key]) => String(option).includes(key) || key.includes(String(option)));
+      const found = grammarPatterns.find((entry) => grammarKeys(entry).some((key) => String(option).includes(key) || key.includes(String(option))));
       return found ? `「${option}」= ${found[1]}` : "";
     })
     .filter(Boolean);
   return notes.length >= 2 ? ` Phân biệt nhanh: ${notes.join("; ")}.` : "";
+}
+
+function grammarKeys(entry) {
+  const [pattern, , aliases = []] = entry;
+  return [pattern, ...aliases]
+    .map((key) => String(key || "").replace(/[〜~]/g, "").trim())
+    .filter((key) => key.length >= 2 && !["こと", "もの", "ところ", "だけ", "とは", "なり"].includes(key));
+}
+
+function n1GrammarEntriesForText(text, maxItems = 5) {
+  const source = String(text || "").replace(/[〜~]/g, "");
+  const found = [];
+  sortedN1GrammarPatterns.forEach((entry) => {
+    if (found.length >= maxItems) return;
+    const [pattern, meaning] = entry;
+    if (found.some((item) => item.pattern === pattern)) return;
+    if (grammarKeys(entry).some((key) => source.includes(key))) {
+      if (found.some((item) => String(item.pattern).replace(/[〜~]/g, "").includes(String(pattern).replace(/[〜~]/g, "")))) return;
+      found.push({ pattern, meaning });
+    }
+  });
+  return found;
 }
 
 function vocabularyUsageExplanation(target, correctText) {
@@ -603,8 +636,85 @@ function n2NotesForQuestion(item, group = null) {
   return `\nTừ N2 cần nhớ: ${entries.map((entry) => `${entry.word}（${entry.reading}）= ${entry.meaning}`).join("; ")}.`;
 }
 
+function n1GrammarNotesForQuestion(item, group = null) {
+  const textParts = [item.text, item.textHtml, item.passage, group?.passage, ...(item.options || [])];
+  const entries = n1GrammarEntriesForText(textParts.join(" "), item.questionNumber >= 41 ? 6 : 4);
+  if (!entries.length) return "";
+  return `\nNgữ pháp N1 cần nhớ: ${entries.map((entry) => `「${entry.pattern}」= ${entry.meaning}`).join("; ")}.`;
+}
+
 function withStudyNotes(baseExplanation, item, group = null) {
-  return `${baseExplanation}${n1NotesForQuestion(item, group)}${n2NotesForQuestion(item, group)}`;
+  return `${baseExplanation}${n1GrammarNotesForQuestion(item, group)}${n1NotesForQuestion(item, group)}${n2NotesForQuestion(item, group)}`;
+}
+
+function compactText(value) {
+  return String(value || "").replace(/\[\[[^\]]+\]\]/g, "").replace(/\s+/g, " ").trim();
+}
+
+function readingQuestionFocus(text) {
+  const source = compactText(text);
+  if (source.includes("筆者が最も言いたい") || source.includes("筆者が言いたい")) return "Câu này hỏi chủ trương/kết luận chính của tác giả, nên phải ưu tiên câu kết luận và mạch lập luận toàn đoạn.";
+  if (source.includes("筆者の考え") || source.includes("筆者の説明")) return "Câu này hỏi quan điểm của tác giả, nên chọn ý phản ánh đúng nhận định của tác giả, không chọn ý chỉ là ví dụ phụ.";
+  if (source.includes("どのように述べている") || source.includes("どのように考えている")) return "Câu này hỏi tác giả mô tả/đánh giá vấn đề như thế nào, nên cần bám vào câu giải thích trực tiếp trong bài.";
+  if (source.includes("なぜ") || source.includes("理由")) return "Câu này hỏi lý do, nên đáp án đúng phải nêu đúng nguyên nhân trong bài, không chỉ nêu kết quả.";
+  if (source.includes("何を指す") || source.includes("とは") || source.includes("その")) return "Câu này hỏi từ/cụm được chỉ tới, nên cần quay lại câu ngay trước và sau vị trí đó.";
+  if (source.includes("共通") || source.includes("AとB")) return "Câu này là dạng so sánh/tổng hợp A-B, nên đáp án đúng phải khớp với cả hai văn bản.";
+  if (source.includes("お知らせ") || source.includes("メール") || source.includes("案内") || source.includes("提出") || source.includes("いつまで")) return "Câu này là dạng thông tin ứng dụng, nên cần đối chiếu điều kiện, thời hạn, số tiền hoặc giấy tờ trong bảng/thông báo.";
+  return "Câu này cần đối chiếu trực tiếp câu hỏi với ý chính hoặc chi tiết tương ứng trong đoạn văn.";
+}
+
+function sharedChars(a, b) {
+  const chars = new Set(compactText(a).replace(/[、。，．「」『』（）()・\s]/g, "").split(""));
+  if (!chars.size) return 0;
+  return compactText(b).replace(/[、。，．「」『』（）()・\s]/g, "").split("").reduce((score, char) => score + (chars.has(char) ? 1 : 0), 0);
+}
+
+function evidenceFromPassage(passageText, correctText, questionText) {
+  const passageSource = compactText(passageText);
+  if (!passageSource) return "";
+  const chunks = passageSource
+    .split(/(?<=[。！？!?])|\n+/)
+    .map((item) => item.trim())
+    .filter((item) => item.length >= 18 && item.length <= 180);
+  if (!chunks.length) return "";
+  const best = chunks
+    .map((chunk) => ({
+      chunk,
+      score: sharedChars(correctText, chunk) * 2 + sharedChars(questionText, chunk),
+    }))
+    .sort((a, b) => b.score - a.score)[0];
+  if (!best || best.score < 4) return "";
+  return ` Chỗ đối chiếu trong bài: 「${best.chunk}」.`;
+}
+
+function wrongOptionHint(item, correctText) {
+  const wrongOptions = (item.options || []).filter((option, index) => index !== Number(item.correctAnswer) - 1);
+  if (!wrongOptions.length) return "";
+  const shortWrong = wrongOptions.slice(0, 3).map((option) => `「${option}」`).join("、");
+  return ` Các lựa chọn như ${shortWrong} dễ sai vì thường thêm ý quá mức, đổi chủ thể, đảo quan hệ nguyên nhân-kết quả hoặc chỉ đúng với một phần nhỏ của đoạn.`;
+}
+
+function readingExplanationForRemoteQuestion(item, group) {
+  const correctText = item.options[Number(item.correctAnswer) - 1];
+  if (item.explanation) {
+    return `Đáp án: ${item.correctAnswer}. ${compactText(item.explanation)}`;
+  }
+  const focus = readingQuestionFocus(item.text);
+  const evidence = evidenceFromPassage(group?.passage || item.passage || "", correctText, item.text);
+  return `Đáp án: ${item.correctAnswer}. Ý đúng là 「${correctText}」. ${focus} Vì vậy cần chọn đáp án giữ đúng ý này, không suy rộng ra ngoài bài.${evidence}${wrongOptionHint(item, correctText)}`;
+}
+
+function readingExplanationForLocalQuestion(question) {
+  const correctText = question.options[question.answer] || "";
+  const focus = readingQuestionFocus(question.prompt);
+  const evidence = evidenceFromPassage(question.passage || "", correctText, question.prompt);
+  const original = compactText(question.explanation || "");
+  const originalNote = original && !original.includes("Đáp án") ? ` Ghi chú lời giải: ${original}` : "";
+  const item = {
+    options: question.options,
+    correctAnswer: question.answer + 1,
+  };
+  return `Đáp án: ${question.answer + 1}. Ý đúng là 「${correctText}」. ${focus} Vì vậy cần chọn đáp án giữ đúng ý này, không suy rộng ngoài bài.${evidence}${originalNote}${wrongOptionHint(item, correctText)}`;
 }
 
 function explanationForRemoteQuestion(exam, item, group) {
@@ -643,7 +753,9 @@ function explanationForRemoteQuestion(exam, item, group) {
   }
 
   if (questionNumber <= 40) {
-    base = `Đáp án: ${item.correctAnswer}. Đây là bài sắp xếp câu có dấu ★. Mảnh đúng ở vị trí ★ là 「${correctText}」. ${grammarMeaning(correctText)} Hãy ghép theo trật tự tự nhiên của tiếng Nhật: cụm bổ nghĩa đứng trước danh từ/động từ chính, trợ từ đi sau cụm nó đánh dấu, rồi mới lấy mảnh nằm ở vị trí ★.${grammarOptionNotes(item)}`;
+    const fullOrder = item.starOrder || item.correctOrder || item.fullOrder || item.order || "";
+    const orderNote = fullOrder ? ` Thứ tự đúng: ${fullOrder}.` : " Khi có dữ liệu thứ tự đầy đủ từ file đáp án, phần này sẽ hiện thêm dòng “Thứ tự đúng”.";
+    base = `Đáp án: ${item.correctAnswer}. Đây là bài sắp xếp câu có dấu ★. Mảnh đúng ở vị trí ★ là 「${correctText}」.${orderNote} ${grammarMeaning(correctText)} Hãy ghép theo trật tự tự nhiên của tiếng Nhật: cụm bổ nghĩa đứng trước danh từ/động từ chính, trợ từ đi sau cụm nó đánh dấu, rồi mới lấy mảnh nằm ở vị trí ★.${grammarOptionNotes(item)}`;
     return withStudyNotes(base, item, group);
   }
 
@@ -652,7 +764,7 @@ function explanationForRemoteQuestion(exam, item, group) {
     return withStudyNotes(base, item, group);
   }
 
-  base = `Đáp án: ${item.correctAnswer}. Theo nội dung đoạn đọc, lựa chọn đúng là 「${correctText}」. Đáp án này khớp trực tiếp với ý chính/chi tiết trong bài, còn các lựa chọn khác thường sai do nói quá, đổi chủ thể hoặc lệch điều kiện.`;
+  base = readingExplanationForRemoteQuestion(item, group);
   return withStudyNotes(base, item, group);
 }
 
@@ -683,7 +795,10 @@ function convertRemoteExam(exam, data) {
           Number(item.correctAnswer) - 1,
           explanationForRemoteQuestion(exam, item, group),
           questionNumber >= 41 ? group.passage || "" : "",
-          promptMarkup
+          promptMarkup,
+          {
+            starOrder: item.starOrder || item.correctOrder || item.fullOrder || item.order || "",
+          }
         ));
       });
     });
@@ -728,6 +843,13 @@ function addN2NotesToExplanation(question) {
   question.explanation += `\nTừ N2 cần nhớ: ${entries.map((entry) => `${entry.word}（${entry.reading}）= ${entry.meaning}`).join("; ")}.`;
 }
 
+function addN1GrammarNotesToExplanation(question) {
+  if (!question.explanation || question.explanation.includes("Ngữ pháp N1 cần nhớ:")) return;
+  const entries = n1GrammarEntriesForText(`${question.prompt} ${question.passage || ""} ${question.options.join(" ")}`, question.skill === "reading" ? 6 : 4);
+  if (!entries.length) return;
+  question.explanation += `\nNgữ pháp N1 cần nhớ: ${entries.map((entry) => `「${entry.pattern}」= ${entry.meaning}`).join("; ")}.`;
+}
+
 function enhanceQuestion(question) {
   if (!hasHighlightedPrompt(question) && !question.targetWord) {
     const target = targetFromQuestionText(question);
@@ -735,6 +857,10 @@ function enhanceQuestion(question) {
       question.targetWord = target;
     }
   }
+  if (question.skill === "reading" && (!question.explanation || !question.explanation.includes("Đáp án"))) {
+    question.explanation = readingExplanationForLocalQuestion(question);
+  }
+  addN1GrammarNotesToExplanation(question);
   addN1NotesToExplanation(question);
   addN2NotesToExplanation(question);
   return question;
