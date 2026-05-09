@@ -448,6 +448,13 @@ const supplementalVocabAnswers = [
   ["がらりと", "がらりと", "thay đổi hẳn"], ["ぎくしゃく", "ぎくしゃく", "gượng gạo, không trôi chảy"], ["くよくよ", "くよくよ", "lo nghĩ mãi"], ["じめじめ", "じめじめ", "ẩm ướt; u ám"], ["すべすべ", "すべすべ", "trơn láng"], ["すんなり", "すんなり", "suôn sẻ, dễ dàng"], ["ずっしりと", "ずっしりと", "nặng trĩu"], ["せかせかと", "せかせかと", "vội vàng, hấp tấp"], ["そわそわ", "そわそわ", "bồn chồn"], ["てきぱきと", "てきぱきと", "nhanh nhẹn, gọn gàng"], ["てっきり", "てっきり", "cứ đinh ninh là"], ["とりわけ", "とりわけ", "đặc biệt là"], ["むしょうに", "むしょうに", "vô cùng, không hiểu sao rất"], ["めきめき", "めきめき", "tiến bộ nhanh chóng"]
 ];
 
+const supplementalVocabAnswerDetails = [
+  ["快挙", "かいきょ", "thành tích lớn, chiến công đáng khen"], ["助長", "じょちょう", "làm tăng thêm, thúc đẩy theo chiều xấu"], ["結成", "けっせい", "thành lập, lập thành nhóm"], ["つくづく", "つくづく", "thấm thía, thật sự cảm thấy sâu sắc"], ["ほぐれて", "ほぐれて", "được thả lỏng, bớt căng thẳng"], ["すくって", "すくって", "múc lên, vốc lên bằng tay"], ["ピント", "ピント", "tiêu điểm, độ nét của ảnh"], ["軽快", "けいかい", "nhẹ nhàng, vui tươi, nhanh nhẹn"], ["サイクル", "サイクル", "chu trình, vòng lặp"], ["仲裁", "ちゅうさい", "trọng tài, hòa giải"], ["しわざ", "しわざ", "việc làm, trò gây ra"], ["かみ合わなくて", "かみあわなくて", "không ăn khớp, không khớp ý nhau"], ["存続", "そんぞく", "tiếp tục tồn tại, duy trì"], ["派", "は", "phe, nhóm theo quan điểm"], ["風習", "ふうしゅう", "phong tục, tập quán"], ["もどかしかった", "もどかしかった", "sốt ruột, bực vì không như ý"], ["こじれて", "こじれて", "trở nên rắc rối, xấu đi"], ["旺盛", "おうせい", "mạnh mẽ, dồi dào"], ["余波", "よは", "dư âm, ảnh hưởng lan sau sự việc"], ["目先", "めさき", "trước mắt, lợi ích ngắn hạn"], ["になう", "になう", "gánh vác, đảm nhận"], ["クレーム", "クレーム", "khiếu nại, phàn nàn"], ["みっちり", "みっちり", "dày đặc, kỹ lưỡng, không hở thời gian"], ["撤去", "てっきょ", "dỡ bỏ, loại bỏ"], ["あやぶまれて", "あやぶまれて", "bị lo ngại, bị nghi ngờ khó thành"], ["危ぶまれて", "あやぶまれて", "bị lo ngại, bị cho là có nguy cơ"], ["歴然", "れきぜん", "rõ ràng, hiển nhiên"], ["ここちよく", "ここちよく", "dễ chịu, thoải mái"], ["従事", "じゅうじ", "làm việc trong, tham gia công việc"], ["にじんで", "にじんで", "bị nhòe, thấm loang ra"], ["レイアウト", "レイアウト", "bố cục, cách sắp xếp trang"], ["起用", "きよう", "bổ nhiệm, chọn dùng người"], ["盛大に", "せいだいに", "một cách long trọng, quy mô lớn"], ["在庫", "ざいこ", "hàng tồn kho"], ["リスク", "リスク", "rủi ro"], ["なだめられて", "なだめられて", "được dỗ dành, được làm dịu lại"], ["シェア", "シェア", "thị phần, phần chia sẻ"], ["経歴", "けいれき", "lý lịch nghề nghiệp, quá trình làm việc"], ["はじく", "はじく", "đẩy bật ra, không thấm"], ["いとも", "いとも", "rất, vô cùng; thường đi với dễ dàng"], ["一環", "いっかん", "một phần trong toàn thể/chuỗi hoạt động"], ["よみがえって", "よみがえって", "sống lại, hiện về trong ký ức"], ["たたえた", "たたえた", "ca ngợi, tán dương"], ["非", "ひ", "lỗi, điều sai trái"], ["予断", "よだん", "sự phán đoán trước, kết luận vội"], ["絶大", "ぜつだい", "rất lớn, tuyệt đại"], ["腕前", "うでまえ", "tay nghề, trình độ kỹ năng"], ["おおらか", "おおらか", "rộng lượng, thoải mái, không câu nệ"], ["センス", "センス", "gu, cảm quan thẩm mỹ"], ["ストック", "ストック", "dự trữ, hàng/tư liệu để sẵn"], ["まちまち", "まちまち", "khác nhau, không thống nhất"], ["リストアップ", "リストアップ", "liệt kê thành danh sách"], ["人出", "ひとで", "lượng người ra đường/tham gia"], ["妥協", "だきょう", "thỏa hiệp"], ["並行", "へいこう", "song song, diễn ra đồng thời"], ["修復", "しゅうふく", "khôi phục, sửa chữa lại"], ["尽くす", "つくす", "làm hết sức, tận lực"], ["たどり", "たどり", "lần theo, đi theo dấu vết"], ["メディア", "メディア", "truyền thông, phương tiện thông tin"], ["強制", "きょうせい", "ép buộc, cưỡng chế"], ["荷", "に", "gánh nặng, hành lý"], ["本音", "ほんね", "lòng thật, suy nghĩ thật"], ["本⾳", "ほんね", "lòng thật, suy nghĩ thật"], ["おびただしい", "おびただしい", "rất nhiều, vô số"], ["実情", "じつじょう", "tình hình thực tế"], ["幅広い", "はばひろい", "rộng, đa dạng"], ["一掃", "いっそう", "quét sạch, xóa sạch"], ["遮断", "しゃだん", "cắt đứt, chặn lại"], ["練った", "ねった", "đã trau chuốt, đã xây dựng kỹ"], ["弾む", "はずむ", "sôi nổi, nảy lên"], ["直面", "ちょくめん", "đối mặt trực tiếp"], ["ノルマ", "ノルマ", "chỉ tiêu, định mức phải hoàn thành"], ["及ぼす", "およぼす", "gây ra, ảnh hưởng tới"], ["センサー", "センサー", "cảm biến"], ["異色", "いしょく", "độc đáo, khác thường"], ["強み", "つよみ", "điểm mạnh"], ["取り戻した", "とりもどした", "lấy lại, khôi phục lại"], ["まみれ", "まみれ", "dính đầy, phủ đầy"], ["ノウハウ", "ノウハウ", "bí quyết, kỹ thuật thực tế"], ["禁物", "きんもつ", "điều cấm kỵ, thứ nên tránh"], ["流出", "りゅうしゅつ", "rò rỉ, chảy/lan ra ngoài"], ["キャリア", "キャリア", "sự nghiệp, kinh nghiệm nghề nghiệp"], ["解除", "かいじょ", "hủy bỏ, gỡ bỏ"], ["壮大な", "そうだいな", "hùng vĩ, quy mô lớn"], ["しいて", "しいて", "cố tình, nếu buộc phải nói/chọn"], ["保護", "ほご", "bảo vệ"], ["食い止める", "くいとめる", "ngăn chặn, chặn đứng"], ["寄与", "きよ", "đóng góp, góp phần"], ["切り出す", "きりだす", "mở lời, đưa chuyện ra nói"], ["上", "うえ", "về mặt, trên phương diện"], ["会心", "かいしん", "đắc ý, hài lòng vì làm rất tốt"], ["大筋", "おおすじ", "đại ý, đường hướng chính"], ["不備", "ふび", "thiếu sót, không đầy đủ"], ["和らいで", "やわらいで", "dịu đi, giảm bớt"], ["ウエイト", "ウエイト", "trọng lượng; mức độ quan trọng"], ["うずうず", "うずうず", "nôn nóng, háo hức không yên"], ["心細い", "こころぼそい", "lo lắng, bất an vì thiếu chỗ dựa"], ["ニュアンス", "ニュアンス", "sắc thái nghĩa"], ["ひしひしと", "ひしひしと", "cảm nhận sâu sắc, thấm thía"], ["もっぱら", "もっぱら", "chủ yếu, chuyên vào"], ["抜粋", "ばっすい", "trích đoạn, trích lược"], ["猛", "もう", "mãnh liệt, dữ dội"], ["揺らぎ", "ゆらぎ", "sự dao động, lung lay"], ["染みて", "しみて", "thấm vào"], ["ためらって", "ためらって", "do dự, ngập ngừng"], ["へとへとに", "へとへとに", "kiệt sức"], ["すさまじい", "すさまじい", "dữ dội, khủng khiếp"], ["ハードル", "ハードル", "rào cản, trở ngại"], ["起伏", "きふく", "thăng trầm, lên xuống"], ["駆使", "くし", "vận dụng thành thạo"]
+  , ["推移", "すいい", "sự biến đổi, diễn biến theo thời gian"], ["稼働", "かどう", "vận hành, hoạt động máy móc"], ["言い張って", "いいはって", "khăng khăng nói, một mực quả quyết"], ["版", "はん", "bản in, phiên bản"], ["結束", "けっそく", "sự đoàn kết, gắn bó"], ["合併", "がっぺい", "sáp nhập, hợp nhất"], ["手先", "てさき", "đầu ngón tay; sự khéo tay"], ["加筆", "かひつ", "viết thêm, bổ sung nội dung"], ["脳裏", "のうり", "trong đầu, trong tâm trí"]
+];
+
+supplementalVocabAnswers.push(...supplementalVocabAnswerDetails);
+
 const grammarPatterns = [
   ["だけ", "chỉ/đến mức; trong mẫu 「Vるだけ無駄」 nghĩa là làm cũng vô ích"],
   ["を受けて", "chịu tác động từ, dựa trên bối cảnh/sự kiện trước đó"],
@@ -488,6 +495,86 @@ const grammarPatterns = [
   ["でさえ", "ngay cả, đến cả"],
   ["といっても", "nói là... nhưng thực ra/nhưng cũng chỉ..."],
 ];
+
+const supplementalPhraseMeanings = {
+  "３) は": "mẫu 「Vます＋はする」 = có làm/có thể làm, nhưng phía sau nêu hạn chế",
+  "お越しになる際は": "khi quý vị đến, khi tới nơi tư vấn",
+  "なるかどうかはともかく": "chưa bàn là có thành hay không, tạm gác chuyện có trở thành hay không",
+  "かのごとく": "như thể là, cứ như là",
+  "始末だった": "kết cục là, rốt cuộc rơi vào tình trạng",
+  "だけのことだ": "chỉ đơn giản là vậy thôi",
+  "悩まされることはない": "sẽ không còn bị làm phiền/khổ sở vì",
+  "強まる見込みです": "dự kiến sẽ mạnh lên",
+  "知りたがるものです": "thường muốn biết, hay muốn hỏi",
+  "緊張するんだから": "vì ngay cả người lớn cũng căng thẳng",
+  "行動なのだ": "là hành động như vậy",
+  "評判も良くなった": "đánh giá/danh tiếng cũng tốt lên",
+  "睡眠の質があるなんて": "rằng có thứ gọi là chất lượng giấc ngủ",
+  "扱える人材の確保やコスト面での難しさから": "do khó khăn về bảo đảm nhân sự có thể xử lý và về mặt chi phí",
+  "話すことで": "bằng việc nói ra, nhờ nói chuyện",
+  "会ってこそ": "chỉ khi gặp trực tiếp thì mới",
+  "思い出してください": "hãy nhớ lại",
+  "小説でもあるまい": "đâu phải tiểu thuyết, không phải chuyện như trong tiểu thuyết",
+  "褒めたり叱ったりする": "khen rồi mắng, vừa khen vừa mắng tùy lúc",
+  "否定できなくなる": "trở nên không thể phủ nhận",
+  "たしかに": "đúng là, quả thật",
+  "そのためだ": "là vì lý do đó",
+  "使者のようでもある": "cũng giống như một sứ giả",
+  "日もあれば": "có ngày thì..., cũng có ngày...",
+  "思えないほどの": "đến mức không thể nghĩ là",
+  "自分は花粉症だという": "rằng bản thân bị dị ứng phấn hoa",
+  "思える道を": "con đường mà mình có thể nghĩ là",
+  "か否か": "có hay không",
+  "30年前までは": "cho đến 30 năm trước",
+  "環境があれば": "nếu có môi trường/điều kiện",
+  "迷うほど": "đến mức phân vân, khó phân biệt",
+  "うそになるが": "nói vậy thì thành nói dối, không phải thật lòng",
+  "わたしにとって": "đối với tôi",
+  "もしかしたら": "biết đâu, có lẽ",
+  "生まれるからだが": "là vì nó sinh ra/phát sinh",
+  "ものか": "làm sao mà..., nhất định không",
+  "書けてるじゃない": "viết được khá tốt đấy chứ",
+  "とかで": "hình như vì..., nghe nói là do...",
+  "にもなっておらず": "không hề thành/đạt tới mức",
+  "来たり来なかったり": "lúc đến lúc không",
+  "入らなきゃいけないってわけじゃない": "không có nghĩa là bắt buộc phải tham gia",
+  "診察できる": "có thể khám/chẩn đoán",
+  "がちな": "có xu hướng hay..., dễ...",
+  "そうではなく": "không phải vậy mà là",
+  "私としては": "về phía tôi, theo tôi",
+  "まず": "trước hết",
+  "別の": "khác, một cái khác",
+  "いれば": "nếu có/ở đó thì",
+  "わかってくるはずだ": "chắc sẽ dần hiểu ra",
+  "など": "như là, chẳng hạn",
+  "なかなか": "khá, tương đối; mãi mà không",
+  "見逃す": "bỏ lỡ, không xem được",
+  "聞こうにも": "dù muốn hỏi cũng không thể",
+  "任されるまでになったが": "đã đến mức được giao phó, nhưng",
+  "やってみなきゃ": "nếu không thử làm thì",
+  "答えておけばいいんだよ": "cứ trả lời sẵn như vậy là được",
+  "失わせてしまうおそれがある": "có nguy cơ làm mất đi",
+  "鶴が": "con hạc là chủ thể của hành động",
+  "わけにもいかず": "không thể cứ để vậy/không làm vậy được",
+  "日本の将来を見据えながら": "vừa nhìn tới tương lai của Nhật Bản",
+  "初めて": "lần đầu tiên, chỉ khi... mới",
+  "それは": "điều đó thì",
+  "見つけられなかった": "đã không thể tìm thấy",
+  "一方で": "mặt khác",
+  "その時のことである": "đó là chuyện vào lúc ấy",
+  "こうした": "những điều như vậy, kiểu này",
+  "と引きかえに": "đổi lại, đánh đổi với",
+  "なにも": "không cần phải..., đâu nhất thiết",
+  "探すったって": "nói là tìm nhưng...",
+  "そうかと思えば": "vừa tưởng như vậy thì lại...",
+  "くれればよかったのに": "giá mà đã làm cho tôi thì tốt",
+  "買えずにいた": "đã không mua được, cứ trong trạng thái chưa mua được",
+  "聞こえはいいがに": "nghe thì hay đấy nhưng",
+  "新人に務まるのかと": "liệu người mới có đảm đương được không",
+  "進めた": "đã tiến hành, đã thúc đẩy",
+  "における": "ở, trong phạm vi",
+  "消すように": "như để xóa đi",
+};
 
 const n1GrammarPatterns = Array.isArray(window.n1GrammarExtra) ? window.n1GrammarExtra : [];
 grammarPatterns.push(...n1GrammarPatterns);
@@ -605,18 +692,18 @@ function lookupVocabAnswer(term) {
     const entry = entryForExactTerm(form) || sortedStudyVocabulary.find(([word]) => word === form);
     if (entry) return { word: term, base: entry[0], reading: entry[1], meaning: entry[2] };
   }
-  if (/^[ぁ-んァ-ンー]+$/.test(term)) return { word: term, base: term, reading: term, meaning: "xem nghĩa theo cụm trong câu" };
+  if (/^[ぁ-んァ-ンー]+$/.test(term)) return { word: term, base: term, reading: term, meaning: "đáp án đúng trong câu này" };
   return null;
 }
 
 function termMeaning(term) {
   const entry = lookupVocabAnswer(term);
-  return entry ? `${entry.word}（${entry.reading}）= ${entry.meaning}` : `${term} = cần ghi nhớ nghĩa/cách dùng trong ngữ cảnh này`;
+  return entry ? `${entry.word}（${entry.reading}）= ${entry.meaning}` : `「${term}」`;
 }
 
 function answerMeaningLine(term) {
   const entry = lookupVocabAnswer(term);
-  if (!entry) return `Đáp án đúng: 「${term}」. Cần ghi nhớ nghĩa/cách dùng của từ này trong cả cụm câu.`;
+  if (!entry) return `Đáp án đúng: 「${term}」.`;
   const baseNote = entry.base !== term ? `, gốc: ${entry.base}` : "";
   return `Đáp án đúng: 「${term}」（${entry.reading}）= ${entry.meaning}${baseNote}.`;
 }
@@ -632,7 +719,7 @@ function optionMeanings(item) {
 function grammarMeaning(pattern) {
   const source = String(pattern || "");
   const found = grammarPatterns.find((entry) => grammarKeys(entry).some((key) => source.includes(key) || key.includes(source)));
-  return found ? `Mẫu ngữ pháp 「${pattern}」 = ${found[1]}.` : `Mẫu ngữ pháp 「${pattern}」 cần hiểu theo chức năng nối ý trong câu; hãy ghi nhớ cả câu hoàn chỉnh để nắm sắc thái.`;
+  return found ? `Mẫu ngữ pháp 「${pattern}」 = ${found[1]}.` : "";
 }
 
 function grammarAnswerLine(pattern) {
@@ -641,7 +728,79 @@ function grammarAnswerLine(pattern) {
   if (found) {
     return `Đáp án ngữ pháp: 「${pattern}」. Mẫu 「${found[0]}」 nghĩa là: ${found[1]}.`;
   }
-  return `Đáp án ngữ pháp: 「${pattern}」. Hãy đọc cả cụm này trong câu để xác định quan hệ ý nghĩa; phần sau giải thích cách nối.`;
+  const phraseMeaning = phraseMeaningFallback(pattern);
+  return phraseMeaning ? `Đáp án ngữ pháp/cụm đúng: 「${pattern}」 = ${phraseMeaning}.` : `Mảnh/cụm đúng: 「${pattern}」.`;
+}
+
+function phraseMeaningFallback(pattern) {
+  const source = String(pattern || "").trim().replace(/[。、「」]/g, "");
+  const direct = supplementalPhraseMeanings[source];
+  if (direct) return direct;
+  if (source.includes("わけにはいか")) return "không thể làm vậy được vì hoàn cảnh/đạo lý không cho phép";
+  if (source.includes("わけじゃない") || source.includes("わけではない")) return "không có nghĩa là, không hẳn là";
+  if (source.includes("とは限らない")) return "không nhất thiết là, chưa chắc là";
+  if (source.includes("に違いない")) return "chắc chắn là, hẳn là";
+  if (source.includes("にすぎ")) return "chỉ là, không hơn gì";
+  if (source.includes("に越したことはない")) return "không gì tốt hơn là";
+  if (source.includes("にしては")) return "so với/tính theo... thì";
+  if (source.includes("にとって")) return "đối với";
+  if (source.includes("における") || source.includes("において")) return "ở/trong phạm vi";
+  if (source.includes("にともない") || source.includes("に伴い")) return "cùng với, kéo theo";
+  if (source.includes("に先立ち")) return "trước khi, trước thềm";
+  if (source.includes("を機に")) return "nhân dịp, lấy đó làm bước ngoặt";
+  if (source.includes("をもって")) return "lấy mốc đó, kể từ/đến thời điểm đó";
+  if (source.includes("をも")) return "ngay cả, đến cả";
+  if (source.includes("を控えて")) return "trước thềm, sắp đến";
+  if (source.includes("ものだ")) return "thường là, vốn là; cũng dùng để hồi tưởng";
+  if (source.includes("ものではない") || source.includes("ものじゃない")) return "không nên, không phải chuyện nên làm";
+  if (source.includes("ものなら")) return "nếu có thể, nếu mà";
+  if (source.includes("ものを")) return "giá mà... thì đã; vậy mà";
+  if (source.includes("ことはない")) return "không cần phải, không có chuyện";
+  if (source.includes("ことだ")) return "chỉ là việc/điều đó thôi";
+  if (source.includes("ことになる")) return "dẫn đến việc, thành ra";
+  if (source.includes("ことから")) return "vì, từ việc";
+  if (source.includes("ことには")) return "nếu không... thì";
+  if (source.includes("ほど")) return "đến mức";
+  if (source.includes("ばかりに")) return "chỉ vì... mà dẫn tới kết quả xấu";
+  if (source.includes("ばかり")) return "chỉ/toàn là; đang ở trạng thái chờ";
+  if (source.includes("ながら")) return "vừa... vừa...; dù là... nhưng";
+  if (source.includes("つもり")) return "cứ tưởng/định là";
+  if (source.includes("まま")) return "giữ nguyên trạng thái";
+  if (source.includes("として")) return "với tư cách là, như là";
+  if (source.includes("というわけ")) return "nghĩa là, vì vậy mà";
+  if (source.includes("という")) return "rằng, gọi là";
+  if (source.includes("とはいえ")) return "dù nói vậy, tuy nhiên";
+  if (source.includes("といっても")) return "nói là... nhưng thực ra";
+  if (source.includes("とすれば")) return "nếu giả sử là";
+  if (source.includes("かと思いきや") || source.includes("思いきや")) return "cứ tưởng... nhưng bất ngờ là";
+  if (source.includes("か否か")) return "có hay không";
+  if (source.includes("かどうか")) return "có hay không";
+  if (source.includes("からには") || source.includes("からして")) return "một khi đã/vì đã";
+  if (source.includes("がゆえ")) return "chính vì";
+  if (source.includes("こそ")) return "chính vì/chính là; nhấn mạnh";
+  if (source.includes("さえ")) return "ngay cả";
+  if (source.includes("すら")) return "ngay cả";
+  if (source.includes("しかない")) return "chỉ còn cách";
+  if (source.includes("ずにはいられない")) return "không thể không";
+  if (source.includes("ずに済む") || source.includes("なくて済む")) return "khỏi phải, không cần phải";
+  if (source.includes("たがる")) return "có vẻ muốn, hay muốn";
+  if (source.includes("たとん") || source.includes("とたん")) return "ngay khi... thì";
+  if (source.includes("てこそ")) return "chỉ sau khi/làm... thì mới";
+  if (source.includes("てはいられない")) return "không thể cứ... được";
+  if (source.includes("ても始まらない")) return "có... cũng chẳng giải quyết được gì";
+  if (source.includes("てもらう")) return "được ai đó làm cho";
+  if (source.includes("ても")) return "dù có... thì";
+  if (source.includes("ないだろう")) return "có lẽ không";
+  if (source.includes("ないで")) return "không làm..., mà";
+  if (source.includes("ならでは")) return "đặc trưng riêng của, chỉ có ở";
+  if (source.includes("ともなれば")) return "một khi đã đến mức/là";
+  if (source.includes("どころではない")) return "không còn tâm trí/không phải lúc để";
+  if (source.includes("ように")) return "để, sao cho; như là";
+  if (source.includes("ようだ")) return "có vẻ như";
+  if (source.includes("はず")) return "lẽ ra, chắc là";
+  if (source.includes("おそれがある")) return "có nguy cơ";
+  if (source.includes("見込み")) return "dự kiến, có khả năng";
+  return "";
 }
 
 function grammarOptionNotes(item) {
@@ -800,7 +959,7 @@ function explanationForRemoteQuestion(exam, item, group) {
   }
 
   if (questionNumber <= 13) {
-    base = `Đáp án: ${item.correctAnswer}. ${answerMeaningLine(correctText)} Chỗ trống cần từ này vì nó khớp trực tiếp với ý của câu: ${prompt.replace("（　）", `「${correctText}」`)}. Hãy học theo cụm trong câu, ví dụ 「${correctText}」 đi với mạch nghĩa xung quanh chỗ trống.${optionMeanings(item)}`;
+    base = `Đáp án: ${item.correctAnswer}. ${answerMeaningLine(correctText)} Câu hoàn chỉnh: ${prompt.replace("（　）", `「${correctText}」`)}.${optionMeanings(item)}`;
     return withStudyNotes(base, item, group);
   }
 
@@ -818,19 +977,19 @@ function explanationForRemoteQuestion(exam, item, group) {
   }
 
   if (questionNumber <= 35) {
-    base = `Đáp án: ${item.correctAnswer}. ${grammarAnswerLine(correctText)} Câu hoàn chỉnh: ${prompt.replace("（　）", `「${correctText}」`)}. Cách hiểu: hãy nhìn phần trước và sau chỗ trống để xác định quan hệ logic như nguyên nhân, điều kiện, nhượng bộ, mức độ hoặc dẫn lời.${grammarOptionNotes(item)}`;
+    base = `Đáp án: ${item.correctAnswer}. ${grammarAnswerLine(correctText)} Câu hoàn chỉnh: ${prompt.replace("（　）", `「${correctText}」`)}.${grammarOptionNotes(item)}`;
     return withStudyNotes(base, item, group);
   }
 
   if (questionNumber <= 40) {
     const fullOrder = item.starOrder || item.correctOrder || item.fullOrder || item.order || "";
-    const orderNote = fullOrder ? ` Thứ tự đúng: ${fullOrder}.` : " Khi có dữ liệu thứ tự đầy đủ từ file đáp án, phần này sẽ hiện thêm dòng “Thứ tự đúng”.";
-    base = `Đáp án: ${item.correctAnswer}. Đây là bài sắp xếp câu có dấu ★. Mảnh đúng ở vị trí ★ là 「${correctText}」. ${grammarAnswerLine(correctText)}${orderNote} Hãy ghép theo trật tự tự nhiên của tiếng Nhật: cụm bổ nghĩa đứng trước danh từ/động từ chính, trợ từ đi sau cụm nó đánh dấu, rồi mới lấy mảnh nằm ở vị trí ★.${grammarOptionNotes(item)}`;
+    const orderNote = fullOrder ? ` Thứ tự đúng: ${fullOrder}.` : "";
+    base = `Đáp án: ${item.correctAnswer}. Mảnh ở vị trí ★ là 「${correctText}」. ${grammarAnswerLine(correctText)}${orderNote}${grammarOptionNotes(item)}`;
     return withStudyNotes(base, item, group);
   }
 
   if (questionNumber <= 44) {
-    base = `Đáp án: ${item.correctAnswer}. ${grammarAnswerLine(correctText)} Trong đoạn văn, chỗ này cần 「${correctText}」 để nối đúng mạch ý trước sau. Khi làm dạng này, hãy dịch quan hệ giữa hai câu: bổ sung, đối lập, nhượng bộ, nguyên nhân hay ví dụ; đừng chỉ nhìn riêng một câu.${grammarOptionNotes(item)}`;
+    base = `Đáp án: ${item.correctAnswer}. ${grammarAnswerLine(correctText)}${grammarOptionNotes(item)}`;
     return withStudyNotes(base, item, group);
   }
 
@@ -930,7 +1089,7 @@ function prependAnswerDetail(question) {
     question.explanation = `${answerMeaningLine(correctText)} ${question.explanation}`;
   }
 
-  if (number >= 26 && number <= 44 && !question.explanation.includes("Đáp án ngữ pháp:")) {
+  if (number >= 26 && number <= 44 && !question.explanation.includes("Đáp án ngữ pháp:") && !question.explanation.includes("Đáp án ngữ pháp/cụm đúng:")) {
     question.explanation = `${grammarAnswerLine(correctText)} ${question.explanation}`;
   }
 }
