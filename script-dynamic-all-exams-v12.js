@@ -450,7 +450,7 @@ const supplementalVocabAnswers = [
 
 const supplementalVocabAnswerDetails = [
   ["快挙", "かいきょ", "thành tích lớn, chiến công đáng khen"], ["助長", "じょちょう", "làm tăng thêm, thúc đẩy theo chiều xấu"], ["結成", "けっせい", "thành lập, lập thành nhóm"], ["つくづく", "つくづく", "thấm thía, thật sự cảm thấy sâu sắc"], ["ほぐれて", "ほぐれて", "được thả lỏng, bớt căng thẳng"], ["すくって", "すくって", "múc lên, vốc lên bằng tay"], ["ピント", "ピント", "tiêu điểm, độ nét của ảnh"], ["軽快", "けいかい", "nhẹ nhàng, vui tươi, nhanh nhẹn"], ["サイクル", "サイクル", "chu trình, vòng lặp"], ["仲裁", "ちゅうさい", "trọng tài, hòa giải"], ["しわざ", "しわざ", "việc làm, trò gây ra"], ["かみ合わなくて", "かみあわなくて", "không ăn khớp, không khớp ý nhau"], ["存続", "そんぞく", "tiếp tục tồn tại, duy trì"], ["派", "は", "phe, nhóm theo quan điểm"], ["風習", "ふうしゅう", "phong tục, tập quán"], ["もどかしかった", "もどかしかった", "sốt ruột, bực vì không như ý"], ["こじれて", "こじれて", "trở nên rắc rối, xấu đi"], ["旺盛", "おうせい", "mạnh mẽ, dồi dào"], ["余波", "よは", "dư âm, ảnh hưởng lan sau sự việc"], ["目先", "めさき", "trước mắt, lợi ích ngắn hạn"], ["になう", "になう", "gánh vác, đảm nhận"], ["クレーム", "クレーム", "khiếu nại, phàn nàn"], ["みっちり", "みっちり", "dày đặc, kỹ lưỡng, không hở thời gian"], ["撤去", "てっきょ", "dỡ bỏ, loại bỏ"], ["あやぶまれて", "あやぶまれて", "bị lo ngại, bị nghi ngờ khó thành"], ["危ぶまれて", "あやぶまれて", "bị lo ngại, bị cho là có nguy cơ"], ["歴然", "れきぜん", "rõ ràng, hiển nhiên"], ["ここちよく", "ここちよく", "dễ chịu, thoải mái"], ["従事", "じゅうじ", "làm việc trong, tham gia công việc"], ["にじんで", "にじんで", "bị nhòe, thấm loang ra"], ["レイアウト", "レイアウト", "bố cục, cách sắp xếp trang"], ["起用", "きよう", "bổ nhiệm, chọn dùng người"], ["盛大に", "せいだいに", "một cách long trọng, quy mô lớn"], ["在庫", "ざいこ", "hàng tồn kho"], ["リスク", "リスク", "rủi ro"], ["なだめられて", "なだめられて", "được dỗ dành, được làm dịu lại"], ["シェア", "シェア", "thị phần, phần chia sẻ"], ["経歴", "けいれき", "lý lịch nghề nghiệp, quá trình làm việc"], ["はじく", "はじく", "đẩy bật ra, không thấm"], ["いとも", "いとも", "rất, vô cùng; thường đi với dễ dàng"], ["一環", "いっかん", "một phần trong toàn thể/chuỗi hoạt động"], ["よみがえって", "よみがえって", "sống lại, hiện về trong ký ức"], ["たたえた", "たたえた", "ca ngợi, tán dương"], ["非", "ひ", "lỗi, điều sai trái"], ["予断", "よだん", "sự phán đoán trước, kết luận vội"], ["絶大", "ぜつだい", "rất lớn, tuyệt đại"], ["腕前", "うでまえ", "tay nghề, trình độ kỹ năng"], ["おおらか", "おおらか", "rộng lượng, thoải mái, không câu nệ"], ["センス", "センス", "gu, cảm quan thẩm mỹ"], ["ストック", "ストック", "dự trữ, hàng/tư liệu để sẵn"], ["まちまち", "まちまち", "khác nhau, không thống nhất"], ["リストアップ", "リストアップ", "liệt kê thành danh sách"], ["人出", "ひとで", "lượng người ra đường/tham gia"], ["妥協", "だきょう", "thỏa hiệp"], ["並行", "へいこう", "song song, diễn ra đồng thời"], ["修復", "しゅうふく", "khôi phục, sửa chữa lại"], ["尽くす", "つくす", "làm hết sức, tận lực"], ["たどり", "たどり", "lần theo, đi theo dấu vết"], ["メディア", "メディア", "truyền thông, phương tiện thông tin"], ["強制", "きょうせい", "ép buộc, cưỡng chế"], ["荷", "に", "gánh nặng, hành lý"], ["本音", "ほんね", "lòng thật, suy nghĩ thật"], ["本⾳", "ほんね", "lòng thật, suy nghĩ thật"], ["おびただしい", "おびただしい", "rất nhiều, vô số"], ["実情", "じつじょう", "tình hình thực tế"], ["幅広い", "はばひろい", "rộng, đa dạng"], ["一掃", "いっそう", "quét sạch, xóa sạch"], ["遮断", "しゃだん", "cắt đứt, chặn lại"], ["練った", "ねった", "đã trau chuốt, đã xây dựng kỹ"], ["弾む", "はずむ", "sôi nổi, nảy lên"], ["直面", "ちょくめん", "đối mặt trực tiếp"], ["ノルマ", "ノルマ", "chỉ tiêu, định mức phải hoàn thành"], ["及ぼす", "およぼす", "gây ra, ảnh hưởng tới"], ["センサー", "センサー", "cảm biến"], ["異色", "いしょく", "độc đáo, khác thường"], ["強み", "つよみ", "điểm mạnh"], ["取り戻した", "とりもどした", "lấy lại, khôi phục lại"], ["まみれ", "まみれ", "dính đầy, phủ đầy"], ["ノウハウ", "ノウハウ", "bí quyết, kỹ thuật thực tế"], ["禁物", "きんもつ", "điều cấm kỵ, thứ nên tránh"], ["流出", "りゅうしゅつ", "rò rỉ, chảy/lan ra ngoài"], ["キャリア", "キャリア", "sự nghiệp, kinh nghiệm nghề nghiệp"], ["解除", "かいじょ", "hủy bỏ, gỡ bỏ"], ["壮大な", "そうだいな", "hùng vĩ, quy mô lớn"], ["しいて", "しいて", "cố tình, nếu buộc phải nói/chọn"], ["保護", "ほご", "bảo vệ"], ["食い止める", "くいとめる", "ngăn chặn, chặn đứng"], ["寄与", "きよ", "đóng góp, góp phần"], ["切り出す", "きりだす", "mở lời, đưa chuyện ra nói"], ["上", "うえ", "về mặt, trên phương diện"], ["会心", "かいしん", "đắc ý, hài lòng vì làm rất tốt"], ["大筋", "おおすじ", "đại ý, đường hướng chính"], ["不備", "ふび", "thiếu sót, không đầy đủ"], ["和らいで", "やわらいで", "dịu đi, giảm bớt"], ["ウエイト", "ウエイト", "trọng lượng; mức độ quan trọng"], ["うずうず", "うずうず", "nôn nóng, háo hức không yên"], ["心細い", "こころぼそい", "lo lắng, bất an vì thiếu chỗ dựa"], ["ニュアンス", "ニュアンス", "sắc thái nghĩa"], ["ひしひしと", "ひしひしと", "cảm nhận sâu sắc, thấm thía"], ["もっぱら", "もっぱら", "chủ yếu, chuyên vào"], ["抜粋", "ばっすい", "trích đoạn, trích lược"], ["猛", "もう", "mãnh liệt, dữ dội"], ["揺らぎ", "ゆらぎ", "sự dao động, lung lay"], ["染みて", "しみて", "thấm vào"], ["ためらって", "ためらって", "do dự, ngập ngừng"], ["へとへとに", "へとへとに", "kiệt sức"], ["すさまじい", "すさまじい", "dữ dội, khủng khiếp"], ["ハードル", "ハードル", "rào cản, trở ngại"], ["起伏", "きふく", "thăng trầm, lên xuống"], ["駆使", "くし", "vận dụng thành thạo"]
-  , ["推移", "すいい", "sự biến đổi, diễn biến theo thời gian"], ["稼働", "かどう", "vận hành, hoạt động máy móc"], ["言い張って", "いいはって", "khăng khăng nói, một mực quả quyết"], ["版", "はん", "bản in, phiên bản"], ["結束", "けっそく", "sự đoàn kết, gắn bó"], ["合併", "がっぺい", "sáp nhập, hợp nhất"], ["手先", "てさき", "đầu ngón tay; sự khéo tay"], ["加筆", "かひつ", "viết thêm, bổ sung nội dung"], ["脳裏", "のうり", "trong đầu, trong tâm trí"]
+  , ["推移", "すいい", "sự biến đổi, diễn biến theo thời gian"], ["稼働", "かどう", "vận hành, hoạt động máy móc"], ["言い張って", "いいはって", "khăng khăng nói, một mực quả quyết"], ["版", "はん", "bản in, phiên bản"], ["結束", "けっそく", "sự đoàn kết, gắn bó"], ["合併", "がっぺい", "sáp nhập, hợp nhất"], ["手先", "てさき", "đầu ngón tay; sự khéo tay"], ["ごまかして", "ごまかして", "gian lận, nói dối/che giấu sự thật"], ["加筆", "かひつ", "viết thêm, bổ sung nội dung"], ["ブランク", "ブランク", "khoảng trống, thời gian gián đoạn"], ["うすうす", "うすうす", "lờ mờ, mang máng"], ["脳裏", "のうり", "trong đầu, trong tâm trí"], ["始めて", "はじめて", "bắt đầu"], ["傾向", "けいこう", "xu hướng, khuynh hướng"], ["特別によい", "とくべつによい", "đặc biệt tốt"], ["からかって", "からかって", "trêu chọc"], ["不思議そうな", "ふしぎそうな", "có vẻ nghi hoặc/khó hiểu"], ["すべて", "すべて", "tất cả, toàn bộ"], ["先方への返答を保留した。", "せんぽうへのへんとうをほりゅうした", "đã tạm hoãn câu trả lời cho phía đối tác"], ["混雑の緩和が期待される。", "こんざつのかんわがきたいされる", "được kỳ vọng giảm bớt ùn tắc/đông đúc"], ["まだ目標には程遠い。", "まだもくひょうにはほどとおい", "còn xa mới đạt mục tiêu"], ["砂糖を入れたらまろやかな味になった。", "さとうをいれたらまろやかなあじになった", "thêm đường vào thì vị trở nên dịu/tròn"], ["古い体制から脱却する。", "ふるいたいせいからだっきゃくする", "thoát khỏi cơ chế cũ"], ["機材を使いこなしていた。", "きざいをつかいこなしていた", "đã sử dụng thành thạo thiết bị"]
 ];
 
 supplementalVocabAnswers.push(...supplementalVocabAnswerDetails);
@@ -837,7 +837,7 @@ function n1GrammarEntriesForText(text, maxItems = 5) {
 
 function vocabularyUsageExplanation(target, correctText) {
   const targetNote = target ? `${termMeaning(target)}. ` : "";
-  return `${targetNote}Câu đúng là: 「${correctText}」. Dịch ý phần cần học: dùng 「${target || "từ này"}」 trong câu này là tự nhiên vì nó đi đúng với ngữ cảnh và quan hệ từ trong câu. Các lựa chọn khác thường sai do dùng sai collocation, sai đối tượng đi kèm hoặc lệch nghĩa.`;
+  return `${targetNote}Đáp án/cách dùng đúng: 「${correctText}」.`;
 }
 
 function remoteTargetWord(item) {
@@ -879,18 +879,6 @@ function compactText(value) {
   return String(value || "").replace(/\[\[[^\]]+\]\]/g, "").replace(/\s+/g, " ").trim();
 }
 
-function readingQuestionFocus(text) {
-  const source = compactText(text);
-  if (source.includes("筆者が最も言いたい") || source.includes("筆者が言いたい")) return "Câu này hỏi chủ trương/kết luận chính của tác giả, nên phải ưu tiên câu kết luận và mạch lập luận toàn đoạn.";
-  if (source.includes("筆者の考え") || source.includes("筆者の説明")) return "Câu này hỏi quan điểm của tác giả, nên chọn ý phản ánh đúng nhận định của tác giả, không chọn ý chỉ là ví dụ phụ.";
-  if (source.includes("どのように述べている") || source.includes("どのように考えている")) return "Câu này hỏi tác giả mô tả/đánh giá vấn đề như thế nào, nên cần bám vào câu giải thích trực tiếp trong bài.";
-  if (source.includes("なぜ") || source.includes("理由")) return "Câu này hỏi lý do, nên đáp án đúng phải nêu đúng nguyên nhân trong bài, không chỉ nêu kết quả.";
-  if (source.includes("何を指す") || source.includes("とは") || source.includes("その")) return "Câu này hỏi từ/cụm được chỉ tới, nên cần quay lại câu ngay trước và sau vị trí đó.";
-  if (source.includes("共通") || source.includes("AとB")) return "Câu này là dạng so sánh/tổng hợp A-B, nên đáp án đúng phải khớp với cả hai văn bản.";
-  if (source.includes("お知らせ") || source.includes("メール") || source.includes("案内") || source.includes("提出") || source.includes("いつまで")) return "Câu này là dạng thông tin ứng dụng, nên cần đối chiếu điều kiện, thời hạn, số tiền hoặc giấy tờ trong bảng/thông báo.";
-  return "Câu này cần đối chiếu trực tiếp câu hỏi với ý chính hoặc chi tiết tương ứng trong đoạn văn.";
-}
-
 function sharedChars(a, b) {
   const chars = new Set(compactText(a).replace(/[、。，．「」『』（）()・\s]/g, "").split(""));
   if (!chars.size) return 0;
@@ -916,34 +904,49 @@ function evidenceFromPassage(passageText, correctText, questionText) {
 }
 
 function wrongOptionHint(item, correctText) {
-  const wrongOptions = (item.options || []).filter((option, index) => index !== Number(item.correctAnswer) - 1);
-  if (!wrongOptions.length) return "";
-  const shortWrong = wrongOptions.slice(0, 3).map((option) => `「${option}」`).join("、");
-  return ` Các lựa chọn như ${shortWrong} dễ sai vì thường thêm ý quá mức, đổi chủ thể, đảo quan hệ nguyên nhân-kết quả hoặc chỉ đúng với một phần nhỏ của đoạn.`;
+  return "";
+}
+
+function stripGenericReadingExplanation(value) {
+  return compactText(value)
+    .replace(/Câu này cần đối chiếu trực tiếp câu hỏi với ý chính hoặc chi tiết tương ứng trong đoạn văn。?/g, "")
+    .replace(/Câu này hỏi chủ trương\/kết luận chính của tác giả, nên phải ưu tiên câu kết luận và mạch lập luận toàn đoạn。?/g, "")
+    .replace(/Câu này hỏi quan điểm hoặc cách giải thích của tác giả, nên chọn ý phản ánh đúng nhận định trong bài, không chọn ý chỉ là ví dụ phụ。?/g, "")
+    .replace(/Câu này hỏi quan điểm của tác giả, nên chọn ý phản ánh đúng nhận định của tác giả, không chọn ý chỉ là ví dụ phụ。?/g, "")
+    .replace(/Câu này hỏi tác giả mô tả\/đánh giá vấn đề như thế nào, nên cần bám vào câu giải thích trực tiếp trong bài。?/g, "")
+    .replace(/Câu này hỏi tác giả mô tả vấn đề như thế nào, nên cần bám vào câu giải thích trực tiếp trong đoạn。?/g, "")
+    .replace(/Câu này hỏi lý do, nên đáp án đúng phải nêu đúng nguyên nhân trong bài, không chỉ nêu kết quả。?/g, "")
+    .replace(/Câu này hỏi nội dung được chỉ tới, nên cần quay lại câu ngay trước và sau vị trí đó để xác định phạm vi。?/g, "")
+    .replace(/Câu này hỏi từ\/cụm được chỉ tới, nên cần quay lại câu ngay trước và sau vị trí đó。?/g, "")
+    .replace(/Câu này là dạng so sánh\/tổng hợp A-B, nên đáp án đúng phải khớp với cả hai văn bản。?/g, "")
+    .replace(/Câu này là dạng thông tin ứng dụng, nên cần đối chiếu điều kiện, thời hạn, số tiền, người liên quan hoặc giấy tờ trong bảng\/thông báo。?/g, "")
+    .replace(/Câu này là dạng thông tin ứng dụng, nên cần đối chiếu điều kiện, thời hạn, số tiền hoặc giấy tờ trong bảng\/thông báo。?/g, "")
+    .replace(/Ý đúng nằm ở lựa chọn này vì nó giữ đúng trọng tâm của đoạn và không suy rộng ngoài nội dung bài。?/g, "")
+    .replace(/Vì vậy cần chọn đáp án giữ đúng ý này, không suy rộng(?: ra)? ngoài bài。?/g, "")
+    .replace(/Các lựa chọn còn lại như .*? thường sai vì thêm ý không có trong bài, đổi chủ thể, đảo quan hệ nguyên nhân-kết quả hoặc chỉ đúng một phần。?/g, "")
+    .replace(/Các lựa chọn như .*? dễ sai vì thường thêm ý quá mức, đổi chủ thể, đảo quan hệ nguyên nhân-kết quả hoặc chỉ đúng với một phần nhỏ của đoạn。?/g, "")
+    .replace(/(?:\s*\.\s*){2,}/g, ". ")
+    .replace(/\s+/g, " ")
+    .replace(/\s+([.。])/g, "$1")
+    .trim();
 }
 
 function readingExplanationForRemoteQuestion(item, group) {
   const correctText = item.options[Number(item.correctAnswer) - 1];
   if (item.explanation) {
-    const explanation = compactText(item.explanation);
+    const explanation = stripGenericReadingExplanation(item.explanation);
     return explanation.startsWith("Đáp án") ? explanation : `Đáp án: ${item.correctAnswer}. ${explanation}`;
   }
-  const focus = readingQuestionFocus(item.text);
   const evidence = evidenceFromPassage(group?.passage || item.passage || "", correctText, item.text);
-  return `Đáp án: ${item.correctAnswer}. Ý đúng là 「${correctText}」. ${focus} Vì vậy cần chọn đáp án giữ đúng ý này, không suy rộng ra ngoài bài.${evidence}${wrongOptionHint(item, correctText)}`;
+  return `Đáp án: ${item.correctAnswer}. Ý đúng là 「${correctText}」.${evidence}`;
 }
 
 function readingExplanationForLocalQuestion(question) {
   const correctText = question.options[question.answer] || "";
-  const focus = readingQuestionFocus(question.prompt);
   const evidence = evidenceFromPassage(question.passage || "", correctText, question.prompt);
-  const original = compactText(question.explanation || "");
+  const original = stripGenericReadingExplanation(question.explanation || "");
   const originalNote = original && !original.includes("Đáp án") ? ` Ghi chú lời giải: ${original}` : "";
-  const item = {
-    options: question.options,
-    correctAnswer: question.answer + 1,
-  };
-  return `Đáp án: ${question.answer + 1}. Ý đúng là 「${correctText}」. ${focus} Vì vậy cần chọn đáp án giữ đúng ý này, không suy rộng ngoài bài.${evidence}${originalNote}${wrongOptionHint(item, correctText)}`;
+  return `Đáp án: ${question.answer + 1}. Ý đúng là 「${correctText}」.${evidence}${originalNote}`;
 }
 
 function explanationForRemoteQuestion(exam, item, group) {
@@ -954,19 +957,19 @@ function explanationForRemoteQuestion(exam, item, group) {
   let base = "";
 
   if (questionNumber <= 6) {
-    base = `Đáp án: ${item.correctAnswer}. Cách đọc đúng trong câu là 「${correctText}」. Đây là dạng kiểm tra âm đọc kanji, nên hãy gắn cách đọc với cả cụm trong đề: ${prompt}`;
+    base = `Đáp án: ${item.correctAnswer}. Cách đọc đúng: 「${correctText}」.`;
     return withStudyNotes(base, item, group);
   }
 
   if (questionNumber <= 13) {
-    base = `Đáp án: ${item.correctAnswer}. ${answerMeaningLine(correctText)} Câu hoàn chỉnh: ${prompt.replace("（　）", `「${correctText}」`)}.${optionMeanings(item)}`;
+    base = `Đáp án: ${item.correctAnswer}. ${answerMeaningLine(correctText)}${optionMeanings(item)}`;
     return withStudyNotes(base, item, group);
   }
 
   if (questionNumber <= 19) {
     const target = remoteTargetWord(item);
     const targetNote = target ? `Từ/cụm được hỏi là 「${target}」. ` : "";
-    base = `Đáp án: ${item.correctAnswer}. ${targetNote}${termMeaning(correctText)}. Trong ngữ cảnh này, 「${target || "từ được hỏi"}」 gần nghĩa nhất với 「${correctText}」; các lựa chọn còn lại lệch sắc thái hoặc không khớp với ý của câu.`;
+    base = `Đáp án: ${item.correctAnswer}. ${targetNote}Gần nghĩa nhất: ${termMeaning(correctText)}.`;
     return withStudyNotes(base, item, group);
   }
 
@@ -977,14 +980,14 @@ function explanationForRemoteQuestion(exam, item, group) {
   }
 
   if (questionNumber <= 35) {
-    base = `Đáp án: ${item.correctAnswer}. ${grammarAnswerLine(correctText)} Câu hoàn chỉnh: ${prompt.replace("（　）", `「${correctText}」`)}.${grammarOptionNotes(item)}`;
+    base = `Đáp án: ${item.correctAnswer}. ${grammarAnswerLine(correctText)}${grammarOptionNotes(item)}`;
     return withStudyNotes(base, item, group);
   }
 
   if (questionNumber <= 40) {
     const fullOrder = item.starOrder || item.correctOrder || item.fullOrder || item.order || "";
-    const orderNote = fullOrder ? ` Thứ tự đúng: ${fullOrder}.` : "";
-    base = `Đáp án: ${item.correctAnswer}. Mảnh ở vị trí ★ là 「${correctText}」. ${grammarAnswerLine(correctText)}${orderNote}${grammarOptionNotes(item)}`;
+    const orderNote = fullOrder ? ` 正しい順序: ${fullOrder}.` : "";
+    base = `Đáp án: ${item.correctAnswer}. Mảnh ở vị trí ★ là 「${correctText}」.${orderNote} ${grammarAnswerLine(correctText)}${grammarOptionNotes(item)}`;
     return withStudyNotes(base, item, group);
   }
 
@@ -1085,11 +1088,11 @@ function prependAnswerDetail(question) {
   const correctText = question.options?.[question.answer] || "";
   if (!correctText) return;
 
-  if (number >= 7 && number <= 13 && !question.explanation.includes("Đáp án đúng:")) {
+  if (number >= 7 && number <= 25 && !question.explanation.includes("Đáp án đúng:")) {
     question.explanation = `${answerMeaningLine(correctText)} ${question.explanation}`;
   }
 
-  if (number >= 26 && number <= 44 && !question.explanation.includes("Đáp án ngữ pháp:") && !question.explanation.includes("Đáp án ngữ pháp/cụm đúng:")) {
+  if (number >= 26 && number <= 44 && !question.explanation.includes("Đáp án ngữ pháp:") && !question.explanation.includes("Đáp án ngữ pháp/cụm đúng:") && !question.explanation.includes("Mảnh/cụm đúng:")) {
     question.explanation = `${grammarAnswerLine(correctText)} ${question.explanation}`;
   }
 }
@@ -1117,7 +1120,7 @@ function enhanceQuestions(list) {
 
 async function loadRemoteExams() {
   const remoteLoaded = await Promise.allSettled(remoteExams.map(async (exam) => {
-    const response = await fetch(`${exam.path}?v=1`);
+    const response = await fetch(`${exam.path}?v=2`);
     if (!response.ok) throw new Error(`Không tải được đề ${exam.title}`);
     const data = await response.json();
     return convertRemoteExam(exam, data);
