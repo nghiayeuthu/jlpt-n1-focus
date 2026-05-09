@@ -1,0 +1,1051 @@
+{
+  "level": "N1",
+  "date": "201007",
+  "year": 2010,
+  "month": 7,
+  "sections": [
+    {
+      "type": "vocabulary",
+      "sectionNumber": 1,
+      "groups": [
+        {
+          "instruction": "問題1-4 文字・語彙",
+          "questions": [
+            {
+              "questionNumber": 1,
+              "text": "駅前の店はどこも繁盛している。",
+              "textHtml": "駅前の店はどこも繁盛している。",
+              "options": [
+                "びんしょう",
+                "はんじょう",
+                "びんじょう",
+                "はんしょう"
+              ],
+              "id": 1,
+              "correctAnswer": 2
+            },
+            {
+              "questionNumber": 2,
+              "text": "契約の内容については、こちらの書類をご覧ください。",
+              "textHtml": "契約の内容については、こちらの書類をご覧ください。",
+              "options": [
+                "せいやく",
+                "けいやく",
+                "ようやく",
+                "こうやく"
+              ],
+              "id": 2,
+              "correctAnswer": 2
+            },
+            {
+              "questionNumber": 3,
+              "text": "この国は、昔から貿易によって潤ってきた。",
+              "textHtml": "この国は、昔から貿易によって潤ってきた。",
+              "options": [
+                "もうかって",
+                "まかなって",
+                "おきなって",
+                "うるおって"
+              ],
+              "id": 3,
+              "correctAnswer": 4
+            },
+            {
+              "questionNumber": 4,
+              "text": "警備が⼿薄なところがないか調べた。",
+              "textHtml": "警備が⼿薄なところがないか調べた。",
+              "options": [
+                "しゅはく",
+                "しゅす",
+                "てうす",
+                "てはく"
+              ],
+              "id": 4,
+              "correctAnswer": 3
+            },
+            {
+              "questionNumber": 5,
+              "text": "開発のために古いビルが次々と壊されている。",
+              "textHtml": "開発のために古いビルが次々と壊されている。",
+              "options": [
+                "こわされて",
+                "くずされて",
+                "たおされて",
+                "つぶされて"
+              ],
+              "id": 5,
+              "correctAnswer": 1
+            },
+            {
+              "questionNumber": 6,
+              "text": "オリンピックが華々しく開幕した。",
+              "textHtml": "オリンピックが華々しく開幕した。",
+              "options": [
+                "はなばなしく",
+                "おもおもしく",
+                "ものものしく",
+                "そうぞうしく"
+              ],
+              "id": 6,
+              "correctAnswer": 1
+            },
+            {
+              "questionNumber": 7,
+              "text": "この連載⼩説は全12話で[[blank]]する。",
+              "textHtml": "この連載⼩説は全12話で[[blank]]する。",
+              "options": [
+                "静⽌",
+                "成就",
+                "完結",
+                "終息"
+              ],
+              "id": 7,
+              "correctAnswer": 3
+            },
+            {
+              "questionNumber": 8,
+              "text": "会議で質問に答えられなくて困っていたら、課⻑が[[blank]]してくれた。",
+              "textHtml": "会議で質問に答えられなくて困っていたら、課⻑が[[blank]]してくれた。",
+              "options": [
+                "キープ",
+                "フォロー",
+                "マッチ",
+                "アップ"
+              ],
+              "id": 8,
+              "correctAnswer": 2
+            },
+            {
+              "questionNumber": 9,
+              "text": "この春、とうとう[[blank]]のマイホームを⼿に⼊れた。",
+              "textHtml": "この春、とうとう[[blank]]のマイホームを⼿に⼊れた。",
+              "options": [
+                "切望",
+                "欲望",
+                "念願",
+                "志願"
+              ],
+              "id": 9,
+              "correctAnswer": 3
+            },
+            {
+              "questionNumber": 10,
+              "text": "会議室ではA案に賛成したが、[[blank]]を⾔えばB案の⽚⽅がいいと思う。",
+              "textHtml": "会議室ではA案に賛成したが、[[blank]]を⾔えばB案の⽚⽅がいいと思う。",
+              "options": [
+                "本⾳",
+                "本気",
+                "弱⾳",
+                "弱気"
+              ],
+              "id": 10,
+              "correctAnswer": 1
+            },
+            {
+              "questionNumber": 11,
+              "text": "先⽅に協⼒を依頼したが、[[blank]]断られてしまった。",
+              "textHtml": "先⽅に協⼒を依頼したが、[[blank]]断られてしまった。",
+              "options": [
+                "やんわり",
+                "しんなり",
+                "うんざり",
+                "ひんやり"
+              ],
+              "id": 11,
+              "correctAnswer": 1
+            },
+            {
+              "questionNumber": 12,
+              "text": "[[blank]]ホテルでは全室禁煙です。",
+              "textHtml": "[[blank]]ホテルでは全室禁煙です。",
+              "options": [
+                "⾃",
+                "主",
+                "実",
+                "当"
+              ],
+              "id": 12,
+              "correctAnswer": 4
+            },
+            {
+              "questionNumber": 13,
+              "text": "新しいビジネスを始めるにあたっては、[[blank]]計画を⽴てる必要がある。",
+              "textHtml": "新しいビジネスを始めるにあたっては、[[blank]]計画を⽴てる必要がある。",
+              "options": [
+                "零細な",
+                "綿密な",
+                "濃密な",
+                "繊細な"
+              ],
+              "id": 13,
+              "correctAnswer": 2
+            },
+            {
+              "questionNumber": 14,
+              "text": "彼はお⾦に関してルーズなところがある。",
+              "textHtml": "彼はお⾦に関してルーズなところがある。",
+              "options": [
+                "ずうずうしい",
+                "だらしない",
+                "うるさい",
+                "よわい"
+              ],
+              "id": 14,
+              "correctAnswer": 2
+            },
+            {
+              "questionNumber": 15,
+              "text": "この職場のもかなりなじんできた。",
+              "textHtml": "この職場のもかなりなじんできた。",
+              "options": [
+                "恵まれて",
+                "逆らって",
+                "飽きて",
+                "慣れて"
+              ],
+              "id": 15,
+              "correctAnswer": 4
+            },
+            {
+              "questionNumber": 16,
+              "text": "あの兄弟はいつもお互いに張り合っている。",
+              "textHtml": "あの兄弟はいつもお互いに張り合っている。",
+              "options": [
+                "競争して",
+                "応援して",
+                "無視して",
+                "尊重して"
+              ],
+              "id": 16,
+              "correctAnswer": 1
+            },
+            {
+              "questionNumber": 17,
+              "text": "ある⽇、我が家に朗報が届いた。",
+              "textHtml": "ある⽇、我が家に朗報が届いた。",
+              "options": [
+                "意外な知らせ",
+                "うれしい知らせ",
+                "大切な知らせ",
+                "めずらしい知らせ"
+              ],
+              "id": 17,
+              "correctAnswer": 2
+            },
+            {
+              "questionNumber": 18,
+              "text": "やっとわずらわしい作業から解放された。",
+              "textHtml": "やっとわずらわしい作業から解放された。",
+              "options": [
+                "地味な",
+                "苦手な",
+                "面倒な",
+                "退屈な"
+              ],
+              "id": 18,
+              "correctAnswer": 3
+            },
+            {
+              "questionNumber": 19,
+              "text": "さっき、上司にいやみを⾔われた。",
+              "textHtml": "さっき、上司にいやみを⾔われた。",
+              "options": [
+                "不平",
+                "冗談",
+                "愚痴",
+                "⽪⾁"
+              ],
+              "id": 19,
+              "correctAnswer": 4
+            },
+            {
+              "questionNumber": 20,
+              "text": "密集",
+              "textHtml": "密集",
+              "options": [
+                "この地図は古い住宅が密集している。",
+                "毎週⽔曜⽇に会議のメンバーを密集している。",
+                "このコンサートには世界中から有名な歌⼿が密集している。",
+                "趣味で外国の切⼿を密集している。"
+              ],
+              "id": 20,
+              "correctAnswer": 1
+            },
+            {
+              "questionNumber": 21,
+              "text": "潔い",
+              "textHtml": "潔い",
+              "options": [
+                "間違ったところをしたと思うなら、潔く謝ったほうがいいよ。",
+                "家に帰ったら、潔くなるまでしっかり⼿を洗いましょう。",
+                "裁判で、被告は「じぶんは無実だ、潔い」と主張した。",
+                "資料は配らずに、潔く説明だけですませた。"
+              ],
+              "id": 21,
+              "correctAnswer": 1
+            },
+            {
+              "questionNumber": 22,
+              "text": "発⾜",
+              "textHtml": "発⾜",
+              "options": [
+                "新技術を発⾜したおかげで、他社との勝負に勝てた。",
+                "これから、先⽇発⾜した問題について検討します。",
+                "この団体は先⽉発⾜したばかりです。",
+                "この出版社は、来⽉、新しい週刊誌を発⾜する。"
+              ],
+              "id": 22,
+              "correctAnswer": 3
+            },
+            {
+              "questionNumber": 23,
+              "text": "にぎわう",
+              "textHtml": "にぎわう",
+              "options": [
+                "朝の電⾞は会社にいくサラリーマンでにぎわっている。",
+                "休みの前の⽇の夜は、どこのレストランもにぎわっている。",
+                "この図書館には、いろいろな分野の本がにぎわっている。",
+                "都会の真ん中にあるこの公園は、いつも緑でにぎわっている。"
+              ],
+              "id": 23,
+              "correctAnswer": 2
+            },
+            {
+              "questionNumber": 24,
+              "text": "ひとまず",
+              "textHtml": "ひとまず",
+              "options": [
+                "この機械はひとまず助かすとすぐには⽌められない。",
+                "政府が発表した経済対策は、ひとまずしか効果がなかった。",
+                "ご飯を⾷べてひとまずだってから、薬を飲んでください。",
+                "今⽇の作業はひとまずこれで終わりにしよう。"
+              ],
+              "id": 24,
+              "correctAnswer": 4
+            },
+            {
+              "questionNumber": 25,
+              "text": "満喫",
+              "textHtml": "満喫",
+              "options": [
+                "この⾳楽を聞くと、気持ちがとても満喫する。",
+                "この雑誌には、安いアパートの情報が満喫されている。",
+                "これらの条件を満喫する⼈材を探しています。",
+                "海外旅⾏に⾏って、久しぶりの休暇を満喫した。"
+              ],
+              "id": 25,
+              "correctAnswer": 4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "grammar",
+      "sectionNumber": 5,
+      "groups": [
+        {
+          "instruction": "問題5 文法",
+          "questions": [
+            {
+              "questionNumber": 26,
+              "text": "この美術館の絵を全部⾒ようと思ったら、半⽇[[blank]]⾜りないと思います。",
+              "textHtml": "この美術館の絵を全部⾒ようと思ったら、半⽇[[blank]]⾜りないと思います。",
+              "options": [
+                "にわたって",
+                "にかけて",
+                "までは",
+                "では"
+              ],
+              "id": 26,
+              "correctAnswer": 4
+            },
+            {
+              "questionNumber": 27,
+              "text": "部屋の広さも考えず、店員に進められる[[blank]]、おおきいテーブルをかってしまった。",
+              "textHtml": "部屋の広さも考えず、店員に進められる[[blank]]、おおきいテーブルをかってしまった。",
+              "options": [
+                "まま",
+                "ままを",
+                "ままでも",
+                "ままなのに"
+              ],
+              "id": 27,
+              "correctAnswer": 1
+            },
+            {
+              "questionNumber": 28,
+              "text": "A会社の元社員が11⽇、突然の解雇を不当[[blank]]、解雇取り消しを同社に求める訴えを起こした。",
+              "textHtml": "A会社の元社員が11⽇、突然の解雇を不当[[blank]]、解雇取り消しを同社に求める訴えを起こした。",
+              "options": [
+                "となって",
+                "になって",
+                "として",
+                "にして"
+              ],
+              "id": 28,
+              "correctAnswer": 3
+            },
+            {
+              "questionNumber": 29,
+              "text": "下⽔道⼯事中、ご不便をおかけ致しますが、どうかご理解[[blank]]、よろしくお願い申し上げます。",
+              "textHtml": "下⽔道⼯事中、ご不便をおかけ致しますが、どうかご理解[[blank]]、よろしくお願い申し上げます。",
+              "options": [
+                "いたしたく",
+                "いただきたく",
+                "差し上げたく",
+                "申し上げたく"
+              ],
+              "id": 29,
+              "correctAnswer": 2
+            },
+            {
+              "questionNumber": 30,
+              "text": "間違い電話をかけてきて謝りもしないとは、失礼[[blank]]。",
+              "textHtml": "間違い電話をかけてきて謝りもしないとは、失礼[[blank]]。",
+              "options": [
+                "ではいられない",
+                "でならない",
+                "極まりない",
+                "に越したことはない"
+              ],
+              "id": 30,
+              "correctAnswer": 3
+            },
+            {
+              "questionNumber": 31,
+              "text": "（電話の中で）",
+              "textHtml": "（電話の中で）",
+              "options": [
+                "ほかはないにもかかわらず",
+                "ことがある",
+                "こともある",
+                "はずだ"
+              ],
+              "id": 31,
+              "correctAnswer": 4
+            },
+            {
+              "questionNumber": 32,
+              "text": "今回の事件で⼭⽥⽒の政府的影響⼒がかんぜんに失われる[[blank]]弱まることは間違いないだろう。",
+              "textHtml": "今回の事件で⼭⽥⽒の政府的影響⼒がかんぜんに失われる[[blank]]弱まることは間違いないだろう。",
+              "options": [
+                "ことはないにしても",
+                "ことはないにもかかわらず",
+                "ほかはないにしても",
+                "ほかはないにもかかわらず"
+              ],
+              "id": 32,
+              "correctAnswer": 1
+            },
+            {
+              "questionNumber": 33,
+              "text": "「3歳までの育児は⺟親がすべきだ」という⼈もいるが、⼦育てをするのが⺟親で[[blank]]、必ずしもそうではないと思 う。",
+              "textHtml": "「3歳までの育児は⺟親がすべきだ」という⼈もいるが、⼦育てをするのが⺟親で[[blank]]、必ずしもそうではないと思 う。",
+              "options": [
+                "なくてはならないからといって",
+                "なくしてはならないかというと",
+                "あるわけにはいかないからといって",
+                "あるわけにはいかないかというと"
+              ],
+              "id": 33,
+              "correctAnswer": 2
+            },
+            {
+              "questionNumber": 34,
+              "text": "もう⼆度と恋[[blank]]と固く⼼に誓ったはずだったが、知らず知らずのうちに彼⼥のことが好きになっていた。",
+              "textHtml": "もう⼆度と恋[[blank]]と固く⼼に誓ったはずだったが、知らず知らずのうちに彼⼥のことが好きになっていた。",
+              "options": [
+                "こそするものか",
+                "などするものか",
+                "こそするものなのか",
+                "などするものなのか"
+              ],
+              "id": 34,
+              "correctAnswer": 2
+            },
+            {
+              "questionNumber": 35,
+              "text": "先⽇提出した私の意⾒書は、単に決定に⾄るプロセルの問題点を指摘[[blank]]、決定そのものに反対するものではあり ません。",
+              "textHtml": "先⽇提出した私の意⾒書は、単に決定に⾄るプロセルの問題点を指摘[[blank]]、決定そのものに反対するものではあり ません。",
+              "options": [
+                "しそうになったにすぎず",
+                "しそうになったほどで",
+                "しようとしたにすぎず",
+                "しようとしたほどで"
+              ],
+              "id": 35,
+              "correctAnswer": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "grammar",
+      "sectionNumber": 6,
+      "groups": [
+        {
+          "instruction": "問題6 文の並び替え",
+          "questions": [
+            {
+              "questionNumber": 36,
+              "text": "このレストランは＿＿＿ ＿＿＿ ★ ＿＿＿と評判だ。",
+              "textHtml": "このレストランは＿＿＿ ＿＿＿ ★ ＿＿＿と評判だ。",
+              "options": [
+                "だけあって",
+                "主人が",
+                "魚屋も経営している",
+                "魚料理がおいしい"
+              ],
+              "starOrder": "主人が / 魚屋も経営している / だけあって / 魚料理がおいしい",
+              "id": 36,
+              "correctAnswer": 1
+            },
+            {
+              "questionNumber": 37,
+              "text": "A「申し訳ない。僕が＿＿＿ ＿＿＿ ★ ＿＿＿ことになってしまった。」",
+              "textHtml": "A「申し訳ない。僕が＿＿＿ ＿＿＿ ★ ＿＿＿ことになってしまった。」",
+              "options": [
+                "残業してもらう",
+                "君にまで",
+                "ミスをした",
+                "ばかりに"
+              ],
+              "starOrder": "ミスをした / ばかりに / 君にまで / 残業してもらう",
+              "id": 37,
+              "correctAnswer": 2
+            },
+            {
+              "questionNumber": 38,
+              "text": "そもそもこの情報が、責任者である彼に＿＿＿ ＿＿＿ ★ ＿＿＿と思う。",
+              "textHtml": "そもそもこの情報が、責任者である彼に＿＿＿ ＿＿＿ ★ ＿＿＿と思う。",
+              "options": [
+                "伝わっていない",
+                "おかしい",
+                "こと",
+                "からして"
+              ],
+              "starOrder": "伝わっていない / こと / からして / おかしい",
+              "id": 38,
+              "correctAnswer": 4
+            },
+            {
+              "questionNumber": 39,
+              "text": "アルバイト先の仲間はみんな＿＿＿ ＿＿＿ ★ ＿＿＿話でいつも盛り上がっています。",
+              "textHtml": "アルバイト先の仲間はみんな＿＿＿ ＿＿＿ ★ ＿＿＿話でいつも盛り上がっています。",
+              "options": [
+                "こともあって",
+                "ならではの",
+                "同世代",
+                "年が近い"
+              ],
+              "starOrder": "年が近い / こともあって / 同世代 / ならではの",
+              "id": 39,
+              "correctAnswer": 3
+            },
+            {
+              "questionNumber": 40,
+              "text": "アリ「ああ、確か「わかる」＿＿＿ ＿＿＿ ★ ＿＿＿。」",
+              "textHtml": "アリ「ああ、確か「わかる」＿＿＿ ＿＿＿ ★ ＿＿＿。」",
+              "options": [
+                "ような",
+                "と思う",
+                "という",
+                "意味だった"
+              ],
+              "starOrder": "という / ような / 意味だった / と思う",
+              "id": 40,
+              "correctAnswer": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "grammar",
+      "sectionNumber": 7,
+      "groups": [
+        {
+          "instruction": "問題7 文章の文法",
+          "questions": [
+            {
+              "questionNumber": 41,
+              "text": "[41]",
+              "textHtml": "[41]",
+              "options": [
+                "ところで",
+                "とはいえ",
+                "その結果",
+                "それでも"
+              ],
+              "id": 41,
+              "correctAnswer": 3
+            },
+            {
+              "questionNumber": 42,
+              "text": "[42]",
+              "textHtml": "[42]",
+              "options": [
+                "親しまれることになる",
+                "親しみやすくさえあった",
+                "親しくなるだけのことだ",
+                "親しめるのではなかったか"
+              ],
+              "id": 42,
+              "correctAnswer": 1
+            },
+            {
+              "questionNumber": 43,
+              "text": "[43]",
+              "textHtml": "[43]",
+              "options": [
+                "⼦どもの⽗",
+                "⽗の⼦ども",
+                "このような⼦どもの⽗親",
+                "そういう⽗親の⼦ども"
+              ],
+              "id": 43,
+              "correctAnswer": 4
+            },
+            {
+              "questionNumber": 44,
+              "text": "[44]",
+              "textHtml": "[44]",
+              "options": [
+                "⽗である",
+                "⽗ではない",
+                "⽗だったのだ",
+                "⽗ではないのか"
+              ],
+              "id": 44,
+              "correctAnswer": 2
+            },
+            {
+              "questionNumber": 45,
+              "text": "[45]",
+              "textHtml": "[45]",
+              "options": [
+                "対等",
+                "上下",
+                "他⼈",
+                "家族"
+              ],
+              "id": 45,
+              "correctAnswer": 1,
+              "explanation": "Đáp án 1: 対等. Câu này cần đối chiếu trực tiếp câu hỏi với ý chính hoặc chi tiết tương ứng trong đoạn văn. Ý đúng nằm ở lựa chọn này vì nó giữ đúng trọng tâm của đoạn và không suy rộng ngoài nội dung bài. Các lựa chọn còn lại như 「上下」、「他⼈」、「家族」 thường sai vì thêm ý không có trong bài, đổi chủ thể, đảo quan hệ nguyên nhân-kết quả hoặc chỉ đúng một phần."
+            }
+          ],
+          "passage": "父親の役割が変化していることについての文章。父が文化やルールを伝える役割を果たせなくなっているという内容。"
+        }
+      ]
+    },
+    {
+      "type": "reading",
+      "sectionNumber": 8,
+      "groups": [
+        {
+          "instruction": "2010/7 問題8 短文",
+          "passage": "「コミュニケーション」という言葉はふつう、双方がメッセージを伝え合うこと、あるいは意思を疎通させること、といった意味合いで用いられているが、これはじっさいのコミュニケーションの全体像をとらえてはいない。たとえば、黙して何も語らないこともコミュニケーションの行為であり、また視線の動きやちょっとした仕草だけでも、十分にコミュニケーションは成立する。\n\nネット社会の匿名性は完全に透明人間の心理です。自分がどこにアクセスしているかなど、みんなにわかってしまうなら、やっても面白くないはずです。それだと制限のある普通の社会と同じだから。ネット社会の匿名性というのは、心理的には透明人間の世界なのです。\n\nある会社の年末年始休業案内。2009年12月29日から2010年1月4日まで休業し、休業中もホームページでの問い合わせ・注文は受け付けるが、回答や商品の発送は休業明けとなる。\n\n商品名についての文章。商品名は当たり前すぎても消費者の心を動かさず、踏み込みすぎるとふざけていると思われる。場当たり的なネーミングでは競争に勝てないので、音への感性を磨き、自社製品を愛し育てる意欲を持つことが前提条件だ。",
+          "questions": [
+            {
+              "questionNumber": 46,
+              "text": "コミュニケーションの全体像に最も近いものはどれか。",
+              "textHtml": "コミュニケーションの全体像に最も近いものはどれか。",
+              "options": [
+                "視線や仕草で相⼿と意思を疎通させること",
+                "⾔葉や⾔葉以外の⽅法で思いを伝え合うこと",
+                "黙って何も⾔わないことで思いを伝え合うこと",
+                "⾔葉を使って相⼿と意思を疎通させること"
+              ],
+              "id": 46,
+              "correctAnswer": 2,
+              "explanation": "Đáp án 2: ⾔葉や⾔葉以外の⽅法で思いを伝え合うこと. Câu này cần đối chiếu trực tiếp câu hỏi với ý chính hoặc chi tiết tương ứng trong đoạn văn. Ý đúng nằm ở lựa chọn này vì nó giữ đúng trọng tâm của đoạn và không suy rộng ngoài nội dung bài. Đối chiếu trong bài: 「「コミュニケーション」という言葉はふつう、双方がメッセージを伝え合うこと、あるいは意思を疎通させること、といった意味合いで用いられているが、これはじっさいのコミュニケーションの全体像をとらえてはいない。」. Các lựa chọn còn lại như 「視線や仕草で相⼿と意思を疎通させること」、「黙って何も⾔わないことで思いを伝え合うこと」、「⾔葉を使って相⼿と意思を疎通させること」 thường sai vì thêm ý không có trong bài, đổi chủ thể, đảo quan hệ nguyên nhân-kết quả hoặc chỉ đúng một phần."
+            },
+            {
+              "questionNumber": 47,
+              "text": "筆者が考えるネット上の透明人間の世界とは、どのようなものか。",
+              "textHtml": "筆者が考えるネット上の透明人間の世界とは、どのようなものか。",
+              "options": [
+                "情報の発信者が誰なのかが⾒えてしまう社会",
+                "犯罪を起こしても誰からも気づかれない社会",
+                "どんな情報を発信しても犯罪にならない社会",
+                "誰がどこに接続しているのかわからない社会"
+              ],
+              "id": 47,
+              "correctAnswer": 4,
+              "explanation": "Đáp án 4: 誰がどこに接続しているのかわからない社会. Câu này hỏi tác giả mô tả vấn đề như thế nào, nên cần bám vào câu giải thích trực tiếp trong đoạn. Ý đúng nằm ở lựa chọn này vì nó giữ đúng trọng tâm của đoạn và không suy rộng ngoài nội dung bài. Đối chiếu trong bài: 「「コミュニケーション」という言葉はふつう、双方がメッセージを伝え合うこと、あるいは意思を疎通させること、といった意味合いで用いられているが、これはじっさいのコミュニケーションの全体像をとらえてはいない。」. Các lựa chọn còn lại như 「情報の発信者が誰なのかが⾒えてしまう社会」、「犯罪を起こしても誰からも気づかれない社会」、「どんな情報を発信しても犯罪にならない社会」 thường sai vì thêm ý không có trong bài, đổi chủ thể, đảo quan hệ nguyên nhân-kết quả hoặc chỉ đúng một phần."
+            },
+            {
+              "questionNumber": 48,
+              "text": "この文書の件名として、（　）に入るものはどれか。",
+              "textHtml": "この文書の件名として、[[blank]]に入るものはどれか。",
+              "options": [
+                "回答・発送等の遅れに関するおわび",
+                "休業中のホームページ停⽌のご案内",
+                "年末年始の休業⽇のお知らせ",
+                "問い合わせ先の変更について"
+              ],
+              "id": 48,
+              "correctAnswer": 3,
+              "explanation": "Đáp án 3: 年末年始の休業⽇のお知らせ. Câu này hỏi nội dung được chỉ tới, nên cần quay lại câu ngay trước và sau vị trí đó để xác định phạm vi. Ý đúng nằm ở lựa chọn này vì nó giữ đúng trọng tâm của đoạn và không suy rộng ngoài nội dung bài. Đối chiếu trong bài: 「2009年12月29日から2010年1月4日まで休業し、休業中もホームページでの問い合わせ・注文は受け付けるが、回答や商品の発送は休業明けとなる。」. Các lựa chọn còn lại như 「回答・発送等の遅れに関するおわび」、「休業中のホームページ停⽌のご案内」、「問い合わせ先の変更について」 thường sai vì thêm ý không có trong bài, đổi chủ thể, đảo quan hệ nguyên nhân-kết quả hoặc chỉ đúng một phần."
+            },
+            {
+              "questionNumber": 49,
+              "text": "競争に勝つような商品名にするには、まず何が必要だと述べているか。",
+              "textHtml": "競争に勝つような商品名にするには、まず何が必要だと述べているか。",
+              "options": [
+                "⾳の持つ表情に敏感になり、⾳と味とのバランスに気を配る。",
+                "⾃社のイメージを⼤切に思い、消費者の⾳の好みを考慮する。",
+                "⾳と味への感性を磨き、その商品が持つイメージを考慮する。",
+                "開発した商品への思いを⼤切にし、⾳の持つ響きに気を配る。"
+              ],
+              "id": 49,
+              "correctAnswer": 4,
+              "explanation": "Đáp án 4: 開発した商品への思いを⼤切にし、⾳の持つ響きに気を配る。. Câu này cần đối chiếu trực tiếp câu hỏi với ý chính hoặc chi tiết tương ứng trong đoạn văn. Ý đúng nằm ở lựa chọn này vì nó giữ đúng trọng tâm của đoạn và không suy rộng ngoài nội dung bài. Đối chiếu trong bài: 「「コミュニケーション」という言葉はふつう、双方がメッセージを伝え合うこと、あるいは意思を疎通させること、といった意味合いで用いられているが、これはじっさいのコミュニケーションの全体像をとらえてはいない。」. Các lựa chọn còn lại như 「⾳の持つ表情に敏感になり、⾳と味とのバランスに気を配る。」、「⾃社のイメージを⼤切に思い、消費者の⾳の好みを考慮する。」、「⾳と味への感性を磨き、その商品が持つイメージを考慮する。」 thường sai vì thêm ý không có trong bài, đổi chủ thể, đảo quan hệ nguyên nhân-kết quả hoặc chỉ đúng một phần."
+            }
+          ]
+        },
+        {
+          "instruction": "2010/7 問題9 話上手・ツバメ・消費",
+          "passage": "話をすぐ自分の話にすりかえてしまう人の中にも、不思議と嫌われない人がいる。聞き上手ではないが、話が非常におもしろいからである。筆者は、聞き上手の修業だけでなく、話上手な人の話しぶりを「なぜ上手なのか」と分析する価値があると述べる。\n\nツバメは季節に合わせてすむ場所を変える渡り鳥である。日本が冬の時期は暖かくえさの豊富なオーストラリアや東南アジアで暮らし、繁殖期が近づくと春の日本へ命がけで渡ってくる。気象庁はその年初めてツバメを見た日「ツバメの初見日」を記録し、気象や環境の変化を予測する手がかりとしている。近年、初見日が早まっていることがわかってきた。\n\n「消費」という言葉は、消して費やしてしまうという消極的な印象を持つ。しかし実際には、人は食べ物を食べて自分の身体を生産し、衣服を身につけて生命を守り、他人に与える印象も生産している。筆者は、いわゆる消費は命と生活、次の世代を生産する行為だと述べる。",
+          "questions": [
+            {
+              "questionNumber": 50,
+              "text": "寛容な気持ちになるとあるが、なぜそうなるのか。",
+              "textHtml": "寛容な気持ちになるとあるが、なぜそうなるのか。",
+              "options": [
+                "相⼿の話が⾃分の話よりおもしろくて引きこまれてしまうから",
+                "話を奪ってしまった⼈の態度が堂々としていて魅⼒的だから",
+                "⾃分の代わりに話上⼿な⼈が話をしてくれれば助かるから",
+                "相⼿は確かに話上⼿だけれど、聞き上⼿とは⾔えないから"
+              ],
+              "id": 50,
+              "correctAnswer": 1,
+              "explanation": "Đáp án 1: 相⼿の話が⾃分の話よりおもしろくて引きこまれてしまうから. Câu này hỏi lý do, nên đáp án đúng phải nêu đúng nguyên nhân trong bài, không chỉ nêu kết quả. Ý đúng nằm ở lựa chọn này vì nó giữ đúng trọng tâm của đoạn và không suy rộng ngoài nội dung bài. Đối chiếu trong bài: 「筆者は、聞き上手の修業だけでなく、話上手な人の話しぶりを「なぜ上手なのか」と分析する価値があると述べる。」. Các lựa chọn còn lại như 「話を奪ってしまった⼈の態度が堂々としていて魅⼒的だから」、「⾃分の代わりに話上⼿な⼈が話をしてくれれば助かるから」、「相⼿は確かに話上⼿だけれど、聞き上⼿とは⾔えないから」 thường sai vì thêm ý không có trong bài, đổi chủ thể, đảo quan hệ nguyên nhân-kết quả hoặc chỉ đúng một phần."
+            },
+            {
+              "questionNumber": 51,
+              "text": "話上手になるにはどうすればいいと筆者は述べているか。",
+              "textHtml": "話上手になるにはどうすればいいと筆者は述べているか。",
+              "options": [
+                "話上⼿な⼈になぜ上⼿なのかと尋ねて分析する。",
+                "どんな問題でも⾃分の話にかえられるようにする。",
+                "⼈の真似をしないで。聞き上⼿になるための研究をする。",
+                "話上⼿な⼈をよく観察して、その特徴を⾃分のものにする。"
+              ],
+              "id": 51,
+              "correctAnswer": 4,
+              "explanation": "Đáp án 4: 話上⼿な⼈をよく観察して、その特徴を⾃分のものにする。. Câu này cần đối chiếu trực tiếp câu hỏi với ý chính hoặc chi tiết tương ứng trong đoạn văn. Ý đúng nằm ở lựa chọn này vì nó giữ đúng trọng tâm của đoạn và không suy rộng ngoài nội dung bài. Đối chiếu trong bài: 「筆者は、聞き上手の修業だけでなく、話上手な人の話しぶりを「なぜ上手なのか」と分析する価値があると述べる。」. Các lựa chọn còn lại như 「話上⼿な⼈になぜ上⼿なのかと尋ねて分析する。」、「どんな問題でも⾃分の話にかえられるようにする。」、「⼈の真似をしないで。聞き上⼿になるための研究をする。」 thường sai vì thêm ý không có trong bài, đổi chủ thể, đảo quan hệ nguyên nhân-kết quả hoặc chỉ đúng một phần."
+            },
+            {
+              "questionNumber": 52,
+              "text": "筆者の考えと合っているのはどれか。",
+              "textHtml": "筆者の考えと合っているのはどれか。",
+              "options": [
+                "聞き上⼿になるだけでなく、話上⼿な⼈にも学んでみるとよい。",
+                "聞き上⼿は損をカるをとがあるので、話上⼿になったほうがよい。",
+                "他⼈に嫌われないように、話上⼿より聞き上⼿になったほうがよい。",
+                "聞き上⼿から話上⼿になるには、⾃分の話し⽅を分析してみるとよい。"
+              ],
+              "id": 52,
+              "correctAnswer": 1,
+              "explanation": "Đáp án 1: 聞き上⼿になるだけでなく、話上⼿な⼈にも学んでみるとよい。. Câu này hỏi quan điểm hoặc cách giải thích của tác giả, nên chọn ý phản ánh đúng nhận định trong bài, không chọn ý chỉ là ví dụ phụ. Ý đúng nằm ở lựa chọn này vì nó giữ đúng trọng tâm của đoạn và không suy rộng ngoài nội dung bài. Đối chiếu trong bài: 「筆者は、聞き上手の修業だけでなく、話上手な人の話しぶりを「なぜ上手なのか」と分析する価値があると述べる。」. Các lựa chọn còn lại như 「聞き上⼿は損をカるをとがあるので、話上⼿になったほうがよい。」、「他⼈に嫌われないように、話上⼿より聞き上⼿になったほうがよい。」、「聞き上⼿から話上⼿になるには、⾃分の話し⽅を分析してみるとよい。」 thường sai vì thêm ý không có trong bài, đổi chủ thể, đảo quan hệ nguyên nhân-kết quả hoặc chỉ đúng một phần."
+            },
+            {
+              "questionNumber": 53,
+              "text": "ツバメが日本へ渡ってくるのはなぜか。",
+              "textHtml": "ツバメが日本へ渡ってくるのはなぜか。",
+              "options": [
+                "南半球でひなが育ち、えさとなる昆⾍が不⾜するから",
+                "⽇本が春になる頃、ひなが海を渡れるようになるから",
+                "⽇本が暖かくなるとえさがふえ、⼦育てがしやすいから",
+                "⽇本は冬になっても、他の地域より暖かくえさが豊富だから"
+              ],
+              "id": 53,
+              "correctAnswer": 3,
+              "explanation": "Đáp án 3: ⽇本が暖かくなるとえさがふえ、⼦育てがしやすいから. Câu này hỏi lý do, nên đáp án đúng phải nêu đúng nguyên nhân trong bài, không chỉ nêu kết quả. Ý đúng nằm ở lựa chọn này vì nó giữ đúng trọng tâm của đoạn và không suy rộng ngoài nội dung bài. Đối chiếu trong bài: 「日本が冬の時期は暖かくえさの豊富なオーストラリアや東南アジアで暮らし、繁殖期が近づくと春の日本へ命がけで渡ってくる。」. Các lựa chọn còn lại như 「南半球でひなが育ち、えさとなる昆⾍が不⾜するから」、「⽇本が春になる頃、ひなが海を渡れるようになるから」、「⽇本は冬になっても、他の地域より暖かくえさが豊富だから」 thường sai vì thêm ý không có trong bài, đổi chủ thể, đảo quan hệ nguyên nhân-kết quả hoặc chỉ đúng một phần."
+            },
+            {
+              "questionNumber": 54,
+              "text": "「ツバメの初見日」を記録しているのは何のためか。",
+              "textHtml": "「ツバメの初見日」を記録しているのは何のためか。",
+              "options": [
+                "ツバメの渡りのルートを解明するため",
+                "⽇照時間の短縮の原因を究明するため",
+                "世界の気象や環境の変化を研究するため",
+                "観察者や研究者に気象情報を提供するたの"
+              ],
+              "id": 54,
+              "correctAnswer": 3,
+              "explanation": "Đáp án 3: 世界の気象や環境の変化を研究するため. Câu này cần đối chiếu trực tiếp câu hỏi với ý chính hoặc chi tiết tương ứng trong đoạn văn. Ý đúng nằm ở lựa chọn này vì nó giữ đúng trọng tâm của đoạn và không suy rộng ngoài nội dung bài. Đối chiếu trong bài: 「気象庁はその年初めてツバメを見た日「ツバメの初見日」を記録し、気象や環境の変化を予測する手がかりとしている。」. Các lựa chọn còn lại như 「ツバメの渡りのルートを解明するため」、「⽇照時間の短縮の原因を究明するため」、「観察者や研究者に気象情報を提供するたの」 thường sai vì thêm ý không có trong bài, đổi chủ thể, đảo quan hệ nguyên nhân-kết quả hoặc chỉ đúng một phần."
+            },
+            {
+              "questionNumber": 55,
+              "text": "「ツバメの初見日」と日照時間の関係について正しいものはどれか。",
+              "textHtml": "「ツバメの初見日」と日照時間の関係について正しいものはどれか。",
+              "options": [
+                "南半球などで⽇照時間に変化がおきてツバメの渡りが早まっているのだろう。",
+                "温暖化で⽇本の⽇照時間が⻑くなり、ツバメの渡りが遅れてきているようだ。",
+                "ツバメは毎年⽇照時間と関係なく渡りを始めるようになったのかもしれない。",
+                "⽇本の⽇照時間にくるいがでたために、ツバメが早く渡ってくるようになった。"
+              ],
+              "id": 55,
+              "correctAnswer": 1,
+              "explanation": "Đáp án 1: 南半球などで⽇照時間に変化がおきてツバメの渡りが早まっているのだろう。. Câu này cần đối chiếu trực tiếp câu hỏi với ý chính hoặc chi tiết tương ứng trong đoạn văn. Ý đúng nằm ở lựa chọn này vì nó giữ đúng trọng tâm của đoạn và không suy rộng ngoài nội dung bài. Đối chiếu trong bài: 「気象庁はその年初めてツバメを見た日「ツバメの初見日」を記録し、気象や環境の変化を予測する手がかりとしている。」. Các lựa chọn còn lại như 「温暖化で⽇本の⽇照時間が⻑くなり、ツバメの渡りが遅れてきているようだ。」、「ツバメは毎年⽇照時間と関係なく渡りを始めるようになったのかもしれない。」、「⽇本の⽇照時間にくるいがでたために、ツバメが早く渡ってくるようになった。」 thường sai vì thêm ý không có trong bài, đổi chủ thể, đảo quan hệ nguyên nhân-kết quả hoặc chỉ đúng một phần."
+            },
+            {
+              "questionNumber": 56,
+              "text": "行為の中身からひどくズレていますとあるが、筆者は行為の中身をどのように説明しているか。",
+              "textHtml": "行為の中身からひどくズレていますとあるが、筆者は行為の中身をどのように説明しているか。",
+              "options": [
+                "⽣産者の⽴場に⽴って経済を⽀えること",
+                "ものを使うことで、何かをつくり出すこと",
+                "⽣産的な活勤に従事し⼀⽇を終えること",
+                "ものを使って、その形を消してしまうこと"
+              ],
+              "id": 56,
+              "correctAnswer": 2,
+              "explanation": "Đáp án 2: ものを使うことで、何かをつくり出すこと. Câu này cần đối chiếu trực tiếp câu hỏi với ý chính hoặc chi tiết tương ứng trong đoạn văn. Ý đúng nằm ở lựa chọn này vì nó giữ đúng trọng tâm của đoạn và không suy rộng ngoài nội dung bài. Đối chiếu trong bài: 「しかし実際には、人は食べ物を食べて自分の身体を生産し、衣服を身につけて生命を守り、他人に与える印象も生産している。」. Các lựa chọn còn lại như 「⽣産者の⽴場に⽴って経済を⽀えること」、「⽣産的な活勤に従事し⼀⽇を終えること」、「ものを使って、その形を消してしまうこと」 thường sai vì thêm ý không có trong bài, đổi chủ thể, đảo quan hệ nguyên nhân-kết quả hoặc chỉ đúng một phần."
+            },
+            {
+              "questionNumber": 57,
+              "text": "筆者は衣服にどのような役割があると述べているか。",
+              "textHtml": "筆者は衣服にどのような役割があると述べているか。",
+              "options": [
+                "体温を⼀定に保つだけでなく、着る⼈に満⾜感をあたえる。",
+                "次々に新たな流⾏を⽣み出し、⼈々の消費⾏動を促進する。",
+                "着るの⼈柄充実や個性を引き出すことで、⽣活をよりさせる。",
+                "⽣命を守るだけでなく、他者に対する⾃分のイメージを創造する。"
+              ],
+              "id": 57,
+              "correctAnswer": 4,
+              "explanation": "Đáp án 4: ⽣命を守るだけでなく、他者に対する⾃分のイメージを創造する。. Câu này cần đối chiếu trực tiếp câu hỏi với ý chính hoặc chi tiết tương ứng trong đoạn văn. Ý đúng nằm ở lựa chọn này vì nó giữ đúng trọng tâm của đoạn và không suy rộng ngoài nội dung bài. Đối chiếu trong bài: 「筆者は、聞き上手の修業だけでなく、話上手な人の話しぶりを「なぜ上手なのか」と分析する価値があると述べる。」. Các lựa chọn còn lại như 「体温を⼀定に保つだけでなく、着る⼈に満⾜感をあたえる。」、「次々に新たな流⾏を⽣み出し、⼈々の消費⾏動を促進する。」、「着るの⼈柄充実や個性を引き出すことで、⽣活をよりさせる。」 thường sai vì thêm ý không có trong bài, đổi chủ thể, đảo quan hệ nguyên nhân-kết quả hoặc chỉ đúng một phần."
+            },
+            {
+              "questionNumber": 58,
+              "text": "筆者が消費という言葉を不適切と考えているのはなぜか。",
+              "textHtml": "筆者が消費という言葉を不適切と考えているのはなぜか。",
+              "options": [
+                "言葉のイメージが一般的な用い方と合わないから",
+                "生産との対立が十分に示されていない言い方だから",
+                "物を使って無くす行為を消極的に示した言い方だから",
+                "言葉のイメージがその行為の実態を示していないから"
+              ],
+              "id": 58,
+              "correctAnswer": 4,
+              "explanation": "Đáp án 4: 言葉のイメージがその行為の実態を示していないから. Câu này hỏi lý do, nên đáp án đúng phải nêu đúng nguyên nhân trong bài, không chỉ nêu kết quả. Ý đúng nằm ở lựa chọn này vì nó giữ đúng trọng tâm của đoạn và không suy rộng ngoài nội dung bài. Đối chiếu trong bài: 「気象庁はその年初めてツバメを見た日「ツバメの初見日」を記録し、気象や環境の変化を予測する手がかりとしている。」. Các lựa chọn còn lại như 「言葉のイメージが一般的な用い方と合わないから」、「生産との対立が十分に示されていない言い方だから」、「物を使って無くす行為を消極的に示した言い方だから」 thường sai vì thêm ý không có trong bài, đổi chủ thể, đảo quan hệ nguyên nhân-kết quả hoặc chỉ đúng một phần."
+            }
+          ]
+        },
+        {
+          "instruction": "2010/7 問題10 心理学と感情",
+          "passage": "心理学は昔から心を研究してきたが、肝心の感情についてはまだよくわかっていない。現代の心理学が得意なのは、感覚や知覚、認知と呼ばれる働きについてであり、それらと感情を一体化した心のプロセスが、私たちの全体的な「生」の体験なのかもしれない。\n\nロボット工学では、人間のように見たり、聞いたり、歩いたり、話したりする精巧なロボットが作られている。しかし、うれしそうな表情やしっぽを振る仕草は表面的な動作のまねであり、感情の働きによるものではない。複雑な心の働きの中でも感情機能を解明し再現するのは難しい。\n\n感情は私たちの体験を豊かに支え、何かを選んだり、しようとしたりする行動を駆り立てる動因にもなる。好き嫌いを論理だけで説明するのは難しいが、実際の行動には感情が深く関わっている。",
+          "questions": [
+            {
+              "questionNumber": 59,
+              "text": "①不思議に思われるとあるが、人々は何を不思議に思うのか。",
+              "textHtml": "①不思議に思われるとあるが、人々は何を不思議に思うのか。",
+              "options": [
+                "⼼理学では感情機能についてまだ⼗分わかっていないこと",
+                "⼼理学では認知と感情の関係がまだ解明されていないこと",
+                "⼼理学は感情の働きを研究するのが得意だということ",
+                "⼼理学が昔から⼼について研究してきたということ"
+              ],
+              "id": 59,
+              "correctAnswer": 1,
+              "explanation": "Đáp án 1: ⼼理学では感情機能についてまだ⼗分わかっていないこと. Câu này cần đối chiếu trực tiếp câu hỏi với ý chính hoặc chi tiết tương ứng trong đoạn văn. Ý đúng nằm ở lựa chọn này vì nó giữ đúng trọng tâm của đoạn và không suy rộng ngoài nội dung bài. Đối chiếu trong bài: 「現代の心理学が得意なのは、感覚や知覚、認知と呼ばれる働きについてであり、それらと感情を一体化した心のプロセスが、私たちの全体的な「生」の体験なのかもしれない。」. Các lựa chọn còn lại như 「⼼理学では認知と感情の関係がまだ解明されていないこと」、「⼼理学は感情の働きを研究するのが得意だということ」、「⼼理学が昔から⼼について研究してきたということ」 thường sai vì thêm ý không có trong bài, đổi chủ thể, đảo quan hệ nguyên nhân-kết quả hoặc chỉ đúng một phần."
+            },
+            {
+              "questionNumber": 60,
+              "text": "筆者の言う②全体的な「生」の体験とは何か。",
+              "textHtml": "筆者の言う②全体的な「生」の体験とは何か。",
+              "options": [
+                "⼼で感じとったことを、そのまま⾏動に移すような体験",
+                "⾝の回りの世界を⽬や⽿で認識して考え、⼼で感じる体験",
+                "どのように周囲を⾒たり聴いたりして考えるかという体験",
+                "感覚や知覚で周囲の世界のものごとをとらえようとする体験"
+              ],
+              "id": 60,
+              "correctAnswer": 2,
+              "explanation": "Đáp án 2: ⾝の回りの世界を⽬や⽿で認識して考え、⼼で感じる体験. Câu này hỏi nội dung được chỉ tới, nên cần quay lại câu ngay trước và sau vị trí đó để xác định phạm vi. Ý đúng nằm ở lựa chọn này vì nó giữ đúng trọng tâm của đoạn và không suy rộng ngoài nội dung bài. Đối chiếu trong bài: 「現代の心理学が得意なのは、感覚や知覚、認知と呼ばれる働きについてであり、それらと感情を一体化した心のプロセスが、私たちの全体的な「生」の体験なのかもしれない。」. Các lựa chọn còn lại như 「⼼で感じとったことを、そのまま⾏動に移すような体験」、「どのように周囲を⾒たり聴いたりして考えるかという体験」、「感覚や知覚で周囲の世界のものごとをとらえようとする体験」 thường sai vì thêm ý không có trong bài, đổi chủ thể, đảo quan hệ nguyên nhân-kết quả hoặc chỉ đúng một phần."
+            },
+            {
+              "questionNumber": 61,
+              "text": "この文章では、ロボットを取り上げて何を説明しているか。",
+              "textHtml": "この文章では、ロボットを取り上げて何を説明しているか。",
+              "options": [
+                "ロボットの感情のメカニズムの複雑さ",
+                "最近のロボット工学の進歩のめざましさ",
+                "人間の動作や表情を再現することの難しさ",
+                "人間の感情の働きを解明することの難しさ"
+              ],
+              "id": 61,
+              "correctAnswer": 4,
+              "explanation": "Đáp án 4: 人間の感情の働きを解明することの難しさ. Câu này hỏi nội dung được chỉ tới, nên cần quay lại câu ngay trước và sau vị trí đó để xác định phạm vi. Ý đúng nằm ở lựa chọn này vì nó giữ đúng trọng tâm của đoạn và không suy rộng ngoài nội dung bài. Đối chiếu trong bài: 「現代の心理学が得意なのは、感覚や知覚、認知と呼ばれる働きについてであり、それらと感情を一体化した心のプロセスが、私たちの全体的な「生」の体験なのかもしれない。」. Các lựa chọn còn lại như 「ロボットの感情のメカニズムの複雑さ」、「最近のロボット工学の進歩のめざましさ」、「人間の動作や表情を再現することの難しさ」 thường sai vì thêm ý không có trong bài, đổi chủ thể, đảo quan hệ nguyên nhân-kết quả hoặc chỉ đúng một phần."
+            },
+            {
+              "questionNumber": 62,
+              "text": "筆者の述べている感情の働きをまとめる場合、（　）に入るものとして適切なのはどれか。",
+              "textHtml": "筆者の述べている感情の働きをまとめる場合、[[blank]]に入るものとして適切なのはどれか。",
+              "options": [
+                "何かをしたいと思い⾏動を起こす",
+                "ものごとを感覚でとらえようとする",
+                "相⼿の⼼を分析して理解しようとする",
+                "好き嫌いを論理的に考え判断する"
+              ],
+              "id": 62,
+              "correctAnswer": 1,
+              "explanation": "Đáp án 1: 何かをしたいと思い⾏動を起こす. Câu này cần đối chiếu trực tiếp câu hỏi với ý chính hoặc chi tiết tương ứng trong đoạn văn. Ý đúng nằm ở lựa chọn này vì nó giữ đúng trọng tâm của đoạn và không suy rộng ngoài nội dung bài. Đối chiếu trong bài: 「現代の心理学が得意なのは、感覚や知覚、認知と呼ばれる働きについてであり、それらと感情を一体化した心のプロセスが、私たちの全体的な「生」の体験なのかもしれない。」. Các lựa chọn còn lại như 「ものごとを感覚でとらえようとする」、「相⼿の⼼を分析して理解しようとする」、「好き嫌いを論理的に考え判断する」 thường sai vì thêm ý không có trong bài, đổi chủ thể, đảo quan hệ nguyên nhân-kết quả hoặc chỉ đúng một phần."
+            }
+          ]
+        },
+        {
+          "instruction": "2010/7 問題11 学歴について A/B",
+          "passage": "A: しっかりした人生を歩むには、やはり「学歴」が必要だと述べる。学歴などいらない、ほどほどでいいという考えは中途半端できれいごとに思える。親ならば、子どもが一生食べるのに困らない「生きる力」を付けさせるべきであり、その最良の方法が学歴を付けさせることだという考えは今も変わらない。\n\nB: 学歴とは何なのか、と疑問を投げかける。会社は実力で勝負しなければならないのに、入社前に教育を受けた「場所」で評価されるのは納得がいかない。教育の質ならまだわかるが、学校名という「場所」がその人の看板として通用し続けるのは奇妙だと述べる。",
+          "questions": [
+            {
+              "questionNumber": 63,
+              "text": "AとBの認識で共通しているのは何か。",
+              "textHtml": "AとBの認識で共通しているのは何か。",
+              "options": [
+                "学歴の重要性は否定できない",
+                "学歴による区別は実在する。",
+                "学歴よりも実⼒が重要だ。",
+                "学歴は実在と関係がある。"
+              ],
+              "id": 63,
+              "correctAnswer": 2,
+              "explanation": "Đáp án 2: 学歴による区別は実在する。. Câu này là dạng so sánh/tổng hợp A-B, nên đáp án đúng phải khớp với cả hai văn bản. Ý đúng nằm ở lựa chọn này vì nó giữ đúng trọng tâm của đoạn và không suy rộng ngoài nội dung bài. Đối chiếu trong bài: 「親ならば、子どもが一生食べるのに困らない「生きる力」を付けさせるべきであり、その最良の方法が学歴を付けさせることだという考えは今も変わらない。」. Các lựa chọn còn lại như 「学歴の重要性は否定できない」、「学歴よりも実⼒が重要だ。」、「学歴は実在と関係がある。」 thường sai vì thêm ý không có trong bài, đổi chủ thể, đảo quan hệ nguyên nhân-kết quả hoặc chỉ đúng một phần."
+            },
+            {
+              "questionNumber": 64,
+              "text": "学歴や学校教育について、Bが批判しているのはどのようなことか。",
+              "textHtml": "学歴や学校教育について、Bが批判しているのはどのようなことか。",
+              "options": [
+                "実際の社会では学歴は関係なく、何でもできる⼈が⾼く評価されること",
+                "社会⼈になってからも、どこで学校教育を受けたかが重要視されること",
+                "実際の社会で必要とされる実⼒が、学校教育では養成されていないこと",
+                "社会的には学歴が重視されているのに、企業ではそれが通⽤しないこと"
+              ],
+              "id": 64,
+              "correctAnswer": 2,
+              "explanation": "Đáp án 2: 社会⼈になってからも、どこで学校教育を受けたかが重要視されること. Câu này cần đối chiếu trực tiếp câu hỏi với ý chính hoặc chi tiết tương ứng trong đoạn văn. Ý đúng nằm ở lựa chọn này vì nó giữ đúng trọng tâm của đoạn và không suy rộng ngoài nội dung bài. Đối chiếu trong bài: 「親ならば、子どもが一生食べるのに困らない「生きる力」を付けさせるべきであり、その最良の方法が学歴を付けさせることだという考えは今も変わらない。」. Các lựa chọn còn lại như 「実際の社会では学歴は関係なく、何でもできる⼈が⾼く評価されること」、「実際の社会で必要とされる実⼒が、学校教育では養成されていないこと」、「社会的には学歴が重視されているのに、企業ではそれが通⽤しないこと」 thường sai vì thêm ý không có trong bài, đổi chủ thể, đảo quan hệ nguyên nhân-kết quả hoặc chỉ đúng một phần."
+            },
+            {
+              "id": 65,
+              "questionNumber": 65,
+              "text": "AとBの二つの文章をまとめる場合、①と②に入るものの組み合わせとして適切なのはどれか。",
+              "textHtml": "AとBの二つの文章をまとめる場合、①と②に入るものの組み合わせとして適切なのはどれか。",
+              "options": [
+                "①学歴が高ければ高いほどよい / ②社員が多くなれば学歴という区分も大切だ",
+                "①学歴を得るために苦労が必要だ / ②社員で競争に勝つには学歴は通用しない",
+                "①学歴は生きていくのに必要なものだ / ②会社は社員の学歴より実力を重視するべきだ",
+                "①子供に学歴を付けさせるのは親の役目だ / ②会社は専門の知識と学歴の両方が必要だ"
+              ],
+              "correctAnswer": 3,
+              "explanation": "Đáp án 3: ①学歴は生きていくのに必要なものだ / ②会社は社員の学歴より実力を重視するべきだ. Câu này là dạng so sánh/tổng hợp A-B, nên đáp án đúng phải khớp với cả hai văn bản. Ý đúng nằm ở lựa chọn này vì nó giữ đúng trọng tâm của đoạn và không suy rộng ngoài nội dung bài. Đối chiếu trong bài: 「親ならば、子どもが一生食べるのに困らない「生きる力」を付けさせるべきであり、その最良の方法が学歴を付けさせることだという考えは今も変わらない。」. Các lựa chọn còn lại như 「①学歴が高ければ高いほどよい / ②社員が多くなれば学歴という区分も大切だ」、「①学歴を得るために苦労が必要だ / ②社員で競争に勝つには学歴は通用しない」、「①子供に学歴を付けさせるのは親の役目だ / ②会社は専門の知識と学歴の両方が必要だ」 thường sai vì thêm ý không có trong bài, đổi chủ thể, đảo quan hệ nguyên nhân-kết quả hoặc chỉ đúng một phần."
+            }
+          ]
+        },
+        {
+          "instruction": "2010/7 問題12 外的報酬と内的報酬",
+          "passage": "給与には外的報酬と内的報酬がある。外的報酬とは給与やインセンティブなど、お金として受け取れるもの。内的報酬とは、給与額には表れないが、その仕事を通して得られる満足の報酬である。\n\n筆者は、外的報酬よりも内的報酬を増やすことを心がけてきた。達成感や成長感こそ仕事の原動力であり、他人からの評価にとらわれすぎるのは得策ではない。外的報酬が高くても内的報酬が低い仕事は長く続かない。内的報酬の高い仕事なら将来大きな報酬に変わる可能性もある。友人は編集部でのアルバイトを通じて技術や人脈を培い、後にフリーとして高い報酬を得るようになった。",
+          "questions": [
+            {
+              "questionNumber": 66,
+              "text": "外的報酬と内的報酬の説明として本文と合っているものはどれか。",
+              "textHtml": "外的報酬と内的報酬の説明として本文と合っているものはどれか。",
+              "options": [
+                "外的報酬は仕事の幅を広げるのに必要なものであり、内的報酬は会社から評価され給与として得られるもの",
+                "外的報酬は将来の自分のために必要なものであり、内的報酬は自分の努力では得られないもの",
+                "外的報酬は給与として得られるものであり、内的報酬は長期的には満足感が得られないもの",
+                "外的報酬は他人から評価され得られるものであり、内的報酬は仕事を長く続けるために必要なもの"
+              ],
+              "id": 66,
+              "correctAnswer": 4,
+              "explanation": "Đáp án 4: 外的報酬は他人から評価され得られるものであり、内的報酬は仕事を長く続けるために必要なもの. Câu này cần đối chiếu trực tiếp câu hỏi với ý chính hoặc chi tiết tương ứng trong đoạn văn. Ý đúng nằm ở lựa chọn này vì nó giữ đúng trọng tâm của đoạn và không suy rộng ngoài nội dung bài. Đối chiếu trong bài: 「内的報酬とは、給与額には表れないが、その仕事を通して得られる満足の報酬である。」. Các lựa chọn còn lại như 「外的報酬は仕事の幅を広げるのに必要なものであり、内的報酬は会社から評価され給与として得られるもの」、「外的報酬は将来の自分のために必要なものであり、内的報酬は自分の努力では得られないもの」、「外的報酬は給与として得られるものであり、内的報酬は長期的には満足感が得られないもの」 thường sai vì thêm ý không có trong bài, đổi chủ thể, đảo quan hệ nguyên nhân-kết quả hoặc chỉ đúng một phần."
+            },
+            {
+              "questionNumber": 67,
+              "text": "①「そこで得たお金」とあるが、「そこ」とは何を指しているか。",
+              "textHtml": "①「そこで得たお金」とあるが、「そこ」とは何を指しているか。",
+              "options": [
+                "報酬の低い仕事",
+                "やりがいのある仕事",
+                "内容に釣り合わない仕事",
+                "心の満足感を伴わない仕事"
+              ],
+              "id": 67,
+              "correctAnswer": 4,
+              "explanation": "Đáp án 4: 心の満足感を伴わない仕事. Câu này hỏi nội dung được chỉ tới, nên cần quay lại câu ngay trước và sau vị trí đó để xác định phạm vi. Ý đúng nằm ở lựa chọn này vì nó giữ đúng trọng tâm của đoạn và không suy rộng ngoài nội dung bài. Đối chiếu trong bài: 「内的報酬とは、給与額には表れないが、その仕事を通して得られる満足の報酬である。」. Các lựa chọn còn lại như 「報酬の低い仕事」、「やりがいのある仕事」、「内容に釣り合わない仕事」 thường sai vì thêm ý không có trong bài, đổi chủ thể, đảo quan hệ nguyên nhân-kết quả hoặc chỉ đúng một phần."
+            },
+            {
+              "questionNumber": 68,
+              "text": "②まさに内的報酬が外的報酬へと実を結んでいったとあるが、どういうことか。",
+              "textHtml": "②まさに内的報酬が外的報酬へと実を結んでいったとあるが、どういうことか。",
+              "options": [
+                "仕事に慣れて早く⽚づけられるようになり、同僚同じ⾦額の収⼊を得た。",
+                "ボーナスも退職⾦もないが、同じ会社で仕事を続けた結果、収⼊が増えた。",
+                "成⻑感や達成感を得るために働いてきたこどが、滈い収⼊につながった。",
+                "10年間アルバイトを続けて、正社員と向ヒ収⼊を得られるようになった。"
+              ],
+              "id": 68,
+              "correctAnswer": 3,
+              "explanation": "Đáp án 3: 成⻑感や達成感を得るために働いてきたこどが、滈い収⼊につながった。. Câu này cần đối chiếu trực tiếp câu hỏi với ý chính hoặc chi tiết tương ứng trong đoạn văn. Ý đúng nằm ở lựa chọn này vì nó giữ đúng trọng tâm của đoạn và không suy rộng ngoài nội dung bài. Đối chiếu trong bài: 「友人は編集部でのアルバイトを通じて技術や人脈を培い、後にフリーとして高い報酬を得るようになった。」. Các lựa chọn còn lại như 「仕事に慣れて早く⽚づけられるようになり、同僚同じ⾦額の収⼊を得た。」、「ボーナスも退職⾦もないが、同じ会社で仕事を続けた結果、収⼊が増えた。」、「10年間アルバイトを続けて、正社員と向ヒ収⼊を得られるようになった。」 thường sai vì thêm ý không có trong bài, đổi chủ thể, đảo quan hệ nguyên nhân-kết quả hoặc chỉ đúng một phần."
+            },
+            {
+              "questionNumber": 69,
+              "text": "この文章で筆者が最も言いたいことはどれか。",
+              "textHtml": "この文章で筆者が最も言いたいことはどれか。",
+              "options": [
+                "⼈脈や仕事の幅を広げて⾼い収⼊を得るにとができれば、それが仕事の原動⼒になる。",
+                "すぐに⾼い収⼊に結びつかなくても、⼼の満⾜感を重視して仕事を続けることが⼤切だ。",
+                "⼤きな収⼊を得たいと考えるなら、アルバイトを続け⾼い技術や⼈脈を得ることが⼤切だ。",
+                "⾒えないところで努⼒して仕事をすれば、他⼈が⾼く評価してくれ、いつか収⼊も⾼くなる。"
+              ],
+              "id": 69,
+              "correctAnswer": 2,
+              "explanation": "Đáp án 2: すぐに⾼い収⼊に結びつかなくても、⼼の満⾜感を重視して仕事を続けることが⼤切だ。. Câu này hỏi kết luận/chủ trương chính của tác giả, nên phải ưu tiên câu kết luận và mạch lập luận toàn đoạn. Ý đúng nằm ở lựa chọn này vì nó giữ đúng trọng tâm của đoạn và không suy rộng ngoài nội dung bài. Đối chiếu trong bài: 「達成感や成長感こそ仕事の原動力であり、他人からの評価にとらわれすぎるのは得策ではない。」. Các lựa chọn còn lại như 「⼈脈や仕事の幅を広げて⾼い収⼊を得るにとができれば、それが仕事の原動⼒になる。」、「⼤きな収⼊を得たいと考えるなら、アルバイトを続け⾼い技術や⼈脈を得ることが⼤切だ。」、「⾒えないところで努⼒して仕事をすれば、他⼈が⾼く評価してくれ、いつか収⼊も⾼くなる。」 thường sai vì thêm ý không có trong bài, đổi chủ thể, đảo quan hệ nguyên nhân-kết quả hoặc chỉ đúng một phần."
+            }
+          ]
+        },
+        {
+          "instruction": "2010/7 問題13 清森市 秋の美術コンクール",
+          "passage": "清森市 秋の美術コンクール作品募集。部門は絵画部門と写真部門。募集期間は2010年11月1日から11月30日。応募規定は、清森市内の秋を題材にしたもの。絵画部門はイラスト・水彩画・油絵のいずれも可。写真部門はフィルム写真・デジタル写真のいずれも可。応募作品は各部門一人一点までで、制作年は問わないが未発表作品に限る。他コンクール入賞作や出版物・展示会で公表済みの作品は不可。\n\n応募は郵送または持参。指定の応募用紙を作品裏側に添付する。審査結果は清森市ホームページ上に1月15日に発表し、入賞者には1月中に結果を郵送する。電話および窓口での問い合わせには応じない。",
+          "questions": [
+            {
+              "questionNumber": 70,
+              "text": "高木さんが制作した以下の作品のうち、応募できるものはどれか。",
+              "textHtml": "高木さんが制作した以下の作品のうち、応募できるものはどれか。",
+              "options": [
+                "清森⾼校に通っていたとき⼊賞した秋の⾵景画",
+                "清森市にある清森温泉の紅葉の油絵とイラスト",
+                "清森市にある情森公園で撮った春の⽊々の写真",
+                "去年清森市で⾏われた秋祭りの写真と⽔彩画"
+              ],
+              "id": 70,
+              "correctAnswer": 4,
+              "explanation": "Đáp án 4: 去年清森市で⾏われた秋祭りの写真と⽔彩画. Câu này cần đối chiếu trực tiếp câu hỏi với ý chính hoặc chi tiết tương ứng trong đoạn văn. Ý đúng nằm ở lựa chọn này vì nó giữ đúng trọng tâm của đoạn và không suy rộng ngoài nội dung bài. Đối chiếu trong bài: 「応募規定は、清森市内の秋を題材にしたもの。」. Các lựa chọn còn lại như 「清森⾼校に通っていたとき⼊賞した秋の⾵景画」、「清森市にある清森温泉の紅葉の油絵とイラスト」、「清森市にある情森公園で撮った春の⽊々の写真」 thường sai vì thêm ý không có trong bài, đổi chủ thể, đảo quan hệ nguyên nhân-kết quả hoặc chỉ đúng một phần."
+            },
+            {
+              "questionNumber": 71,
+              "text": "入賞したかどうかを知るには、高木さんはどうしたらよいか。",
+              "textHtml": "入賞したかどうかを知るには、高木さんはどうしたらよいか。",
+              "options": [
+                "1⽉中旬に清森市のホームページを⾒る。",
+                "1⽉中旬に直接、観光係に電話して聞く。",
+                "2⽉下旬に市役所の窓⼝に問い合わせる。",
+                "2⽉下旬に届く予定の通知を待つ。"
+              ],
+              "id": 71,
+              "correctAnswer": 1,
+              "explanation": "Đáp án 1: 1⽉中旬に清森市のホームページを⾒る。. Câu này cần đối chiếu trực tiếp câu hỏi với ý chính hoặc chi tiết tương ứng trong đoạn văn. Ý đúng nằm ở lựa chọn này vì nó giữ đúng trọng tâm của đoạn và không suy rộng ngoài nội dung bài. Đối chiếu trong bài: 「審査結果は清森市ホームページ上に1月15日に発表し、入賞者には1月中に結果を郵送する。」. Các lựa chọn còn lại như 「1⽉中旬に直接、観光係に電話して聞く。」、「2⽉下旬に市役所の窓⼝に問い合わせる。」、「2⽉下旬に届く予定の通知を待つ。」 thường sai vì thêm ý không có trong bài, đổi chủ thể, đảo quan hệ nguyên nhân-kết quả hoặc chỉ đúng một phần."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "totalQuestions": 71
+}
