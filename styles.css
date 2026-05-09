@@ -348,8 +348,8 @@ h1 {
 
 .folder-card {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 6px 14px;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 6px;
   align-items: center;
 }
 

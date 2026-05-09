@@ -1149,6 +1149,7 @@ const exam202412Questions = [
 ];
 
 const remoteExams = [
+  { path: "exam-202512.json", id: "exam-2025-12", title: "2025 tháng 12" },
   { path: "exam-202407.json", id: "exam-2024-07", title: "2024 tháng 7" },
   { path: "exam-202312.json", id: "exam-2023-12", title: "2023 tháng 12" },
   { path: "exam-202307.json", id: "exam-2023-07", title: "2023 tháng 7" },
@@ -1180,6 +1181,7 @@ const remoteExams = [
 ];
 
 const examFolders = [
+  { id: "exam-2025-12", title: "2025 tháng 12", subtitle: "Đề JLPT N1 - 文字・語彙, 文法, 読解" },
   { id: "exam-2025-07", title: "2025 tháng 7", subtitle: "Đề JLPT N1 - 文字・語彙, 文法, 読解" },
   { id: "exam-2024-12", title: "2024 tháng 12", subtitle: "Đề JLPT N1 - 文字・語彙, 文法, 読解" },
   { id: "exam-2024-07", title: "2024 tháng 7", subtitle: "Đề JLPT N1 - 文字・語彙, 文法, 読解" },
@@ -1236,11 +1238,13 @@ const feedback = document.querySelector("#feedback");
 const questionJump = document.querySelector("#questionJump");
 const nextButton = document.querySelector("#nextQuestion");
 const prevButton = document.querySelector("#prevQuestion");
+const backToFoldersButton = document.querySelector("#backToFolders");
 const filters = document.querySelectorAll(".filter");
 const deckGrid = document.querySelector("#deckGrid");
 const quizShell = document.querySelector(".quiz-shell");
 
 const kanjiTargets = {
+  "exam-2025-12": ["頑丈", "潜んで", "行政", "卓越", "芳しくない", "管轄"],
   "exam-2025-07": ["余暇", "鈍い", "検閲", "崇高", "裁く", "胸中"],
   "exam-2024-12": ["絶叫", "背後", "抱負", "侮って", "筋道", "奔放"],
   "exam-2024-07": ["腐敗", "粗い", "粘膜", "寿命", "戒める", "誓約書"],
@@ -1511,6 +1515,152 @@ const supplementalVocabAnswerDetails = [
 
 supplementalVocabAnswers.push(...supplementalVocabAnswerDetails);
 
+const supplementalSynonymAnswerMeanings = [
+  ["慣れて", "なれて", "quen, đã quen"],
+  ["競争して", "きょうそうして", "cạnh tranh, ganh đua"],
+  ["うれしい知らせ", "うれしいしらせ", "tin vui"],
+  ["面倒な", "めんどうな", "phiền phức, rắc rối"],
+  ["皮肉", "ひにく", "mỉa mai, châm biếm"],
+  ["少なかった", "すくなかった", "ít, không nhiều"],
+  ["曇っていて暗かった", "くもっていてくらかった", "trời âm u và tối"],
+  ["順調に進んでいる", "じゅんちょうにすすんでいる", "đang tiến triển thuận lợi"],
+  ["中止する", "ちゅうしする", "hủy, dừng lại giữa chừng"],
+  ["今までになく新しい", "いままでになくあたらしい", "mới mẻ chưa từng có trước đây"],
+  ["計画して", "けいかくして", "lên kế hoạch"],
+  ["便利で役に立っている", "べんりでやくにたっている", "tiện lợi và có ích"],
+  ["厳しい", "きびしい", "nghiêm khắc, khắc nghiệt"],
+  ["平凡な", "へいぼんな", "bình thường, không có gì đặc biệt"],
+  ["できる限り", "できるかぎり", "hết mức có thể"],
+  ["意外につまらない", "いがいにつまらない", "bất ngờ là chán, không thú vị như nghĩ"],
+  ["刺激を受けて", "しげきをうけて", "được kích thích, được truyền cảm hứng"],
+  ["規模", "きぼ", "quy mô"],
+  ["何度も", "なんども", "nhiều lần"],
+  ["相手", "あいて", "đối phương, người/cái ở phía bên kia"],
+  ["悪く言われる", "わるくいわれる", "bị nói xấu, bị chê bai"],
+  ["面倒だ", "めんどうだ", "phiền phức, rắc rối"],
+  ["事前に", "じぜんに", "trước, từ trước"],
+  ["ほかと比べて特に良かった", "ほかとくらべてとくによかった", "đặc biệt tốt hơn so với những cái khác"],
+  ["支援", "しえん", "hỗ trợ, viện trợ"],
+  ["とても驚いた", "とてもおどろいた", "rất ngạc nhiên"],
+  ["熱心に取り組んでいる", "ねっしんにとりくんでいる", "đang nỗ lực làm một cách nhiệt tình"],
+  ["大幅に", "おおはばに", "rất nhiều, trên diện rộng"],
+  ["非常に", "ひじょうに", "rất, cực kỳ"],
+  ["心配", "しんぱい", "lo lắng"],
+  ["不注意な", "ふちゅういな", "bất cẩn, thiếu chú ý"],
+  ["思い返して", "おもいかえして", "nghĩ lại, nhớ lại"],
+  ["分担", "ぶんたん", "phân chia đảm nhiệm"],
+  ["完成したら", "かんせいしたら", "khi hoàn thành"],
+  ["大体同じだ", "だいたいおなじだ", "gần như giống nhau"],
+  ["苦情", "くじょう", "khiếu nại, phàn nàn"],
+  ["勘違いする", "かんちがいする", "hiểu nhầm"],
+  ["一度に大勢来た", "いちどにおおぜいきた", "nhiều người đến cùng một lúc"],
+  ["言い訳して", "いいわけして", "bào chữa, viện cớ"],
+  ["慌てずに", "あわてずに", "không hoảng, bình tĩnh"],
+  ["突然", "とつぜん", "đột nhiên"],
+  ["大げさに", "おおげさに", "phóng đại, làm quá lên"],
+  ["明白に 1)", "めいはくに", "một cách rõ ràng"],
+  ["何とか", "なんとか", "bằng cách nào đó, xoay xở"],
+  ["小さな", "ちいさな", "nhỏ"],
+  ["困って", "こまって", "gặp khó khăn, bối rối"],
+  ["以前から", "いぜんから", "từ trước"],
+  ["謝った", "あやまった", "đã xin lỗi"],
+  ["怖がって", "こわがって", "sợ hãi"],
+  ["あきらめずに。", "あきらめずに", "không bỏ cuộc"],
+  ["細かく丁寧に", "こまかくていねいに", "tỉ mỉ và cẩn thận"],
+  ["悪いところ", "わるいところ", "điểm xấu, khuyết điểm"],
+  ["怒ったような顔をしていた", "おこったようなかおをしていた", "trông có vẻ tức giận"],
+  ["問い合わせた", "といあわせた", "đã hỏi, đã liên hệ để hỏi"],
+  ["決意", "けつい", "quyết tâm"],
+  ["競い合って", "きそいあって", "cạnh tranh, thi đua với nhau"],
+  ["頑固な", "がんこな", "bướng bỉnh, cố chấp"],
+  ["できるだけ早く", "できるだけはやく", "càng sớm càng tốt"],
+  ["短い", "みじかい", "ngắn"],
+  ["失敗して", "しっぱいして", "thất bại, làm hỏng"],
+  ["薄く切って", "うすくきって", "cắt mỏng"],
+  ["一人一人に", "ひとりひとりに", "cho từng người một"],
+  ["詳しく丁寧に", "くわしくていねいに", "chi tiết và cẩn thận"],
+  ["なかなか返事をしようとしなかった", "なかなかへんじをしようとしなかった", "mãi không chịu trả lời"],
+  ["小型の", "こがたの", "cỡ nhỏ, loại nhỏ"],
+  ["小さな声で言う", "ちいさなこえでいう", "nói nhỏ"],
+  ["疲れて", "つかれて", "mệt"],
+  ["完了する", "かんりょうする", "hoàn tất"],
+  ["珍しい", "めずらしい", "hiếm, lạ"],
+  ["熱中した", "ねっちゅうした", "say mê, mải mê"],
+  ["検討", "けんとう", "xem xét, cân nhắc"],
+  ["じっと見た", "じっとみた", "nhìn chăm chú"],
+  ["想像の", "そうぞうの", "thuộc tưởng tượng"],
+  ["愚痴を言っている", "ぐちをいっている", "đang than vãn, càu nhàu"],
+  ["口数が少ない", "くちかずがすくない", "ít nói"],
+  ["混乱した", "こんらんした", "bối rối, rối loạn"],
+  ["遅くなりそうだ", "おそくなりそうだ", "có vẻ sẽ muộn"],
+  ["大して", "たいして", "không mấy, không đáng kể"],
+  ["規模1)", "きぼ", "quy mô"],
+  ["貢献", "こうけん", "đóng góp, cống hiến"],
+  ["危険", "きけん", "nguy hiểm"],
+  ["非常に素晴らしいとほめた", "ひじょうにすばらしいとほめた", "khen là vô cùng tuyệt vời"],
+  ["選挙に出る", "せんきょにでる", "ra tranh cử"],
+  ["刺激されて", "しげきされて", "bị kích thích, được khơi gợi"],
+  ["自由な", "じゆうな", "tự do, thoải mái"],
+  ["早く正確に", "はやくせいかくに", "nhanh và chính xác"],
+  ["用意した", "よういした", "đã chuẩn bị"],
+  ["場所", "ばしょ", "địa điểm, nơi chốn"],
+  ["差がない", "さがない", "không có khác biệt"],
+  ["批判", "ひはん", "phê phán, chỉ trích"],
+  ["やせ衰えて", "やせおとろえて", "gầy yếu, tiều tụy"],
+  ["必死に頑張って", "ひっしにがんばって", "cố gắng hết sức"],
+  ["思いがけない", "おもいがけない", "không ngờ tới, bất ngờ"],
+  ["熱中して", "ねっちゅうして", "say mê, mải mê"],
+  ["順調に進みました", "じゅんちょうにすすみました", "đã tiến triển thuận lợi"],
+  ["我慢", "がまん", "chịu đựng, nhẫn nhịn"],
+  ["慣習", "かんしゅう", "tập quán, thông lệ"],
+  ["任せる", "まかせる", "giao phó, để cho ai làm"],
+  ["爽やかな", "さわやかな", "sảng khoái, tươi mát"],
+  ["用意する", "よういする", "chuẩn bị"],
+  ["下を向いて", "したをむいて", "cúi xuống, nhìn xuống"],
+  ["苦難", "くなん", "khổ nạn, gian khổ"],
+  ["慌てる", "あわてる", "hoảng, vội vàng cuống lên"],
+  ["自分で買う", "じぶんでかう", "tự mình mua"],
+  ["だらしない", "だらしない", "luộm thuộm, bê bối, không chỉnh tề"],
+  ["じっくりと", "じっくりと", "kỹ lưỡng, cẩn thận, thong thả xem xét"],
+  ["しかたなく", "しかたなく", "miễn cưỡng, không còn cách nào khác"],
+  ["ヒント", "ヒント", "gợi ý, manh mối"],
+  ["すぐには", "すぐには", "ngay lập tức thì không"],
+  ["はっきりしている", "はっきりしている", "rõ ràng, minh bạch"],
+  ["がっかりした", "がっかりした", "thất vọng, hụt hẫng"],
+  ["さわやかな", "さわやかな", "sảng khoái, tươi mát"],
+  ["シンプルな", "シンプルな", "đơn giản"],
+  ["こっそり", "こっそり", "lén lút, âm thầm"],
+  ["あきらめた", "あきらめた", "đã từ bỏ"],
+  ["しばらくは", "しばらくは", "trong một thời gian, tạm thời"],
+  ["これまでの", "これまでの", "từ trước đến nay"],
+  ["だいたい", "だいたい", "đại khái, gần như, nhìn chung"],
+  ["しくみ", "しくみ", "cơ chế, cấu trúc, cách vận hành"],
+  ["ただで", "ただで", "miễn phí, không mất tiền"],
+  ["どうしようもない", "どうしようもない", "không thể làm gì được, hết cách"],
+  ["やはり", "やはり", "quả nhiên, vẫn là, đúng như nghĩ"],
+  ["アドバイス", "アドバイス", "lời khuyên, góp ý"],
+  ["プライド", "プライド", "lòng tự trọng, niềm kiêu hãnh"],
+  ["わざと", "わざと", "cố ý"],
+  ["ほっとした", "ほっとした", "nhẹ nhõm, yên tâm"],
+  ["なんとなく", "なんとなく", "không rõ vì sao, cảm giác là"],
+  ["わずかに", "わずかに", "chỉ một chút, hơi"],
+  ["とりけした", "とりけした", "đã hủy bỏ"],
+  ["ぼんやりしていた", "ぼんやりしていた", "lơ đãng, mơ hồ, không rõ ràng"],
+  ["じゃまする", "じゃまする", "cản trở, làm phiền"],
+  ["はっきり", "はっきり", "rõ ràng, dứt khoát"],
+  ["できるだけ", "できるだけ", "hết mức có thể"],
+  ["つながり", "つながり", "mối liên hệ, sự kết nối"],
+  ["ゆっくりして", "ゆっくりして", "thư thả, nghỉ ngơi thong thả"],
+  ["あいまい", "あいまい", "mơ hồ, không rõ ràng"],
+  ["いくつか", "いくつか", "một vài, một số"],
+  ["おだやか", "おだやか", "ôn hòa, bình lặng"],
+  ["ダメージ", "ダメージ", "thiệt hại, tổn hại"],
+  ["おおげさに", "おおげさに", "phóng đại, làm quá lên"],
+  ["しばらく", "しばらく", "một lúc, một thời gian"]
+];
+
+supplementalVocabAnswers.push(...supplementalSynonymAnswerMeanings);
+
 const grammarPatterns = [
   ["だけ", "chỉ/đến mức; trong mẫu 「Vるだけ無駄」 nghĩa là làm cũng vô ích"],
   ["を受けて", "chịu tác động từ, dựa trên bối cảnh/sự kiện trước đó"],
@@ -1761,7 +1911,8 @@ function answerMeaningLine(term) {
   const entry = lookupVocabAnswer(term);
   if (!entry) return `Đáp án đúng: 「${term}」.`;
   const baseNote = entry.base !== term ? `, gốc: ${entry.base}` : "";
-  return `Đáp án đúng: 「${term}」（${entry.reading}）= ${entry.meaning}${baseNote}.`;
+  const readingNote = entry.reading && entry.reading !== term && entry.reading !== entry.base ? `（${entry.reading}）` : "";
+  return `Đáp án đúng: 「${term}」${readingNote} = ${entry.meaning}${baseNote}.`;
 }
 
 function optionMeanings(item) {
@@ -2025,9 +2176,7 @@ function explanationForRemoteQuestion(exam, item, group) {
   }
 
   if (questionNumber <= 19) {
-    const target = remoteTargetWord(item);
-    const targetNote = target ? `Từ/cụm được hỏi là 「${target}」. ` : "";
-    base = `Đáp án: ${item.correctAnswer}. ${targetNote}Gần nghĩa nhất: ${termMeaning(correctText)}.`;
+    base = `Đáp án: ${item.correctAnswer}. ${answerMeaningLine(correctText)}`;
     return withStudyNotes(base, item, group);
   }
 
@@ -2178,7 +2327,7 @@ function enhanceQuestions(list) {
 
 async function loadRemoteExams() {
   const remoteLoaded = await Promise.allSettled(remoteExams.map(async (exam) => {
-    const response = await fetch(`${exam.path}?v=3`);
+    const response = await fetch(`${exam.path}?v=4`);
     if (!response.ok) throw new Error(`Không tải được đề ${exam.title}`);
     const data = await response.json();
     return convertRemoteExam(exam, data);
@@ -2318,8 +2467,10 @@ function renderQuestion() {
 
   prevButton.hidden = false;
   nextButton.hidden = false;
+  backToFoldersButton.hidden = false;
   prevButton.style.display = "";
   nextButton.style.display = "";
+  backToFoldersButton.style.display = "";
   const list = activeQuestions();
   if (!list.length) {
     questionType.textContent = state.loading ? "Đang tải" : "Chưa có câu hỏi";
@@ -2367,8 +2518,10 @@ function renderQuestion() {
 function renderFolderDirectory() {
   prevButton.hidden = true;
   nextButton.hidden = true;
+  backToFoldersButton.hidden = true;
   prevButton.style.display = "none";
   nextButton.style.display = "none";
+  backToFoldersButton.style.display = "none";
   questionType.textContent = "Thư mục đề";
   questionText.textContent = state.loading ? "Đang tải thêm thư mục đề..." : "Chọn thư mục để luyện đề";
   questionCount.textContent = `${examFolders.length} thư mục`;
@@ -2381,11 +2534,10 @@ function renderFolderDirectory() {
   answers.innerHTML = "";
 
   examFolders.forEach((folder) => {
-    const count = questions.filter((item) => item.folder === folder.id).length;
     const button = document.createElement("button");
     button.className = "answer folder-card";
     button.type = "button";
-    button.innerHTML = `<strong>${folder.title}</strong><span>${folder.subtitle}</span><em>${count} câu</em>`;
+    button.innerHTML = `<strong>${folder.title}</strong><span>${folder.subtitle}</span>`;
     button.addEventListener("click", () => setFilter(folder.id));
     answers.appendChild(button);
   });
@@ -2586,6 +2738,7 @@ function setFilter(filter) {
 
 nextButton.addEventListener("click", () => moveQuestion(1));
 prevButton.addEventListener("click", () => moveQuestion(-1));
+backToFoldersButton.addEventListener("click", () => setFilter("all"));
 
 document.querySelector("#resetProgress").addEventListener("click", () => {
   state.answered = 0;
