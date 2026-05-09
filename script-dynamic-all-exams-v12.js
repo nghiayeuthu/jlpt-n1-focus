@@ -415,6 +415,12 @@ function n1EntriesForText(text, maxItems = 6) {
   return found;
 }
 
+function highlightedTargetFromHtml(htmlPrompt) {
+  if (!htmlPrompt) return "";
+  const match = htmlPrompt.match(/<span class="kanji-target">([^<]+)<\/span>/);
+  return match ? match[1] : "";
+}
+
 function n2EntriesForText(text, maxItems = 6) {
   const source = String(text || "");
   const found = [];
@@ -425,6 +431,35 @@ function n2EntriesForText(text, maxItems = 6) {
     }
   });
   return found;
+}
+
+function fallbackN1EntryForQuestion(question) {
+  const number = questionNumber(question);
+  if (number < 1 || number > 25) return null;
+
+  const target = question.targetWord || highlightedTargetFromHtml(question.htmlPrompt) || targetFromQuestionText(question);
+  if (!target) return null;
+
+  const known = studyEntriesForText(target, 1)[0];
+  const correct = question.options[question.answer] || "";
+  let reading = known?.reading || "";
+  let meaning = known?.meaning || "";
+
+  if (number <= 6) {
+    reading = correct || reading;
+    meaning = meaning || `cách đọc trong câu là ${correct}`;
+  } else if (number <= 13) {
+    reading = reading || target;
+    meaning = meaning || `từ đúng trong ngữ cảnh là ${correct}`;
+  } else if (number <= 19) {
+    reading = reading || target;
+    meaning = meaning || `gần nghĩa với ${correct}`;
+  } else {
+    reading = reading || target;
+    meaning = meaning || `cách dùng đúng: ${correct}`;
+  }
+
+  return { word: target, reading, meaning };
 }
 
 function studyEntriesForText(text, maxItems = 1) {
@@ -560,6 +595,10 @@ function hasHighlightedPrompt(question) {
 function addN1NotesToExplanation(question) {
   if (!question.explanation || question.explanation.includes("Từ N1 cần nhớ:")) return;
   const entries = n1EntriesForText(`${question.prompt} ${question.passage || ""} ${question.options.join(" ")}`, question.skill === "reading" ? 6 : 4);
+  if (!entries.length) {
+    const fallback = fallbackN1EntryForQuestion(question);
+    if (fallback) entries.push(fallback);
+  }
   if (!entries.length) return;
   question.explanation += `\nTừ N1 cần nhớ: ${entries.map((entry) => `${entry.word}（${entry.reading}）= ${entry.meaning}`).join("; ")}.`;
 }
