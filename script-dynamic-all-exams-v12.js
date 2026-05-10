@@ -1408,8 +1408,46 @@ const prevButton = document.querySelector("#prevQuestion");
 const backToFoldersButton = document.querySelector("#backToFolders");
 const filters = document.querySelectorAll(".filter");
 const deckGrid = document.querySelector("#deckGrid");
-const bokiFolderGrid = document.querySelector("#bokiFolderGrid");
 const quizShell = document.querySelector(".quiz-shell");
+const appViews = document.querySelectorAll(".app-view");
+const navLinks = document.querySelectorAll(".nav a");
+const bokiQuestionType = document.querySelector("#bokiQuestionType");
+const bokiQuestionText = document.querySelector("#bokiQuestionText");
+const bokiQuestionCount = document.querySelector("#bokiQuestionCount");
+const bokiPassage = document.querySelector("#bokiPassage");
+const bokiAnswers = document.querySelector("#bokiAnswers");
+const bokiFeedback = document.querySelector("#bokiFeedback");
+const bokiQuestionJump = document.querySelector("#bokiQuestionJump");
+const bokiNextButton = document.querySelector("#bokiNextQuestion");
+const bokiPrevButton = document.querySelector("#bokiPrevQuestion");
+const bokiBackToFoldersButton = document.querySelector("#bokiBackToFolders");
+
+function currentViewFromHash() {
+  const view = window.location.hash.replace("#", "");
+  return ["practice", "boki", "deck"].includes(view) ? view : "practice";
+}
+
+function showAppView(view = currentViewFromHash()) {
+  appViews.forEach((section) => {
+    section.hidden = section.dataset.view !== view;
+  });
+
+  navLinks.forEach((link) => {
+    link.classList.toggle("active", link.getAttribute("href") === `#${view}`);
+  });
+
+  if (view === "boki" && !state.filter.startsWith("boki-")) {
+    state.filter = "boki-all";
+    state.index = 0;
+    renderBokiQuestion();
+  }
+
+  if (view === "practice" && state.filter?.startsWith("boki-")) {
+    state.filter = "all";
+    state.index = 0;
+    renderQuestion();
+  }
+}
 
 const kanjiTargets = {
   "exam-2025-12": ["頑丈", "潜んで", "行政", "卓越", "芳しくない", "管轄"],
@@ -2623,9 +2661,12 @@ function saveProgress() {
 
 function updateMetrics() {
   const accuracy = state.answered ? Math.round((state.correct / state.answered) * 100) : 0;
-  document.querySelector("#accuracyMetric").textContent = `${accuracy}%`;
-  document.querySelector("#answeredMetric").textContent = state.answered;
-  document.querySelector("#streakMetric").textContent = state.streak;
+  const accuracyMetric = document.querySelector("#accuracyMetric");
+  const answeredMetric = document.querySelector("#answeredMetric");
+  const streakMetric = document.querySelector("#streakMetric");
+  if (accuracyMetric) accuracyMetric.textContent = `${accuracy}%`;
+  if (answeredMetric) answeredMetric.textContent = state.answered;
+  if (streakMetric) streakMetric.textContent = state.streak;
 }
 
 function scrollQuestionIntoView() {
@@ -2636,12 +2677,13 @@ function scrollQuestionIntoView() {
 }
 
 function renderQuestion() {
-  if (state.filter === "all") {
+  if (state.filter?.startsWith("boki-")) {
     renderFolderDirectory();
     return;
   }
-  if (state.filter === "boki-all") {
-    renderBokiFolderDirectory();
+
+  if (state.filter === "all") {
+    renderFolderDirectory();
     return;
   }
 
@@ -2724,45 +2766,165 @@ function renderFolderDirectory() {
 }
 
 function renderBokiFolderDirectory() {
-  prevButton.hidden = true;
-  nextButton.hidden = true;
-  backToFoldersButton.hidden = true;
-  prevButton.style.display = "none";
-  nextButton.style.display = "none";
-  backToFoldersButton.style.display = "none";
-  questionType.textContent = "Boki 3級";
-  questionText.textContent = "Chọn thư mục luyện đề Boki";
-  questionCount.textContent = `${bokiFolders.length} thư mục`;
-  passage.hidden = true;
-  passage.textContent = "";
-  questionJump.hidden = true;
-  questionJump.innerHTML = "";
-  feedback.hidden = false;
-  feedback.textContent = "Phần này đã có engine luyện đề và dữ liệu mẫu tự soạn. Khi có bộ đề được phép dùng, thêm JSON theo cùng cấu trúc là chạy.";
-  answers.innerHTML = "";
+  bokiPrevButton.hidden = true;
+  bokiNextButton.hidden = true;
+  bokiBackToFoldersButton.hidden = true;
+  bokiPrevButton.style.display = "none";
+  bokiNextButton.style.display = "none";
+  bokiBackToFoldersButton.style.display = "none";
+  bokiQuestionType.textContent = "Boki 3級";
+  bokiQuestionText.textContent = "Chọn thư mục luyện đề Boki";
+  bokiQuestionCount.textContent = `${bokiFolders.length} thư mục`;
+  bokiPassage.hidden = true;
+  bokiPassage.textContent = "";
+  bokiQuestionJump.hidden = true;
+  bokiQuestionJump.innerHTML = "";
+  bokiFeedback.hidden = false;
+  bokiFeedback.textContent = "Chọn một thư mục Boki để luyện theo form 3 mondai.";
+  bokiAnswers.innerHTML = "";
 
   bokiFolders.forEach((folder) => {
     const button = document.createElement("button");
     button.className = "answer folder-card";
     button.type = "button";
     button.innerHTML = `<strong>${folder.title}</strong><span>${folder.subtitle}</span>`;
-    button.addEventListener("click", () => setFilter(folder.id));
-    answers.appendChild(button);
+    button.addEventListener("click", () => setBokiFilter(folder.id));
+    bokiAnswers.appendChild(button);
   });
 }
 
 function renderBokiFolders() {
-  if (!bokiFolderGrid) return;
-  bokiFolderGrid.innerHTML = "";
+  renderBokiQuestion();
+}
 
-  bokiFolders.forEach((folder) => {
+function activeBokiQuestions() {
+  if (!state.filter?.startsWith("boki-") || state.filter === "boki-all") return [];
+  return questions.filter((item) => item.type === state.filter);
+}
+
+function renderBokiQuestion() {
+  if (!state.filter?.startsWith("boki-") || state.filter === "boki-all") {
+    renderBokiFolderDirectory();
+    return;
+  }
+
+  bokiPrevButton.hidden = false;
+  bokiNextButton.hidden = false;
+  bokiBackToFoldersButton.hidden = false;
+  bokiPrevButton.style.display = "";
+  bokiNextButton.style.display = "";
+  bokiBackToFoldersButton.style.display = "";
+
+  const list = activeBokiQuestions();
+  if (!list.length) {
+    bokiQuestionType.textContent = "Boki 3級";
+    bokiQuestionText.textContent = "Chưa có câu hỏi trong thư mục này.";
+    bokiQuestionCount.textContent = "0/0";
+    bokiPassage.hidden = true;
+    bokiAnswers.innerHTML = "";
+    bokiQuestionJump.hidden = true;
+    bokiQuestionJump.innerHTML = "";
+    bokiFeedback.hidden = true;
+    return;
+  }
+
+  const current = list[state.index];
+  bokiQuestionType.textContent = current.label;
+  bokiQuestionText.innerHTML = promptHtml(current);
+  bokiQuestionCount.textContent = `${state.index + 1}/${list.length}`;
+  bokiPassage.hidden = true;
+  bokiPassage.textContent = "";
+  bokiAnswers.innerHTML = "";
+  bokiFeedback.hidden = true;
+  bokiFeedback.textContent = "";
+
+  current.options.forEach((option, optionIndex) => {
     const button = document.createElement("button");
-    button.className = "answer folder-card";
+    button.className = "answer";
     button.type = "button";
-    button.innerHTML = `<strong>${folder.title}</strong><span>${folder.subtitle}</span>`;
-    button.addEventListener("click", () => setFilter(folder.id));
-    bokiFolderGrid.appendChild(button);
+    button.textContent = option;
+    button.addEventListener("click", () => chooseBokiAnswer(current, optionIndex));
+    bokiAnswers.appendChild(button);
   });
+
+  const selected = state.selectedByPrompt[current.prompt];
+  if (selected !== undefined) revealBokiAnswer(current, selected);
+  renderBokiQuestionJump(list);
+}
+
+function renderBokiQuestionJump(list) {
+  bokiQuestionJump.hidden = false;
+  bokiQuestionJump.innerHTML = "";
+
+  const heading = document.createElement("div");
+  heading.className = "question-jump-heading";
+  heading.innerHTML = `<strong>Chọn câu</strong><span>${folderTitle(state.filter)} · ${list.length} câu</span>`;
+  bokiQuestionJump.appendChild(heading);
+
+  const grid = document.createElement("div");
+  grid.className = "question-jump-grid";
+  list.forEach((question, questionIndex) => {
+    const selected = state.selectedByPrompt[question.prompt];
+    const button = document.createElement("button");
+    button.className = "jump-button";
+    button.type = "button";
+    button.textContent = questionIndex + 1;
+    button.classList.toggle("active", questionIndex === state.index);
+    if (selected !== undefined) {
+      button.classList.add(selected === question.answer ? "done-correct" : "done-wrong");
+    }
+    button.addEventListener("click", () => {
+      state.index = questionIndex;
+      renderBokiQuestion();
+      document.querySelector("#boki .quiz-shell")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+    grid.appendChild(button);
+  });
+  bokiQuestionJump.appendChild(grid);
+}
+
+function chooseBokiAnswer(question, optionIndex) {
+  if (state.selectedByPrompt[question.prompt] !== undefined) {
+    revealBokiAnswer(question, optionIndex);
+    return;
+  }
+
+  state.selectedByPrompt[question.prompt] = optionIndex;
+  state.answered += 1;
+  if (optionIndex === question.answer) {
+    state.correct += 1;
+    state.streak += 1;
+  } else {
+    state.streak = 0;
+  }
+  saveProgress();
+  updateMetrics();
+  revealBokiAnswer(question, optionIndex);
+}
+
+function revealBokiAnswer(question, selectedIndex) {
+  [...bokiAnswers.children].forEach((button, optionIndex) => {
+    button.disabled = true;
+    if (optionIndex === question.answer) button.classList.add("correct");
+    if (optionIndex === selectedIndex && optionIndex !== question.answer) button.classList.add("wrong");
+  });
+  bokiFeedback.hidden = false;
+  bokiFeedback.textContent = question.explanation;
+  renderBokiQuestionJump(activeBokiQuestions());
+}
+
+function moveBokiQuestion(direction) {
+  const list = activeBokiQuestions();
+  if (!list.length) return;
+  state.index = (state.index + direction + list.length) % list.length;
+  renderBokiQuestion();
+  document.querySelector("#boki .quiz-shell")?.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+function setBokiFilter(filter) {
+  state.filter = filter;
+  state.index = 0;
+  renderBokiQuestion();
 }
 
 function renderQuestionJump(list) {
@@ -2950,6 +3112,15 @@ filters.forEach((button) => {
   button.addEventListener("click", () => setFilter(button.dataset.filter));
 });
 
+navLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    const view = link.getAttribute("href").replace("#", "");
+    window.setTimeout(() => showAppView(view), 0);
+  });
+});
+
+window.addEventListener("hashchange", () => showAppView());
+
 function setFilter(filter) {
   filters.forEach((item) => item.classList.toggle("active", item.dataset.filter === filter));
   state.filter = filter;
@@ -2962,6 +3133,13 @@ nextButton.addEventListener("click", () => moveQuestion(1));
 prevButton.addEventListener("click", () => moveQuestion(-1));
 backToFoldersButton.addEventListener("click", () => {
   setFilter(state.filter.startsWith("boki-") ? "boki-all" : "all");
+});
+bokiNextButton.addEventListener("click", () => moveBokiQuestion(1));
+bokiPrevButton.addEventListener("click", () => moveBokiQuestion(-1));
+bokiBackToFoldersButton.addEventListener("click", () => {
+  state.filter = "boki-all";
+  state.index = 0;
+  renderBokiQuestion();
 });
 
 document.querySelector("#resetProgress").addEventListener("click", () => {
@@ -2977,6 +3155,7 @@ document.querySelector("#resetProgress").addEventListener("click", () => {
 renderQuestion();
 renderDeck();
 renderBokiFolders();
+showAppView();
 updateMetrics();
 
 loadRemoteExams()

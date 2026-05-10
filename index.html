@@ -33,7 +33,7 @@
         </span>
       </a>
       <nav class="nav" aria-label="Điều hướng chính">
-        <a href="#practice">Luyện đề</a>
+        <a href="#practice">Luyện đề N1</a>
         <a href="#boki">Boki 3級</a>
         <a href="#deck">Flashcards</a>
       </nav>
@@ -41,38 +41,9 @@
     </header>
 
     <main>
-      <section class="hero">
-        <div class="hero-copy">
-          <p class="eyebrow">日本語能力試験 N1</p>
-          <h1>Luyện thi N1 tập trung, có chấm điểm ngay.</h1>
-          <p class="hero-text">
-            Ôn từ vựng, ngữ pháp và đọc hiểu bằng các phiên luyện ngắn. Mỗi câu có giải thích tiếng Việt để bạn biết mình sai ở đâu.
-          </p>
-          <div class="hero-actions">
-            <a class="primary-button" href="#practice">Bắt đầu luyện</a>
-            <a class="secondary-button" href="#deck">Ôn nhanh từ vựng</a>
-          </div>
-        </div>
-        <div class="hero-panel" aria-label="Tổng quan tiến độ">
-          <div>
-            <span class="metric-value" id="accuracyMetric">0%</span>
-            <span class="metric-label">Độ chính xác</span>
-          </div>
-          <div>
-            <span class="metric-value" id="answeredMetric">0</span>
-            <span class="metric-label">Câu đã làm</span>
-          </div>
-          <div>
-            <span class="metric-value" id="streakMetric">0</span>
-            <span class="metric-label">Chuỗi đúng</span>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="practice">
+      <section class="section app-view" id="practice" data-view="practice">
         <div class="section-heading">
           <p class="eyebrow">Practice</p>
-          <h2>Luyện câu hỏi N1</h2>
           <div class="filters" role="group" aria-label="Chọn kỹ năng">
             <button class="filter active" type="button" data-filter="all">Tất cả</button>
             <button class="filter" type="button" data-filter="vocab">Từ vựng</button>
@@ -100,22 +71,29 @@
         </article>
       </section>
 
-      <section class="section two-column" id="deck">
-        <div class="section-heading compact">
-          <p class="eyebrow">Flashcards</p>
-          <h2>Ôn nhanh từ vựng và ngữ pháp</h2>
-          <p>Chọn Từ vựng hoặc Ngữ pháp, rồi dùng nút tiếp để ôn từng thẻ.</p>
-        </div>
+      <section class="section two-column app-view" id="deck" data-view="deck">
         <div class="deck-grid" id="deckGrid"></div>
       </section>
 
-      <section class="section two-column" id="boki">
-        <div class="section-heading compact">
-          <p class="eyebrow">Boki</p>
-          <h2>Luyện đề Boki 3級</h2>
-          <p>Thư mục luyện đề kế toán Nhật, dùng chung khung chấm đáp án và giải thích tiếng Việt. Dữ liệu hiện tại là đề mẫu tự soạn, có thể thay bằng bộ câu hỏi hợp lệ sau.</p>
-        </div>
-        <div class="boki-folder-grid" id="bokiFolderGrid"></div>
+      <section class="section two-column app-view" id="boki" data-view="boki">
+        <article class="quiz-shell">
+          <div class="quiz-top">
+            <div>
+              <p class="quiz-type" id="bokiQuestionType">Boki 3級</p>
+              <h3 id="bokiQuestionText">Chọn thư mục luyện đề Boki</h3>
+            </div>
+            <span class="pill" id="bokiQuestionCount">0/0</span>
+          </div>
+          <div class="passage" id="bokiPassage" hidden></div>
+          <div class="answers" id="bokiAnswers"></div>
+          <div class="feedback" id="bokiFeedback" hidden></div>
+          <div class="question-jump" id="bokiQuestionJump" hidden></div>
+          <div class="quiz-actions">
+            <button class="secondary-button" id="bokiBackToFolders" type="button" hidden>Chọn thư mục luyện đề Boki</button>
+            <button class="secondary-button" id="bokiPrevQuestion" type="button">Câu trước</button>
+            <button class="primary-button" id="bokiNextQuestion" type="button">Câu tiếp</button>
+          </div>
+        </article>
       </section>
 
     </main>
@@ -126,7 +104,7 @@
 
     <script src="n1-vocabulary-extra.js?v=4"></script>
     <script src="n1-grammar-extra.js?v=1"></script>
-    <script src="script-dynamic-all-exams-v12.js?v=21"></script>
+    <script src="script-dynamic-all-exams-v12.js?v=28"></script>
     <script src="exam-2024-12-grammar-patch.js?v=1"></script>
   </body>
 </html>
