@@ -1,9 +1,9 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="vi">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>N1 Focus - Luyện thi JLPT N1</title>
+    <title>TiengNhatVaKeToan - Học tiếng Nhật và kế toán</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -12,17 +12,29 @@
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
+  <body class="locked">
+    <section class="auth-gate" id="authGate" aria-labelledby="authTitle">
+      <form class="auth-card" id="authForm">
+        <p class="eyebrow">Private Study</p>
+        <h1 id="authTitle">Nhập mật khẩu</h1>
+        <label class="auth-label" for="sitePassword">Mật khẩu truy cập</label>
+        <input class="auth-input" id="sitePassword" type="password" autocomplete="current-password" inputmode="numeric" required />
+        <p class="auth-error" id="authError" hidden>Mật khẩu chưa đúng.</p>
+        <button class="primary-button" type="submit">Vào học</button>
+      </form>
+    </section>
+
     <header class="topbar">
-      <a class="brand" href="#" aria-label="N1 Focus">
-        <span class="brand-mark">N1</span>
+      <a class="brand" href="#" aria-label="TiengNhatVaKeToan">
+        <span class="brand-mark">日計</span>
         <span>
-          <strong>N1 Focus</strong>
-          <small>JLPT practice hub</small>
+          <strong>TiengNhatVaKeToan</strong>
+          <small>Japanese & Boki practice</small>
         </span>
       </a>
       <nav class="nav" aria-label="Điều hướng chính">
         <a href="#practice">Luyện đề</a>
+        <a href="#boki">Boki 3級</a>
         <a href="#deck">Flashcards</a>
       </nav>
       <button class="ghost-button" id="resetProgress" type="button">Làm mới tiến độ</button>
@@ -97,15 +109,24 @@
         <div class="deck-grid" id="deckGrid"></div>
       </section>
 
+      <section class="section two-column" id="boki">
+        <div class="section-heading compact">
+          <p class="eyebrow">Boki</p>
+          <h2>Luyện đề Boki 3級</h2>
+          <p>Thư mục luyện đề kế toán Nhật, dùng chung khung chấm đáp án và giải thích tiếng Việt. Dữ liệu hiện tại là đề mẫu tự soạn, có thể thay bằng bộ câu hỏi hợp lệ sau.</p>
+        </div>
+        <div class="boki-folder-grid" id="bokiFolderGrid"></div>
+      </section>
+
     </main>
 
     <footer class="footer">
-      <p>Made for focused JLPT N1 practice. Thêm câu hỏi mới trong <code>script.js</code>.</p>
+      <p>Made for personal Japanese and Boki practice.</p>
     </footer>
 
     <script src="n1-vocabulary-extra.js?v=4"></script>
     <script src="n1-grammar-extra.js?v=1"></script>
-    <script src="script-dynamic-all-exams-v12.js?v=18"></script>
+    <script src="script-dynamic-all-exams-v12.js?v=21"></script>
     <script src="exam-2024-12-grammar-patch.js?v=1"></script>
   </body>
 </html>

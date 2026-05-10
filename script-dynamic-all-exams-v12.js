@@ -1,4 +1,44 @@
-const questions = [];
+﻿const questions = [];
+
+const sitePasswordHash = "69ba727f4ea30163a7d6b2a9045da29cdfd1671ec6cb0f8375bdd645ea572518";
+
+async function sha256Hex(value) {
+  const bytes = new TextEncoder().encode(value);
+  const hash = await crypto.subtle.digest("SHA-256", bytes);
+  return [...new Uint8Array(hash)].map((byte) => byte.toString(16).padStart(2, "0")).join("");
+}
+
+function unlockSite() {
+  document.body.classList.remove("locked");
+  sessionStorage.setItem("tiengNhatVaKeToanUnlocked", "1");
+}
+
+function setupAuthGate() {
+  const form = document.querySelector("#authForm");
+  const input = document.querySelector("#sitePassword");
+  const error = document.querySelector("#authError");
+
+  if (sessionStorage.getItem("tiengNhatVaKeToanUnlocked") === "1") {
+    unlockSite();
+    return;
+  }
+
+  form?.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    const typedHash = await sha256Hex(input.value.trim());
+    if (typedHash === sitePasswordHash) {
+      unlockSite();
+      input.value = "";
+      error.hidden = true;
+      return;
+    }
+
+    error.hidden = false;
+    input.select();
+  });
+}
+
+setupAuthGate();
 
 function q(type, label, prompt, options, answer, explanation, passageText = "", htmlPrompt = "", meta = {}) {
   return {
@@ -10,7 +50,7 @@ function q(type, label, prompt, options, answer, explanation, passageText = "", 
     answer,
     explanation,
     passage: passageText,
-    folder: type.startsWith("exam-") ? type : "",
+    folder: type.startsWith("exam-") || type.startsWith("boki-") ? type : "",
     skill: skillFromLabel(label),
     ...meta,
   };
@@ -1229,6 +1269,133 @@ const state = {
   deckOpen: false,
 };
 
+const bokiFolders = [
+  {
+    id: "boki-3kyu-sample-01",
+    title: "Boki 3級 - Đề mẫu 01",
+    subtitle: "問題1: 仕訳15問 / 問題2: 帳簿・残高 / 問題3: 決算・財務諸表",
+  },
+  {
+    id: "boki-3kyu-sample-02",
+    title: "Boki 3級 - Đề mẫu 02",
+    subtitle: "問題1: 仕訳15問 / 問題2: 帳簿・残高 / 問題3: 決算・財務諸表",
+  },
+  {
+    id: "boki-3kyu-sample-03",
+    title: "Boki 3級 - Đề mẫu 03",
+    subtitle: "問題1: 仕訳15問 / 問題2: 帳簿・残高 / 問題3: 決算・財務諸表",
+  },
+  {
+    id: "boki-3kyu-sample-04",
+    title: "Boki 3級 - Đề mẫu 04",
+    subtitle: "問題1: 仕訳15問 / 問題2: 帳簿・残高 / 問題3: 決算・財務諸表",
+  },
+  {
+    id: "boki-3kyu-sample-05",
+    title: "Boki 3級 - Đề mẫu 05",
+    subtitle: "問題1: 仕訳15問 / 問題2: 帳簿・残高 / 問題3: 決算・財務諸表",
+  },
+];
+
+function yen(value) {
+  return `${value.toLocaleString("en-US")}円`;
+}
+
+function bokiChoice(correct, distractors, answerIndex) {
+  const options = [...distractors];
+  options.splice(answerIndex, 0, correct);
+  return { options, answer: answerIndex };
+}
+
+function bokiQuestion(folder, label, prompt, correct, distractors, explanation, answerIndex = 0) {
+  const choice = bokiChoice(correct, distractors, answerIndex);
+  return q(folder, label, prompt, choice.options, choice.answer, explanation);
+}
+
+function buildBokiFullMockQuestions() {
+  const list = [];
+  bokiFolders.forEach((folder, setIndex) => {
+    const n = setIndex + 1;
+    const base = 1000 * n;
+    const label1 = `${folder.title} - 問題1 仕訳`;
+    const label2 = `${folder.title} - 問題2 帳簿・残高`;
+    const label3 = `${folder.title} - 問題3 決算・財務諸表`;
+
+    const journalRows = [
+      [`問題1-1. Mua hàng hóa ${yen(30000 + base)} bằng tiền mặt.`, `借方: 仕入 ${yen(30000 + base)} / 貸方: 現金 ${yen(30000 + base)}`, [`借方: 現金 ${yen(30000 + base)} / 貸方: 仕入 ${yen(30000 + base)}`, `借方: 売上 ${yen(30000 + base)} / 貸方: 現金 ${yen(30000 + base)}`, `借方: 買掛金 ${yen(30000 + base)} / 貸方: 仕入 ${yen(30000 + base)}`], "仕入 tăng bên Nợ, 現金 giảm bên Có."],
+      [`問題1-2. Bán hàng hóa ${yen(52000 + base)} cho khách, chưa thu tiền.`, `借方: 売掛金 ${yen(52000 + base)} / 貸方: 売上 ${yen(52000 + base)}`, [`借方: 現金 ${yen(52000 + base)} / 貸方: 売上 ${yen(52000 + base)}`, `借方: 売上 ${yen(52000 + base)} / 貸方: 売掛金 ${yen(52000 + base)}`, `借方: 買掛金 ${yen(52000 + base)} / 貸方: 売上 ${yen(52000 + base)}`], "Bán chịu làm 売掛金 tăng bên Nợ và 売上 tăng bên Có."],
+      [`問題1-3. Thu nợ bán chịu ${yen(26000 + base)} qua tài khoản ngân hàng.`, `借方: 普通預金 ${yen(26000 + base)} / 貸方: 売掛金 ${yen(26000 + base)}`, [`借方: 売掛金 ${yen(26000 + base)} / 貸方: 普通預金 ${yen(26000 + base)}`, `借方: 現金 ${yen(26000 + base)} / 貸方: 売上 ${yen(26000 + base)}`, `借方: 普通預金 ${yen(26000 + base)} / 貸方: 買掛金 ${yen(26000 + base)}`], "Thu khoản phải thu: 普通預金 tăng, 売掛金 giảm."],
+      [`問題1-4. Trả nợ mua hàng ${yen(18000 + base)} bằng tài khoản ngân hàng.`, `借方: 買掛金 ${yen(18000 + base)} / 貸方: 普通預金 ${yen(18000 + base)}`, [`借方: 普通預金 ${yen(18000 + base)} / 貸方: 買掛金 ${yen(18000 + base)}`, `借方: 仕入 ${yen(18000 + base)} / 貸方: 普通預金 ${yen(18000 + base)}`, `借方: 売掛金 ${yen(18000 + base)} / 貸方: 普通預金 ${yen(18000 + base)}`], "買掛金 giảm ghi bên Nợ, 普通預金 giảm ghi bên Có."],
+      [`問題1-5. Trả tiền thuê văn phòng ${yen(12000 + base)} bằng tiền mặt.`, `借方: 支払家賃 ${yen(12000 + base)} / 貸方: 現金 ${yen(12000 + base)}`, [`借方: 現金 ${yen(12000 + base)} / 貸方: 支払家賃 ${yen(12000 + base)}`, `借方: 前払家賃 ${yen(12000 + base)} / 貸方: 現金 ${yen(12000 + base)}`, `借方: 未払金 ${yen(12000 + base)} / 貸方: 現金 ${yen(12000 + base)}`], "支払家賃 là chi phí, tăng bên Nợ; 現金 giảm bên Có."],
+      [`問題1-6. Nhận hóa đơn điện nước ${yen(7000 + base)} nhưng chưa trả.`, `借方: 水道光熱費 ${yen(7000 + base)} / 貸方: 未払金 ${yen(7000 + base)}`, [`借方: 未払金 ${yen(7000 + base)} / 貸方: 水道光熱費 ${yen(7000 + base)}`, `借方: 現金 ${yen(7000 + base)} / 貸方: 水道光熱費 ${yen(7000 + base)}`, `借方: 買掛金 ${yen(7000 + base)} / 貸方: 水道光熱費 ${yen(7000 + base)}`], "Chi phí phát sinh nhưng chưa trả: ghi Có 未払金."],
+      [`問題1-7. Chủ doanh nghiệp góp vốn ${yen(200000 + base)} bằng tiền mặt.`, `借方: 現金 ${yen(200000 + base)} / 貸方: 資本金 ${yen(200000 + base)}`, [`借方: 資本金 ${yen(200000 + base)} / 貸方: 現金 ${yen(200000 + base)}`, `借方: 現金 ${yen(200000 + base)} / 貸方: 借入金 ${yen(200000 + base)}`, `借方: 売上 ${yen(200000 + base)} / 貸方: 資本金 ${yen(200000 + base)}`], "現金 tăng bên Nợ, 資本金 tăng bên Có."],
+      [`問題1-8. Vay ngân hàng ${yen(100000 + base)} và tiền vào tài khoản thường.`, `借方: 普通預金 ${yen(100000 + base)} / 貸方: 借入金 ${yen(100000 + base)}`, [`借方: 借入金 ${yen(100000 + base)} / 貸方: 普通預金 ${yen(100000 + base)}`, `借方: 普通預金 ${yen(100000 + base)} / 貸方: 売上 ${yen(100000 + base)}`, `借方: 現金 ${yen(100000 + base)} / 貸方: 普通預金 ${yen(100000 + base)}`], "普通預金 là tài sản tăng; 借入金 là nợ phải trả tăng."],
+      [`問題1-9. Trả lãi vay ${yen(3000 + base)} bằng tiền mặt.`, `借方: 支払利息 ${yen(3000 + base)} / 貸方: 現金 ${yen(3000 + base)}`, [`借方: 現金 ${yen(3000 + base)} / 貸方: 支払利息 ${yen(3000 + base)}`, `借方: 受取利息 ${yen(3000 + base)} / 貸方: 現金 ${yen(3000 + base)}`, `借方: 借入金 ${yen(3000 + base)} / 貸方: 現金 ${yen(3000 + base)}`], "支払利息 là chi phí lãi vay."],
+      [`問題1-10. Nhận lãi tiền gửi ${yen(1500 + base)} vào tài khoản ngân hàng.`, `借方: 普通預金 ${yen(1500 + base)} / 貸方: 受取利息 ${yen(1500 + base)}`, [`借方: 受取利息 ${yen(1500 + base)} / 貸方: 普通預金 ${yen(1500 + base)}`, `借方: 現金 ${yen(1500 + base)} / 貸方: 支払利息 ${yen(1500 + base)}`, `借方: 普通預金 ${yen(1500 + base)} / 貸方: 借入金 ${yen(1500 + base)}`], "受取利息 là thu nhập, tăng bên Có."],
+      [`問題1-11. Trả trước cho nhà cung cấp ${yen(16000 + base)} bằng tiền mặt.`, `借方: 前払金 ${yen(16000 + base)} / 貸方: 現金 ${yen(16000 + base)}`, [`借方: 現金 ${yen(16000 + base)} / 貸方: 前払金 ${yen(16000 + base)}`, `借方: 前受金 ${yen(16000 + base)} / 貸方: 現金 ${yen(16000 + base)}`, `借方: 仕入 ${yen(16000 + base)} / 貸方: 現金 ${yen(16000 + base)}`], "Tiền trả trước cho bên bán là 前払金."],
+      [`問題1-12. Nhận trước của khách hàng ${yen(22000 + base)} bằng tiền mặt.`, `借方: 現金 ${yen(22000 + base)} / 貸方: 前受金 ${yen(22000 + base)}`, [`借方: 前受金 ${yen(22000 + base)} / 貸方: 現金 ${yen(22000 + base)}`, `借方: 現金 ${yen(22000 + base)} / 貸方: 売上 ${yen(22000 + base)}`, `借方: 売掛金 ${yen(22000 + base)} / 貸方: 前受金 ${yen(22000 + base)}`], "Nhận trước chưa ghi doanh thu, dùng 前受金."],
+      [`問題1-13. Mua văn phòng phẩm ${yen(5000 + base)} bằng tiền mặt, ghi vào chi phí.`, `借方: 消耗品費 ${yen(5000 + base)} / 貸方: 現金 ${yen(5000 + base)}`, [`借方: 現金 ${yen(5000 + base)} / 貸方: 消耗品費 ${yen(5000 + base)}`, `借方: 備品 ${yen(5000 + base)} / 貸方: 現金 ${yen(5000 + base)}`, `借方: 仕入 ${yen(5000 + base)} / 貸方: 現金 ${yen(5000 + base)}`], "消耗品費 là chi phí vật dụng tiêu hao."],
+      [`問題1-14. Trả chi phí gửi hàng bán ${yen(4500 + base)} bằng tiền mặt.`, `借方: 発送費 ${yen(4500 + base)} / 貸方: 現金 ${yen(4500 + base)}`, [`借方: 現金 ${yen(4500 + base)} / 貸方: 発送費 ${yen(4500 + base)}`, `借方: 仕入 ${yen(4500 + base)} / 貸方: 現金 ${yen(4500 + base)}`, `借方: 支払手数料 ${yen(4500 + base)} / 貸方: 現金 ${yen(4500 + base)}`], "発送費 là chi phí vận chuyển/gửi hàng khi bán."],
+      [`問題1-15. Mua thiết bị ${yen(85000 + base)} bằng tài khoản ngân hàng.`, `借方: 備品 ${yen(85000 + base)} / 貸方: 普通預金 ${yen(85000 + base)}`, [`借方: 普通預金 ${yen(85000 + base)} / 貸方: 備品 ${yen(85000 + base)}`, `借方: 消耗品費 ${yen(85000 + base)} / 貸方: 普通預金 ${yen(85000 + base)}`, `借方: 仕入 ${yen(85000 + base)} / 貸方: 普通預金 ${yen(85000 + base)}`], "備品 là tài sản cố định/thiết bị, tăng bên Nợ."],
+    ];
+
+    journalRows.forEach((row, index) => {
+      list.push(bokiQuestion(folder.id, label1, row[0], row[1], row[2], row[3], (index + n) % 4));
+    });
+
+    const cashDebit = 90000 + base;
+    const cashCredit = 25000 + base;
+    const arDebit = 80000 + base;
+    const arCredit = 30000 + base;
+    const cashBalance = cashDebit - cashCredit;
+    const arBalance = arDebit - arCredit;
+    [
+      [
+        "問題2-問1. 補助簿・勘定記入: 現金の借方合計が" + yen(cashDebit) + "、貸方合計が" + yen(cashCredit) + "。また、売掛金の借方合計が" + yen(arDebit) + "、貸方合計が" + yen(arCredit) + "。正しい組み合わせはどれか。",
+        `現金: 借方 ${yen(cashBalance)} / 売掛金: 借方 ${yen(arBalance)}`,
+        [
+          `現金: 貸方 ${yen(cashBalance)} / 売掛金: 借方 ${yen(arBalance)}`,
+          `現金: 借方 ${yen(cashDebit + cashCredit)} / 売掛金: 貸方 ${yen(arBalance)}`,
+          `現金: 貸方 ${yen(cashCredit)} / 売掛金: 貸方 ${yen(arCredit)}`,
+        ],
+        "問題2の問1は補助簿・勘定記入系。現金も売掛金も資産なので通常は借方残高。差額で残高を求める。",
+      ],
+      [
+        "問題2-問2. 理論・補助簿選択: 売掛金元帳の説明として正しいものはどれか。",
+        "得意先ごとに売掛金の増減と残高を管理する補助簿",
+        [
+          "仕入先ごとに買掛金の増減と残高を管理する補助簿",
+          "現金の収入と支出だけを日付順に記録する補助簿",
+          "商品を仕入れた取引だけを記録する補助簿",
+        ],
+        "問題2の問2は用語・補助簿の選択。売掛金元帳は khách hàng/得意先ごとの khoản phải thu を管理する sổ phụ.",
+      ],
+    ].forEach((row, index) => {
+      list.push(bokiQuestion(folder.id, label2, row[0], row[1], row[2], row[3], (index + 1 + n) % 4));
+    });
+
+    const sales = 300000 + base * 2;
+    const cost = 185000 + base;
+    const expenses = 62000 + base;
+    const depreciation = 24000 + base;
+    const prepaid = 12000 + base;
+    const allowance = 5000 + base;
+    const netIncome = sales - cost - expenses - depreciation - allowance + prepaid;
+    list.push(bokiQuestion(
+      folder.id,
+      label3,
+      `問題3. 決算整理後の損益計算書作成: 売上 ${yen(sales)}、売上原価 ${yen(cost)}、販売費及び一般管理費 ${yen(expenses)}。決算整理として、減価償却費 ${yen(depreciation)}、貸倒引当金繰入 ${yen(allowance)}を計上し、保険料の前払分 ${yen(prepaid)}を費用から控除する。当期純利益はいくらか。`,
+      yen(netIncome),
+      [yen(sales - cost - expenses), yen(netIncome + depreciation), yen(netIncome - prepaid)],
+      "問題3は1つの大問で、決算整理を反映して財務諸表を作る形式。計算は 売上 - 売上原価 - 販管費 - 減価償却費 - 貸倒引当金繰入 + 前払分の費用控除。",
+      (n + 2) % 4
+    ));
+  });
+  return list;
+}
+
+questions.push(...buildBokiFullMockQuestions());
+
 const questionType = document.querySelector("#questionType");
 const questionText = document.querySelector("#questionText");
 const questionCount = document.querySelector("#questionCount");
@@ -1241,6 +1408,7 @@ const prevButton = document.querySelector("#prevQuestion");
 const backToFoldersButton = document.querySelector("#backToFolders");
 const filters = document.querySelectorAll(".filter");
 const deckGrid = document.querySelector("#deckGrid");
+const bokiFolderGrid = document.querySelector("#bokiFolderGrid");
 const quizShell = document.querySelector(".quiz-shell");
 
 const kanjiTargets = {
@@ -2305,6 +2473,13 @@ function prependAnswerDetail(question) {
 }
 
 function enhanceQuestion(question) {
+  if (question.folder?.startsWith("boki-")) {
+    addN1GrammarNotesToExplanation(question);
+    addN1NotesToExplanation(question);
+    addN2NotesToExplanation(question);
+    return question;
+  }
+
   if (!hasHighlightedPrompt(question) && !question.targetWord) {
     const target = targetFromQuestionText(question);
     if (target && question.prompt.includes(target)) {
@@ -2397,7 +2572,8 @@ function patch2025Answers(list) {
 
 function activeQuestions() {
   if (state.filter === "all") return [];
-  if (state.filter.startsWith("exam-")) return questions.filter((item) => item.type === state.filter);
+  if (state.filter === "boki-all") return [];
+  if (state.filter.startsWith("exam-") || state.filter.startsWith("boki-")) return questions.filter((item) => item.type === state.filter);
   const folderQuestions = questions.filter((item) => item.folder);
   return folderQuestions.filter((item) => item.skill === state.filter);
 }
@@ -2462,6 +2638,10 @@ function scrollQuestionIntoView() {
 function renderQuestion() {
   if (state.filter === "all") {
     renderFolderDirectory();
+    return;
+  }
+  if (state.filter === "boki-all") {
+    renderBokiFolderDirectory();
     return;
   }
 
@@ -2543,8 +2723,50 @@ function renderFolderDirectory() {
   });
 }
 
+function renderBokiFolderDirectory() {
+  prevButton.hidden = true;
+  nextButton.hidden = true;
+  backToFoldersButton.hidden = true;
+  prevButton.style.display = "none";
+  nextButton.style.display = "none";
+  backToFoldersButton.style.display = "none";
+  questionType.textContent = "Boki 3級";
+  questionText.textContent = "Chọn thư mục luyện đề Boki";
+  questionCount.textContent = `${bokiFolders.length} thư mục`;
+  passage.hidden = true;
+  passage.textContent = "";
+  questionJump.hidden = true;
+  questionJump.innerHTML = "";
+  feedback.hidden = false;
+  feedback.textContent = "Phần này đã có engine luyện đề và dữ liệu mẫu tự soạn. Khi có bộ đề được phép dùng, thêm JSON theo cùng cấu trúc là chạy.";
+  answers.innerHTML = "";
+
+  bokiFolders.forEach((folder) => {
+    const button = document.createElement("button");
+    button.className = "answer folder-card";
+    button.type = "button";
+    button.innerHTML = `<strong>${folder.title}</strong><span>${folder.subtitle}</span>`;
+    button.addEventListener("click", () => setFilter(folder.id));
+    answers.appendChild(button);
+  });
+}
+
+function renderBokiFolders() {
+  if (!bokiFolderGrid) return;
+  bokiFolderGrid.innerHTML = "";
+
+  bokiFolders.forEach((folder) => {
+    const button = document.createElement("button");
+    button.className = "answer folder-card";
+    button.type = "button";
+    button.innerHTML = `<strong>${folder.title}</strong><span>${folder.subtitle}</span>`;
+    button.addEventListener("click", () => setFilter(folder.id));
+    bokiFolderGrid.appendChild(button);
+  });
+}
+
 function renderQuestionJump(list) {
-  if (!state.filter.startsWith("exam-")) {
+  if (!state.filter.startsWith("exam-") && !state.filter.startsWith("boki-")) {
     questionJump.hidden = true;
     questionJump.innerHTML = "";
     return;
@@ -2625,7 +2847,7 @@ function moveQuestion(direction) {
 }
 
 function folderTitle(folderId) {
-  const folder = examFolders.find((item) => item.id === folderId);
+  const folder = [...examFolders, ...bokiFolders].find((item) => item.id === folderId);
   return folder ? folder.title : "Đề JLPT";
 }
 
@@ -2738,7 +2960,9 @@ function setFilter(filter) {
 
 nextButton.addEventListener("click", () => moveQuestion(1));
 prevButton.addEventListener("click", () => moveQuestion(-1));
-backToFoldersButton.addEventListener("click", () => setFilter("all"));
+backToFoldersButton.addEventListener("click", () => {
+  setFilter(state.filter.startsWith("boki-") ? "boki-all" : "all");
+});
 
 document.querySelector("#resetProgress").addEventListener("click", () => {
   state.answered = 0;
@@ -2752,6 +2976,7 @@ document.querySelector("#resetProgress").addEventListener("click", () => {
 
 renderQuestion();
 renderDeck();
+renderBokiFolders();
 updateMetrics();
 
 loadRemoteExams()
@@ -2759,6 +2984,7 @@ loadRemoteExams()
     state.loading = false;
     renderQuestion();
     renderDeck();
+    renderBokiFolders();
   })
   .catch((error) => {
     state.loading = false;
@@ -2766,4 +2992,5 @@ loadRemoteExams()
     feedback.textContent = error.message;
     renderQuestion();
     renderDeck();
+    renderBokiFolders();
   });
