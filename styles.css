@@ -378,6 +378,11 @@ h1 {
   line-height: 1.35;
 }
 
+#boki .quiz-top h3 {
+  font-size: clamp(18px, 2vw, 24px);
+  line-height: 1.45;
+}
+
 .kanji-target {
   padding-bottom: 2px;
   border-bottom: 3px solid var(--gold);
@@ -405,6 +410,23 @@ h1 {
   white-space: pre-line;
 }
 
+.boki-source-image {
+  display: block;
+  width: 100%;
+  max-height: min(38vh, 360px);
+  object-fit: contain;
+  margin-top: 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--white);
+}
+
+#boki .passage {
+  border-left: 0;
+  padding: 0;
+  background: transparent;
+}
+
 .answers {
   display: grid;
   gap: 12px;
@@ -420,10 +442,24 @@ h1 {
   background: #fbfdfb;
   cursor: pointer;
   text-align: left;
+  font: inherit;
+  line-height: 1.6;
+  user-select: text;
+  -webkit-user-select: text;
+  white-space: pre-wrap;
 }
 
 .answer:hover {
   border-color: var(--green);
+}
+
+.answer:focus-visible {
+  outline: 3px solid rgba(27, 127, 95, 0.24);
+  outline-offset: 2px;
+}
+
+.answer[aria-disabled="true"] {
+  cursor: text;
 }
 
 .answer.correct {

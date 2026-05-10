@@ -1271,130 +1271,202 @@ const state = {
 
 const bokiFolders = [
   {
-    id: "boki-3kyu-sample-01",
-    title: "Boki 3級 - Đề mẫu 01",
-    subtitle: "問題1: 仕訳15問 / 問題2: 帳簿・残高 / 問題3: 決算・財務諸表",
-  },
-  {
-    id: "boki-3kyu-sample-02",
-    title: "Boki 3級 - Đề mẫu 02",
-    subtitle: "問題1: 仕訳15問 / 問題2: 帳簿・残高 / 問題3: 決算・財務諸表",
-  },
-  {
-    id: "boki-3kyu-sample-03",
-    title: "Boki 3級 - Đề mẫu 03",
-    subtitle: "問題1: 仕訳15問 / 問題2: 帳簿・残高 / 問題3: 決算・財務諸表",
-  },
-  {
-    id: "boki-3kyu-sample-04",
-    title: "Boki 3級 - Đề mẫu 04",
-    subtitle: "問題1: 仕訳15問 / 問題2: 帳簿・残高 / 問題3: 決算・財務諸表",
-  },
-  {
-    id: "boki-3kyu-sample-05",
-    title: "Boki 3級 - Đề mẫu 05",
-    subtitle: "問題1: 仕訳15問 / 問題2: 帳簿・残高 / 問題3: 決算・財務諸表",
+    id: "boki-3kyu-excel-01",
+    title: "Boki 3級 - Excel đề 1",
+    subtitle: "問題1: 仕訳15問 / 問題2: 2問 / 問題3: 27問",
   },
 ];
 
-function yen(value) {
-  return `${value.toLocaleString("en-US")}円`;
+const bokiOfficialQuestions = [
+  q("boki-3kyu-excel-01", "Boki 3級 Excel đề 1 - Mon 1 仕訳", "問題1-1. 得意先広島株式会社に対する売掛金￥500,000のうち、￥300,000は郵便為替証書で、￥160,000は同社振出の小切手で受け取った。なお、残額￥40,000については、以前に返品を受けていたが未処理であった。", ["答え・解説を見る"], 0, "答え: 借方 現金 460,000 / 借方 売上 40,000 / 貸方 売掛金 500,000。\nGiải thích: 郵便為替証書 và 小切手 người khác phát hành đều xử lý như 現金. Phần返品 chưa xử lý làm giảm 売上, đồng thời xóa toàn bộ 売掛金 500,000."),
+  q("boki-3kyu-excel-01", "Boki 3級 Excel đề 1 - Mon 1 仕訳", "問題1-2. 福岡株式会社から掛けで仕入れた商品￥170,000のうち、￥40,000分を品違いのため返品した。なお、返品額は掛代金から控除すること。", ["答え・解説を見る"], 0, "答え: 借方 買掛金 40,000 / 貸方 仕入 40,000。\nGiải thích: Trả lại hàng mua chịu thì giảm khoản phải trả 買掛金 và giảm 仕入 theo phương pháp 3 phân pháp."),
+  q("boki-3kyu-excel-01", "Boki 3級 Excel đề 1 - Mon 1 仕訳", "問題1-3. 電子記録債務￥760,000の支払期日が到来し、普通預金口座より引き落とされた旨の連絡を受けた。", ["答え・解説を見る"], 0, "答え: 借方 電子記録債務 760,000 / 貸方 普通預金 760,000。\nGiải thích: Đến hạn thanh toán 電子記録債務 nên nợ phải trả giảm bên Nợ, tiền gửi ngân hàng giảm bên Có."),
+  q("boki-3kyu-excel-01", "Boki 3級 Excel đề 1 - Mon 1 仕訳", "問題1-4. 商品￥20,000を売り上げ、代金のうち￥10,000は現金で受け取り、残額は掛けとした取引について、入金伝票を次のように作成したとき、振替伝票に記入される仕訳を答えなさい。なお、３伝票制を採用しており、商品売買の記帳は３分法によっている。", ["答え・解説を見る"], 0, "答え: 借方 売掛金 10,000 / 貸方 売上 10,000。\nGiải thích: 入金伝票 đã ghi phần thu tiền mặt 10,000. 振替伝票 chỉ ghi phần còn lại bán chịu: 売掛金 tăng và 売上 tăng 10,000.", "", '<div>問題1-4. 商品￥20,000を売り上げ、代金のうち￥10,000は現金で受け取り、残額は掛けとした取引について、入金伝票を次のように作成したとき、振替伝票に記入される仕訳を答えなさい。</div><img class="boki-source-image" src="./boki_excel_images/image_00_r7_c2.png" alt="入金伝票">'),
+  q("boki-3kyu-excel-01", "Boki 3級 Excel đề 1 - Mon 1 仕訳", "問題1-5. ×1年４月１日に利率年0.02％、利息は満期日（×2年３月31日）に受け取る条件で東西銀行に預け入れた１年ものの定期預金￥5,000,000について、本日、満期となったため、元金と利息の合計を東西銀行の普通預金口座に預け替えた。", ["答え・解説を見る"], 0, "答え: 借方 普通預金 5,001,000 / 貸方 定期預金 5,000,000 / 貸方 受取利息 1,000。\nGiải thích: Lãi = 5,000,000 × 0.02% = 1,000. Đáo hạn nên chuyển cả gốc và lãi sang 普通預金."),
+  q("boki-3kyu-excel-01", "Boki 3級 Excel đề 1 - Mon 1 仕訳", "問題1-6. 当期に得意先静岡株式会社に商品を売り上げたことで発生した売掛金￥146,000が貸し倒れた。なお、貸倒引当金の残高は￥700,000ある。", ["答え・解説を見る"], 0, "答え: 借方 貸倒損失 146,000 / 貸方 売掛金 146,000。\nGiải thích: Đây là 売掛金 phát sinh trong kỳ hiện tại, nên khi mất khả năng thu hồi thì dùng 貸倒損失, không dùng 貸倒引当金 của kỳ trước."),
+  q("boki-3kyu-excel-01", "Boki 3級 Excel đề 1 - Mon 1 仕訳", "問題1-7. ７月７日、本年度の雇用保険料（概算）￥123,000を現金で一括納付した。このうち会社負担分は、￥63,000であり、残額は従業員負担分である。従業員負担分は、４〜６月分については過去の給料から月額を差し引いているため、これを充当するが、７月以降の９か月分は会社が概算で立て替えて支払う。", ["答え・解説を見る"], 0, "答え: 借方 法定福利費 63,000 / 借方 預り金 15,000 / 借方 立替金 45,000 / 貸方 現金 123,000。\nGiải thích: Công ty chịu 63,000 là 法定福利費. Phần nhân viên 60,000 chia 12 tháng = 5,000/tháng; 4-6月 đã trừ lương nên xóa 預り金 15,000, 7月以降 9 tháng là công ty tạm ứng hộ 45,000."),
+  q("boki-3kyu-excel-01", "Boki 3級 Excel đề 1 - Mon 1 仕訳", "問題1-8. 香川株式会社は、先月開催された株主総会で承認されていた株主への配当金￥360,000を当座預金口座から支払った。", ["答え・解説を見る"], 0, "答え: 借方 未払配当金 360,000 / 貸方 当座預金 360,000。\nGiải thích: Cổ tức đã được phê duyệt trước đó nên khi trả tiền thì giảm 未払配当金 và giảm 当座預金."),
+  q("boki-3kyu-excel-01", "Boki 3級 Excel đề 1 - Mon 1 仕訳", "問題1-9. 関東商工銀行から￥1,200,000を借り入れ、約束手形を振り出した。これにともない借入期間の利息（日割計算）があらかじめ控除された金額が、当座預金口座に振り込まれた。なお、この借入金の借入期間は73日、利率は年３％である。なお、１年は365日とする。", ["答え・解説を見る"], 0, "答え: 借方 当座預金 1,192,800 / 借方 支払利息 7,200 / 貸方 手形借入金 1,200,000。\nGiải thích: Lãi bị trừ trước = 1,200,000 × 3% × 73/365 = 7,200. Số thực nhận vào 当座預金 là 1,192,800; nợ theo giấy hẹn là 手形借入金 1,200,000."),
+  q("boki-3kyu-excel-01", "Boki 3級 Excel đề 1 - Mon 1 仕訳", "問題1-10. 期首に、前期末に費用勘定から貯蔵品勘定に振り替えた収入印紙￥6,500について、適切な勘定科目に振り戻した。", ["答え・解説を見る"], 0, "答え: 借方 租税公課 6,500 / 貸方 貯蔵品 6,500。\nGiải thích: 収入印紙未使用分 đã chuyển sang 貯蔵品 ở cuối kỳ trước. Đầu kỳ đảo lại về chi phí 租税公課."),
+  q("boki-3kyu-excel-01", "Boki 3級 Excel đề 1 - Mon 1 仕訳", "問題1-11. 出張から戻った従業員から、旅費交通費として計￥39,000を支払ったとの報告書および領収書を受け取った。なお、従業員が出張へ出発する前に概算払いしていた￥50,000と支出額との差額は現金で受け取った。", ["答え・解説を見る"], 0, "答え: 借方 旅費交通費 39,000 / 借方 現金 11,000 / 貸方 仮払金 50,000。\nGiải thích: Tạm ứng trước là 仮払金. Khi quyết toán, chi phí thực tế 39,000 chuyển sang 旅費交通費, phần thừa 11,000 nhận lại bằng 現金."),
+  q("boki-3kyu-excel-01", "Boki 3級 Excel đề 1 - Mon 1 仕訳", "問題1-12. 事務所備品（取得日：×2年７月１日、取得原価：￥500,000、残存価額：ゼロ、耐用年数10年）を、×9年度期首に￥150,000で売却し、代金の全額が甲銀行の普通預金口座に振り込まれた。減価償却費は定額法で計算し、記帳は間接法を用いている。なお、決算日は３月31日である。", ["答え・解説を見る"], 0, "答え: 借方 普通預金 150,000 / 借方 減価償却累計額 337,500 / 借方 固定資産売却損 12,500 / 貸方 備品 500,000。\nGiải thích: Khấu hao lũy kế = 500,000/10年 × 6年9か月 = 337,500. Giá trị còn lại 162,500, bán 150,000 nên lỗ 12,500."),
+  q("boki-3kyu-excel-01", "Boki 3級 Excel đề 1 - Mon 1 仕訳", "問題1-13. 京都株式会社は、事務所として利用する目的でビルの１フロアについて賃借契約を締結した。なお、事務所を借り入れた際に敷金￥300,000、２か月分の家賃￥400,000及び仲介手数料￥150,000を普通預金口座から支払った。", ["答え・解説を見る"], 0, "答え: 借方 差入保証金 300,000 / 借方 支払家賃 400,000 / 借方 支払手数料 150,000 / 貸方 普通預金 850,000。\nGiải thích: 敷金 là tài sản ký quỹ 差入保証金. 家賃 và 仲介手数料 là chi phí, tất cả thanh toán bằng 普通預金."),
+  q("boki-3kyu-excel-01", "Boki 3級 Excel đề 1 - Mon 1 仕訳", "問題1-14. 決算につき、郵便切手の未使用分￥80,000と収入印紙の未使用分￥20,000を貯蔵品勘定へ振り替えた。", ["答え・解説を見る"], 0, "答え: 借方 貯蔵品 100,000 / 貸方 通信費 80,000 / 貸方 租税公課 20,000。\nGiải thích: Tem bưu chính chưa dùng thường đã ghi 通信費,収入印紙 chưa dùng đã ghi 租税公課. Cuối kỳ chuyển phần chưa dùng sang 貯蔵品."),
+  q("boki-3kyu-excel-01", "Boki 3級 Excel đề 1 - Mon 1 仕訳", "問題1-15. 事務作業に使用するため、下記の物品を購入し、物品とともに次の請求書を受け取った。", ["答え・解説を見る"], 0, "答え: 借方 備品 490,000 / 貸方 未払金 490,000。\nGiải thích: 応接用ソファー là 備品. 据付費用 và 送料 là chi phí phụ thuộc để đưa tài sản vào trạng thái sử dụng, nên cộng vào nguyên giá 備品: 480,000 + 3,500 + 6,500 = 490,000. Chưa trả ngay nên ghi 未払金.", "", '<div>問題1-15. 事務作業に使用するため、下記の物品を購入し、物品とともに次の請求書を受け取った。</div><img class="boki-source-image" src="./boki_excel_images/image_01_r44_c1.png" alt="請求書">'),
+  q("boki-3kyu-excel-01", "Boki 3級 Excel đề 1 - Mon 2", "問題2-1. 次に示す備品の固定資産台帳により、備品勘定、減価償却累計額勘定と減価償却費勘定の記入を示しなさい。", ["答え・解説を見る"], 0, "答え: 備品勘定は前期繰越 6,037,000、現金 3,156,000、次期繰越 9,193,000。減価償却累計額は前期繰越 1,850,000、減価償却費 1,539,000、次期繰越 3,389,000。減価償却費は借方 1,539,000、損益へ振替 1,539,000。\nGiải thích: 台帳の小計から取得原価合計 9,193,000、期首累計 1,850,000、当期減価償却費 1,539,000 を読み取る。備品Cは期中取得なので備品勘定の借方に追加する。", "ただし、勘定科目等はプルダウンから最も適当と思われるものを選び、選択しなさい。備品は残存価額ゼロの定額法にもとづき減価償却が行われており、減価償却費は月割計算によって決算時に一括計上している。なお、会計期間は×8年4月1日から×9年3月31日までの1年間である。\n\n固定資産台帳［×9年3月31日現在］（単位：円）\n取得年月日 / 名称 / 期末数量 / 耐用年数 / 期首（期中取得）取得原価 / 期首減価償却累計額 / 差引期首（期中取得）帳簿価額 / 当期減価償却費\n×4年9月20日 / A / 1 / 8年 / 2,592,000 / 1,161,000 / 1,431,000 / 324,000\n×7年4月1日 / B / 1 / 5年 / 3,445,000 / 689,000 / 2,756,000 / 689,000\n×8年10月12日 / C / 2 / 3年 / 3,156,000 / 0 / 3,156,000 / 526,000\n小計 /  /  /  / 9,193,000 / 1,850,000 / 7,343,000 / 1,539,000\n\n記入対象: 備品勘定、減価償却累計額勘定、減価償却費勘定。"),
+  q("boki-3kyu-excel-01", "Boki 3級 Excel đề 1 - Mon 2", "問題2-2. 次の文章の（①）から（④）にあてはまる最も適切な語句を選択しなさい。", ["答え・解説を見る"], 0, "答え: ① 未払金、② 含める、③ 資本的支出、④ 収益的支出。\nGiải thích: Mua TSCĐ trả sau phát sinh 未払金. Chi phí phụ thuộc để đưa tài sản vào sử dụng được 含める vào nguyên giá. Chi làm tăng giá trị/kéo dài thời gian sử dụng là 資本的支出; chi sửa chữa, bảo trì thông thường là 収益的支出.", "1. 有形固定資産を取得した際に、代金をあとで支払うときに生じる債務のことを（①）という。また有形固定資産の取得代金には、付随費用を（②）。\n\n2. 有形固定資産の価値の増加や使用可能年数が延長されるような支出のことを（③）といい、修繕や保守にかかる支出のことを（④）という。\n\n選択肢: 資本的支出、商品有高帳、未払金、含める、収益的支出、固定資産台帳、売掛金、未収入金、減価償却費、含めない。"),
+  q("boki-3kyu-excel-01", "Boki 3級 Excel đề 1 - Mon 3", "問題3. 次の決算整理前残高試算表と決算整理事項等にもとづいて、損益計算書と貸借対照表を完成しなさい。", ["答え・解説を見る"], 0, "答え: 損益計算書: 売上原価 5,759,000、受取手数料 998,000、支払家賃 1,800,000、貸倒引当金繰入 45,000、減価償却費 133,400、支払利息 216,000、法人税等 290,000、当期純利益 1,344,600。\n貸借対照表: 現金 6,750,000、当座預金 6,480,000、受取手形 1,050,000、貸倒引当金 △31,500、売掛金 1,270,000、貸倒引当金 △38,100、商品 1,420,000、前払費用 450,000、未収収益 50,000、建物 4,820,000、建物減価償却累計額 △773,400、備品 200,000、備品減価償却累計額 △199,999、未払費用 144,000、未払法人税等 150,000、繰越利益剰余金 6,463,001。\nGiải thích: Làm theo thứ tự: sửa sai 未収入金/現金, ghi nhận 建物 chưa xử lý, tính 貸倒引当金 3%, đổi 期末商品 sang 商品, tính 減価償却, ghi 未収収益・前払費用・未払費用, rồi tính thuế và lợi nhuận.", "", '<div>問題3. 次の決算整理前残高試算表と決算整理事項等にもとづいて、損益計算書と貸借対照表を完成しなさい。</div><img class="boki-source-image" src="./boki_excel_images/image_02_r194_c1.png" alt="決算整理前残高試算表と決算整理事項">')
+];
+
+const bokiMon3PromptImage = '<div>問題3. 次の決算整理前残高試算表と決算整理事項等にもとづいて、損益計算書と貸借対照表を完成しなさい。</div><img class="boki-source-image" src="./boki_excel_images/image_02_r194_c1.png" alt="決算整理前残高試算表と決算整理事項">';
+
+function bokiMon3Fill(section, item, answer, distractors, explanation) {
+  return q(
+    "boki-3kyu-excel-01",
+    `Boki 3級 Excel đề 1 - Mon 3 ${section}`,
+    `問題3-${section}. ${item}に入る金額を選びなさい。`,
+    [answer, ...distractors],
+    0,
+    `答え: ${item} ${answer}。\nGiải thích: ${explanation}`,
+    "",
+    bokiMon3PromptImage
+  );
 }
 
-function bokiChoice(correct, distractors, answerIndex) {
-  const options = [...distractors];
-  options.splice(answerIndex, 0, correct);
-  return { options, answer: answerIndex };
-}
+const bokiMon3Questions = [
+  bokiMon3Fill("損益計算書", "売上原価", "5,759,000", ["5,690,000", "6,500,000", "6,259,000"], "期首商品 679,000 + 仕入 6,500,000 - 期末商品 1,420,000 = 5,759,000."),
+  bokiMon3Fill("損益計算書", "受取手数料", "998,000", ["948,000", "898,000", "1,048,000"], "試算表 948,000 に未収分 50,000 を加える。"),
+  bokiMon3Fill("損益計算書", "支払家賃", "1,800,000", ["2,250,000", "1,350,000", "450,000"], "翌期分3か月分450,000を前払費用にするため、試算表2,250,000から450,000を差し引く。"),
+  bokiMon3Fill("損益計算書", "貸倒引当金繰入", "45,000", ["24,600", "69,600", "20,400"], "売上債権の期末残高に3%を設定し、既存の貸倒引当金との差額を繰り入れる。"),
+  bokiMon3Fill("損益計算書", "減価償却費", "133,400", ["199,999", "197,200", "64,800"], "建物は既存分と3月取得分を定額法で計算し、備品は当期の減価償却不要。"),
+  bokiMon3Fill("損益計算書", "支払利息", "216,000", ["72,000", "144,000", "288,000"], "試算表の72,000に、8月1日から3月31日までの未払利息144,000を加える。"),
+  bokiMon3Fill("損益計算書", "法人税、住民税及び事業税", "290,000", ["150,000", "140,000", "430,000"], "当期税額として算定された290,000を費用にする。仮払分との差額は未払法人税等。"),
+  bokiMon3Fill("損益計算書", "当期純利益", "1,344,600", ["1,494,600", "1,794,600", "1,210,200"], "収益合計10,888,000から費用合計9,543,400を差し引く。"),
+  bokiMon3Fill("貸借対照表", "現金", "6,750,000", ["7,000,000", "7,250,000", "6,500,000"], "自己振出小切手で回収した分250,000は当座預金で処理すべきため、誤って増やした現金を減らす。"),
+  bokiMon3Fill("貸借対照表", "普通預金", "3,990,000", ["6,480,000", "7,850,000", "2,370,000"], "普通預金は決算整理事項の影響を受けないため試算表残高のまま。"),
+  bokiMon3Fill("貸借対照表", "当座預金", "6,480,000", ["7,850,000", "8,100,000", "6,230,000"], "自己振出小切手回収で250,000増え、建物購入の小切手振出で1,620,000減る。"),
+  bokiMon3Fill("貸借対照表", "受取手形", "1,050,000", ["1,018,500", "1,081,500", "1,270,000"], "受取手形の残高自体は試算表の1,050,000。ここから貸倒引当金を控除表示する。"),
+  bokiMon3Fill("貸借対照表", "受取手形に対する貸倒引当金", "31,500", ["38,100", "24,600", "45,000"], "受取手形 1,050,000 × 3% = 31,500。"),
+  bokiMon3Fill("貸借対照表", "受取手形の差引額", "1,018,500", ["1,050,000", "1,011,900", "1,231,900"], "受取手形 1,050,000 - 貸倒引当金 31,500 = 1,018,500。"),
+  bokiMon3Fill("貸借対照表", "売掛金", "1,270,000", ["1,520,000", "1,231,900", "1,300,000"], "未収入金250,000は当座預金回収なので売掛金ではない。売掛金は試算表残高1,520,000から調整後1,270,000。"),
+  bokiMon3Fill("貸借対照表", "売掛金に対する貸倒引当金", "38,100", ["31,500", "45,000", "24,600"], "売掛金 1,270,000 × 3% = 38,100。"),
+  bokiMon3Fill("貸借対照表", "売掛金の差引額", "1,231,900", ["1,270,000", "1,018,500", "1,481,900"], "売掛金 1,270,000 - 貸倒引当金 38,100 = 1,231,900。"),
+  bokiMon3Fill("貸借対照表", "商品", "1,420,000", ["679,000", "5,759,000", "6,500,000"], "期末棚卸高が貸借対照表の商品になる。"),
+  bokiMon3Fill("貸借対照表", "前払費用", "450,000", ["1,800,000", "2,250,000", "0"], "翌期分の家賃3か月分を前払費用に振り替える。"),
+  bokiMon3Fill("貸借対照表", "未収収益", "50,000", ["948,000", "998,000", "0"], "手数料の未収分50,000を未収収益として資産計上する。"),
+  bokiMon3Fill("貸借対照表", "建物", "4,820,000", ["3,200,000", "1,620,000", "4,046,600"], "試算表の建物3,200,000に、未処理の建物購入1,620,000を加える。"),
+  bokiMon3Fill("貸借対照表", "建物減価償却累計額", "773,400", ["640,000", "133,400", "837,200"], "期首累計640,000に当期の建物減価償却費133,400を加える。"),
+  bokiMon3Fill("貸借対照表", "建物の差引額", "4,046,600", ["4,820,000", "4,180,000", "3,862,800"], "建物 4,820,000 - 減価償却累計額 773,400 = 4,046,600。"),
+  bokiMon3Fill("貸借対照表", "備品の差引額", "1", ["200,000", "0", "199,999"], "備品200,000から備品減価償却累計額199,999を控除する。"),
+  bokiMon3Fill("貸借対照表", "未払費用", "144,000", ["72,000", "216,000", "288,000"], "借入金利息の未払分を負債として計上する。"),
+  bokiMon3Fill("貸借対照表", "未払法人税等", "150,000", ["290,000", "140,000", "430,000"], "法人税等290,000から仮払法人税等140,000を差し引く。"),
+  bokiMon3Fill("貸借対照表", "繰越利益剰余金", "6,463,001", ["5,118,401", "1,344,600", "6,613,001"], "期首の繰越利益剰余金5,118,401に当期純利益1,344,600を加える。")
+];
 
-function bokiQuestion(folder, label, prompt, correct, distractors, explanation, answerIndex = 0) {
-  const choice = bokiChoice(correct, distractors, answerIndex);
-  return q(folder, label, prompt, choice.options, choice.answer, explanation);
-}
+bokiOfficialQuestions.splice(bokiOfficialQuestions.length - 1, 1, ...bokiMon3Questions);
 
-function buildBokiFullMockQuestions() {
-  const list = [];
-  bokiFolders.forEach((folder, setIndex) => {
-    const n = setIndex + 1;
-    const base = 1000 * n;
-    const label1 = `${folder.title} - 問題1 仕訳`;
-    const label2 = `${folder.title} - 問題2 帳簿・残高`;
-    const label3 = `${folder.title} - 問題3 決算・財務諸表`;
+bokiOfficialQuestions.forEach((question, index) => {
+  if (question.label.includes("Mon 3")) {
+    question.answer = 0;
+    return;
+  }
 
-    const journalRows = [
-      [`問題1-1. Mua hàng hóa ${yen(30000 + base)} bằng tiền mặt.`, `借方: 仕入 ${yen(30000 + base)} / 貸方: 現金 ${yen(30000 + base)}`, [`借方: 現金 ${yen(30000 + base)} / 貸方: 仕入 ${yen(30000 + base)}`, `借方: 売上 ${yen(30000 + base)} / 貸方: 現金 ${yen(30000 + base)}`, `借方: 買掛金 ${yen(30000 + base)} / 貸方: 仕入 ${yen(30000 + base)}`], "仕入 tăng bên Nợ, 現金 giảm bên Có."],
-      [`問題1-2. Bán hàng hóa ${yen(52000 + base)} cho khách, chưa thu tiền.`, `借方: 売掛金 ${yen(52000 + base)} / 貸方: 売上 ${yen(52000 + base)}`, [`借方: 現金 ${yen(52000 + base)} / 貸方: 売上 ${yen(52000 + base)}`, `借方: 売上 ${yen(52000 + base)} / 貸方: 売掛金 ${yen(52000 + base)}`, `借方: 買掛金 ${yen(52000 + base)} / 貸方: 売上 ${yen(52000 + base)}`], "Bán chịu làm 売掛金 tăng bên Nợ và 売上 tăng bên Có."],
-      [`問題1-3. Thu nợ bán chịu ${yen(26000 + base)} qua tài khoản ngân hàng.`, `借方: 普通預金 ${yen(26000 + base)} / 貸方: 売掛金 ${yen(26000 + base)}`, [`借方: 売掛金 ${yen(26000 + base)} / 貸方: 普通預金 ${yen(26000 + base)}`, `借方: 現金 ${yen(26000 + base)} / 貸方: 売上 ${yen(26000 + base)}`, `借方: 普通預金 ${yen(26000 + base)} / 貸方: 買掛金 ${yen(26000 + base)}`], "Thu khoản phải thu: 普通預金 tăng, 売掛金 giảm."],
-      [`問題1-4. Trả nợ mua hàng ${yen(18000 + base)} bằng tài khoản ngân hàng.`, `借方: 買掛金 ${yen(18000 + base)} / 貸方: 普通預金 ${yen(18000 + base)}`, [`借方: 普通預金 ${yen(18000 + base)} / 貸方: 買掛金 ${yen(18000 + base)}`, `借方: 仕入 ${yen(18000 + base)} / 貸方: 普通預金 ${yen(18000 + base)}`, `借方: 売掛金 ${yen(18000 + base)} / 貸方: 普通預金 ${yen(18000 + base)}`], "買掛金 giảm ghi bên Nợ, 普通預金 giảm ghi bên Có."],
-      [`問題1-5. Trả tiền thuê văn phòng ${yen(12000 + base)} bằng tiền mặt.`, `借方: 支払家賃 ${yen(12000 + base)} / 貸方: 現金 ${yen(12000 + base)}`, [`借方: 現金 ${yen(12000 + base)} / 貸方: 支払家賃 ${yen(12000 + base)}`, `借方: 前払家賃 ${yen(12000 + base)} / 貸方: 現金 ${yen(12000 + base)}`, `借方: 未払金 ${yen(12000 + base)} / 貸方: 現金 ${yen(12000 + base)}`], "支払家賃 là chi phí, tăng bên Nợ; 現金 giảm bên Có."],
-      [`問題1-6. Nhận hóa đơn điện nước ${yen(7000 + base)} nhưng chưa trả.`, `借方: 水道光熱費 ${yen(7000 + base)} / 貸方: 未払金 ${yen(7000 + base)}`, [`借方: 未払金 ${yen(7000 + base)} / 貸方: 水道光熱費 ${yen(7000 + base)}`, `借方: 現金 ${yen(7000 + base)} / 貸方: 水道光熱費 ${yen(7000 + base)}`, `借方: 買掛金 ${yen(7000 + base)} / 貸方: 水道光熱費 ${yen(7000 + base)}`], "Chi phí phát sinh nhưng chưa trả: ghi Có 未払金."],
-      [`問題1-7. Chủ doanh nghiệp góp vốn ${yen(200000 + base)} bằng tiền mặt.`, `借方: 現金 ${yen(200000 + base)} / 貸方: 資本金 ${yen(200000 + base)}`, [`借方: 資本金 ${yen(200000 + base)} / 貸方: 現金 ${yen(200000 + base)}`, `借方: 現金 ${yen(200000 + base)} / 貸方: 借入金 ${yen(200000 + base)}`, `借方: 売上 ${yen(200000 + base)} / 貸方: 資本金 ${yen(200000 + base)}`], "現金 tăng bên Nợ, 資本金 tăng bên Có."],
-      [`問題1-8. Vay ngân hàng ${yen(100000 + base)} và tiền vào tài khoản thường.`, `借方: 普通預金 ${yen(100000 + base)} / 貸方: 借入金 ${yen(100000 + base)}`, [`借方: 借入金 ${yen(100000 + base)} / 貸方: 普通預金 ${yen(100000 + base)}`, `借方: 普通預金 ${yen(100000 + base)} / 貸方: 売上 ${yen(100000 + base)}`, `借方: 現金 ${yen(100000 + base)} / 貸方: 普通預金 ${yen(100000 + base)}`], "普通預金 là tài sản tăng; 借入金 là nợ phải trả tăng."],
-      [`問題1-9. Trả lãi vay ${yen(3000 + base)} bằng tiền mặt.`, `借方: 支払利息 ${yen(3000 + base)} / 貸方: 現金 ${yen(3000 + base)}`, [`借方: 現金 ${yen(3000 + base)} / 貸方: 支払利息 ${yen(3000 + base)}`, `借方: 受取利息 ${yen(3000 + base)} / 貸方: 現金 ${yen(3000 + base)}`, `借方: 借入金 ${yen(3000 + base)} / 貸方: 現金 ${yen(3000 + base)}`], "支払利息 là chi phí lãi vay."],
-      [`問題1-10. Nhận lãi tiền gửi ${yen(1500 + base)} vào tài khoản ngân hàng.`, `借方: 普通預金 ${yen(1500 + base)} / 貸方: 受取利息 ${yen(1500 + base)}`, [`借方: 受取利息 ${yen(1500 + base)} / 貸方: 普通預金 ${yen(1500 + base)}`, `借方: 現金 ${yen(1500 + base)} / 貸方: 支払利息 ${yen(1500 + base)}`, `借方: 普通預金 ${yen(1500 + base)} / 貸方: 借入金 ${yen(1500 + base)}`], "受取利息 là thu nhập, tăng bên Có."],
-      [`問題1-11. Trả trước cho nhà cung cấp ${yen(16000 + base)} bằng tiền mặt.`, `借方: 前払金 ${yen(16000 + base)} / 貸方: 現金 ${yen(16000 + base)}`, [`借方: 現金 ${yen(16000 + base)} / 貸方: 前払金 ${yen(16000 + base)}`, `借方: 前受金 ${yen(16000 + base)} / 貸方: 現金 ${yen(16000 + base)}`, `借方: 仕入 ${yen(16000 + base)} / 貸方: 現金 ${yen(16000 + base)}`], "Tiền trả trước cho bên bán là 前払金."],
-      [`問題1-12. Nhận trước của khách hàng ${yen(22000 + base)} bằng tiền mặt.`, `借方: 現金 ${yen(22000 + base)} / 貸方: 前受金 ${yen(22000 + base)}`, [`借方: 前受金 ${yen(22000 + base)} / 貸方: 現金 ${yen(22000 + base)}`, `借方: 現金 ${yen(22000 + base)} / 貸方: 売上 ${yen(22000 + base)}`, `借方: 売掛金 ${yen(22000 + base)} / 貸方: 前受金 ${yen(22000 + base)}`], "Nhận trước chưa ghi doanh thu, dùng 前受金."],
-      [`問題1-13. Mua văn phòng phẩm ${yen(5000 + base)} bằng tiền mặt, ghi vào chi phí.`, `借方: 消耗品費 ${yen(5000 + base)} / 貸方: 現金 ${yen(5000 + base)}`, [`借方: 現金 ${yen(5000 + base)} / 貸方: 消耗品費 ${yen(5000 + base)}`, `借方: 備品 ${yen(5000 + base)} / 貸方: 現金 ${yen(5000 + base)}`, `借方: 仕入 ${yen(5000 + base)} / 貸方: 現金 ${yen(5000 + base)}`], "消耗品費 là chi phí vật dụng tiêu hao."],
-      [`問題1-14. Trả chi phí gửi hàng bán ${yen(4500 + base)} bằng tiền mặt.`, `借方: 発送費 ${yen(4500 + base)} / 貸方: 現金 ${yen(4500 + base)}`, [`借方: 現金 ${yen(4500 + base)} / 貸方: 発送費 ${yen(4500 + base)}`, `借方: 仕入 ${yen(4500 + base)} / 貸方: 現金 ${yen(4500 + base)}`, `借方: 支払手数料 ${yen(4500 + base)} / 貸方: 現金 ${yen(4500 + base)}`], "発送費 là chi phí vận chuyển/gửi hàng khi bán."],
-      [`問題1-15. Mua thiết bị ${yen(85000 + base)} bằng tài khoản ngân hàng.`, `借方: 備品 ${yen(85000 + base)} / 貸方: 普通預金 ${yen(85000 + base)}`, [`借方: 普通預金 ${yen(85000 + base)} / 貸方: 備品 ${yen(85000 + base)}`, `借方: 消耗品費 ${yen(85000 + base)} / 貸方: 普通預金 ${yen(85000 + base)}`, `借方: 仕入 ${yen(85000 + base)} / 貸方: 普通預金 ${yen(85000 + base)}`], "備品 là tài sản cố định/thiết bị, tăng bên Nợ."],
-    ];
-
-    journalRows.forEach((row, index) => {
-      list.push(bokiQuestion(folder.id, label1, row[0], row[1], row[2], row[3], (index + n) % 4));
-    });
-
-    const cashDebit = 90000 + base;
-    const cashCredit = 25000 + base;
-    const arDebit = 80000 + base;
-    const arCredit = 30000 + base;
-    const cashBalance = cashDebit - cashCredit;
-    const arBalance = arDebit - arCredit;
+  const choices = [
     [
-      [
-        "問題2-問1. 補助簿・勘定記入: 現金の借方合計が" + yen(cashDebit) + "、貸方合計が" + yen(cashCredit) + "。また、売掛金の借方合計が" + yen(arDebit) + "、貸方合計が" + yen(arCredit) + "。正しい組み合わせはどれか。",
-        `現金: 借方 ${yen(cashBalance)} / 売掛金: 借方 ${yen(arBalance)}`,
-        [
-          `現金: 貸方 ${yen(cashBalance)} / 売掛金: 借方 ${yen(arBalance)}`,
-          `現金: 借方 ${yen(cashDebit + cashCredit)} / 売掛金: 貸方 ${yen(arBalance)}`,
-          `現金: 貸方 ${yen(cashCredit)} / 売掛金: 貸方 ${yen(arCredit)}`,
-        ],
-        "問題2の問1は補助簿・勘定記入系。現金も売掛金も資産なので通常は借方残高。差額で残高を求める。",
-      ],
-      [
-        "問題2-問2. 理論・補助簿選択: 売掛金元帳の説明として正しいものはどれか。",
-        "得意先ごとに売掛金の増減と残高を管理する補助簿",
-        [
-          "仕入先ごとに買掛金の増減と残高を管理する補助簿",
-          "現金の収入と支出だけを日付順に記録する補助簿",
-          "商品を仕入れた取引だけを記録する補助簿",
-        ],
-        "問題2の問2は用語・補助簿の選択。売掛金元帳は khách hàng/得意先ごとの khoản phải thu を管理する sổ phụ.",
-      ],
-    ].forEach((row, index) => {
-      list.push(bokiQuestion(folder.id, label2, row[0], row[1], row[2], row[3], (index + 1 + n) % 4));
-    });
+      "借方 現金 460,000 / 借方 売上 40,000 / 貸方 売掛金 500,000",
+      "借方 現金 500,000 / 貸方 売掛金 500,000",
+      "借方 現金 460,000 / 借方 仕入 40,000 / 貸方 売掛金 500,000",
+      "借方 売掛金 500,000 / 貸方 現金 460,000 / 貸方 売上 40,000",
+    ],
+    [
+      "借方 買掛金 40,000 / 貸方 仕入 40,000",
+      "借方 仕入 40,000 / 貸方 買掛金 40,000",
+      "借方 売上 40,000 / 貸方 売掛金 40,000",
+      "借方 買掛金 170,000 / 貸方 仕入 170,000",
+    ],
+    [
+      "借方 電子記録債務 760,000 / 貸方 普通預金 760,000",
+      "借方 普通預金 760,000 / 貸方 電子記録債務 760,000",
+      "借方 電子記録債権 760,000 / 貸方 普通預金 760,000",
+      "借方 買掛金 760,000 / 貸方 当座預金 760,000",
+    ],
+    [
+      "借方 売掛金 10,000 / 貸方 売上 10,000",
+      "借方 現金 10,000 / 貸方 売上 10,000",
+      "借方 売掛金 20,000 / 貸方 売上 20,000",
+      "借方 売上 10,000 / 貸方 売掛金 10,000",
+    ],
+    [
+      "借方 普通預金 5,001,000 / 貸方 定期預金 5,000,000 / 貸方 受取利息 1,000",
+      "借方 普通預金 5,000,000 / 貸方 定期預金 5,000,000",
+      "借方 定期預金 5,001,000 / 貸方 普通預金 5,000,000 / 貸方 受取利息 1,000",
+      "借方 普通預金 5,001,000 / 貸方 定期預金 5,000,000 / 貸方 支払利息 1,000",
+    ],
+    [
+      "借方 貸倒損失 146,000 / 貸方 売掛金 146,000",
+      "借方 貸倒引当金 146,000 / 貸方 売掛金 146,000",
+      "借方 売掛金 146,000 / 貸方 貸倒損失 146,000",
+      "借方 貸倒損失 146,000 / 貸方 買掛金 146,000",
+    ],
+    [
+      "借方 法定福利費 63,000 / 借方 預り金 15,000 / 借方 立替金 45,000 / 貸方 現金 123,000",
+      "借方 法定福利費 123,000 / 貸方 現金 123,000",
+      "借方 法定福利費 63,000 / 借方 預り金 60,000 / 貸方 現金 123,000",
+      "借方 立替金 123,000 / 貸方 現金 123,000",
+    ],
+    [
+      "借方 未払配当金 360,000 / 貸方 当座預金 360,000",
+      "借方 繰越利益剰余金 360,000 / 貸方 当座預金 360,000",
+      "借方 配当金 360,000 / 貸方 現金 360,000",
+      "借方 当座預金 360,000 / 貸方 未払配当金 360,000",
+    ],
+    [
+      "借方 当座預金 1,192,800 / 借方 支払利息 7,200 / 貸方 手形借入金 1,200,000",
+      "借方 当座預金 1,200,000 / 貸方 手形借入金 1,200,000",
+      "借方 当座預金 1,192,800 / 借方 受取利息 7,200 / 貸方 手形借入金 1,200,000",
+      "借方 普通預金 1,192,800 / 借方 支払利息 7,200 / 貸方 借入金 1,200,000",
+    ],
+    [
+      "借方 租税公課 6,500 / 貸方 貯蔵品 6,500",
+      "借方 貯蔵品 6,500 / 貸方 租税公課 6,500",
+      "借方 通信費 6,500 / 貸方 貯蔵品 6,500",
+      "借方 消耗品費 6,500 / 貸方 貯蔵品 6,500",
+    ],
+    [
+      "借方 旅費交通費 39,000 / 借方 現金 11,000 / 貸方 仮払金 50,000",
+      "借方 旅費交通費 50,000 / 貸方 仮払金 50,000",
+      "借方 仮払金 50,000 / 貸方 旅費交通費 39,000 / 貸方 現金 11,000",
+      "借方 旅費交通費 39,000 / 貸方 現金 39,000",
+    ],
+    [
+      "借方 普通預金 150,000 / 借方 減価償却累計額 337,500 / 借方 固定資産売却損 12,500 / 貸方 備品 500,000",
+      "借方 普通預金 150,000 / 借方 減価償却累計額 350,000 / 貸方 備品 500,000",
+      "借方 普通預金 150,000 / 借方 固定資産売却損 350,000 / 貸方 備品 500,000",
+      "借方 普通預金 150,000 / 借方 減価償却累計額 337,500 / 貸方 備品 487,500",
+    ],
+    [
+      "借方 差入保証金 300,000 / 借方 支払家賃 400,000 / 借方 支払手数料 150,000 / 貸方 普通預金 850,000",
+      "借方 支払家賃 850,000 / 貸方 普通預金 850,000",
+      "借方 差入保証金 300,000 / 借方 前払費用 400,000 / 借方 支払手数料 150,000 / 貸方 普通預金 850,000",
+      "借方 敷金 300,000 / 借方 支払家賃 550,000 / 貸方 普通預金 850,000",
+    ],
+    [
+      "借方 貯蔵品 100,000 / 貸方 通信費 80,000 / 貸方 租税公課 20,000",
+      "借方 通信費 80,000 / 借方 租税公課 20,000 / 貸方 貯蔵品 100,000",
+      "借方 貯蔵品 100,000 / 貸方 消耗品費 100,000",
+      "借方 前払費用 100,000 / 貸方 通信費 80,000 / 貸方 租税公課 20,000",
+    ],
+    [
+      "借方 備品 490,000 / 貸方 未払金 490,000",
+      "借方 備品 480,000 / 借方 支払手数料 10,000 / 貸方 未払金 490,000",
+      "借方 消耗品費 490,000 / 貸方 未払金 490,000",
+      "借方 備品 490,000 / 貸方 買掛金 490,000",
+    ],
+    [
+      "備品: 前期繰越 6,037,000・現金 3,156,000・次期繰越 9,193,000 / 減価償却費 1,539,000",
+      "備品: 前期繰越 6,037,000・次期繰越 6,037,000 / 減価償却費 1,539,000",
+      "備品: 現金 3,156,000・次期繰越 3,156,000 / 減価償却費 1,850,000",
+      "備品: 前期繰越 9,193,000・次期繰越 6,037,000 / 減価償却費 3,389,000",
+    ],
+    [
+      "① 未払金、② 含める、③ 資本的支出、④ 収益的支出",
+      "① 買掛金、② 含めない、③ 収益的支出、④ 資本的支出",
+      "① 未収入金、② 含める、③ 収益的支出、④ 資本的支出",
+      "① 未払金、② 含めない、③ 資本的支出、④ 収益的支出",
+    ],
+    [
+      "売上原価 5,759,000 / 支払家賃 1,800,000 / 減価償却費 133,400 / 当期純利益 1,344,600",
+      "売上原価 5,759,000 / 支払家賃 1,350,000 / 減価償却費 133,400 / 当期純利益 1,794,600",
+      "売上原価 5,690,000 / 支払家賃 1,800,000 / 減価償却費 199,999 / 当期純利益 1,344,600",
+      "売上原価 5,759,000 / 支払家賃 1,800,000 / 減価償却費 133,400 / 当期純損失 1,344,600",
+    ],
+  ][index];
 
-    const sales = 300000 + base * 2;
-    const cost = 185000 + base;
-    const expenses = 62000 + base;
-    const depreciation = 24000 + base;
-    const prepaid = 12000 + base;
-    const allowance = 5000 + base;
-    const netIncome = sales - cost - expenses - depreciation - allowance + prepaid;
-    list.push(bokiQuestion(
-      folder.id,
-      label3,
-      `問題3. 決算整理後の損益計算書作成: 売上 ${yen(sales)}、売上原価 ${yen(cost)}、販売費及び一般管理費 ${yen(expenses)}。決算整理として、減価償却費 ${yen(depreciation)}、貸倒引当金繰入 ${yen(allowance)}を計上し、保険料の前払分 ${yen(prepaid)}を費用から控除する。当期純利益はいくらか。`,
-      yen(netIncome),
-      [yen(sales - cost - expenses), yen(netIncome + depreciation), yen(netIncome - prepaid)],
-      "問題3は1つの大問で、決算整理を反映して財務諸表を作る形式。計算は 売上 - 売上原価 - 販管費 - 減価償却費 - 貸倒引当金繰入 + 前払分の費用控除。",
-      (n + 2) % 4
-    ));
-  });
-  return list;
-}
+  question.options = choices;
+  question.answer = 0;
+});
 
-questions.push(...buildBokiFullMockQuestions());
+questions.push(...bokiOfficialQuestions);
 
 const questionType = document.querySelector("#questionType");
 const questionText = document.querySelector("#questionText");
@@ -2652,6 +2724,30 @@ function promptHtml(question) {
   return `${prompt.slice(0, index)}<span class="kanji-target">${target}</span>${prompt.slice(index + target.length)}`;
 }
 
+function hasTextSelection() {
+  return window.getSelection?.().toString().trim().length > 0;
+}
+
+function createCopyableAnswer(option, onChoose) {
+  const answer = document.createElement("div");
+  answer.className = "answer";
+  answer.setAttribute("role", "button");
+  answer.tabIndex = 0;
+  answer.textContent = option;
+  answer.addEventListener("click", () => {
+    if (answer.getAttribute("aria-disabled") === "true" || hasTextSelection()) return;
+    onChoose();
+  });
+  answer.addEventListener("keydown", (event) => {
+    if (answer.getAttribute("aria-disabled") === "true") return;
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      onChoose();
+    }
+  });
+  return answer;
+}
+
 function saveProgress() {
   localStorage.setItem("n1Answered", String(state.answered));
   localStorage.setItem("n1Correct", String(state.correct));
@@ -2724,12 +2820,7 @@ function renderQuestion() {
   feedback.textContent = "";
 
   current.options.forEach((option, optionIndex) => {
-    const button = document.createElement("button");
-    button.className = "answer";
-    button.type = "button";
-    button.textContent = option;
-    button.addEventListener("click", () => chooseAnswer(current, optionIndex));
-    answers.appendChild(button);
+    answers.appendChild(createCopyableAnswer(option, () => chooseAnswer(current, optionIndex)));
   });
 
   const selected = state.selectedByPrompt[current.prompt];
@@ -2829,22 +2920,30 @@ function renderBokiQuestion() {
   }
 
   const current = list[state.index];
+  const imagePrompt = current.htmlPrompt?.includes("<img");
   bokiQuestionType.textContent = current.label;
-  bokiQuestionText.innerHTML = promptHtml(current);
+  if (imagePrompt) {
+    const images = current.htmlPrompt.match(/<img[^>]+>/g) || [];
+    bokiQuestionText.textContent = current.prompt;
+    bokiPassage.hidden = false;
+    bokiPassage.innerHTML = images.join("");
+  } else {
+    bokiQuestionText.innerHTML = promptHtml(current);
+    if (current.passage) {
+      bokiPassage.hidden = false;
+      bokiPassage.textContent = current.passage;
+    } else {
+      bokiPassage.hidden = true;
+      bokiPassage.textContent = "";
+    }
+  }
   bokiQuestionCount.textContent = `${state.index + 1}/${list.length}`;
-  bokiPassage.hidden = true;
-  bokiPassage.textContent = "";
   bokiAnswers.innerHTML = "";
   bokiFeedback.hidden = true;
   bokiFeedback.textContent = "";
 
   current.options.forEach((option, optionIndex) => {
-    const button = document.createElement("button");
-    button.className = "answer";
-    button.type = "button";
-    button.textContent = option;
-    button.addEventListener("click", () => chooseBokiAnswer(current, optionIndex));
-    bokiAnswers.appendChild(button);
+    bokiAnswers.appendChild(createCopyableAnswer(option, () => chooseBokiAnswer(current, optionIndex)));
   });
 
   const selected = state.selectedByPrompt[current.prompt];
@@ -2903,10 +3002,11 @@ function chooseBokiAnswer(question, optionIndex) {
 }
 
 function revealBokiAnswer(question, selectedIndex) {
-  [...bokiAnswers.children].forEach((button, optionIndex) => {
-    button.disabled = true;
-    if (optionIndex === question.answer) button.classList.add("correct");
-    if (optionIndex === selectedIndex && optionIndex !== question.answer) button.classList.add("wrong");
+  [...bokiAnswers.children].forEach((answer, optionIndex) => {
+    answer.setAttribute("aria-disabled", "true");
+    answer.tabIndex = -1;
+    if (optionIndex === question.answer) answer.classList.add("correct");
+    if (optionIndex === selectedIndex && optionIndex !== question.answer) answer.classList.add("wrong");
   });
   bokiFeedback.hidden = false;
   bokiFeedback.textContent = question.explanation;
@@ -2990,10 +3090,11 @@ function chooseAnswer(question, optionIndex) {
 }
 
 function revealAnswer(question, selectedIndex) {
-  [...answers.children].forEach((button, optionIndex) => {
-    button.disabled = true;
-    if (optionIndex === question.answer) button.classList.add("correct");
-    if (optionIndex === selectedIndex && optionIndex !== question.answer) button.classList.add("wrong");
+  [...answers.children].forEach((answer, optionIndex) => {
+    answer.setAttribute("aria-disabled", "true");
+    answer.tabIndex = -1;
+    if (optionIndex === question.answer) answer.classList.add("correct");
+    if (optionIndex === selectedIndex && optionIndex !== question.answer) answer.classList.add("wrong");
   });
   feedback.hidden = false;
   feedback.textContent = question.explanation;
