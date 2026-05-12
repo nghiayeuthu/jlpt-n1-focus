@@ -1528,6 +1528,8 @@ const kanjiTargets = {
   "exam-2024-07": ["腐敗", "粗い", "粘膜", "寿命", "戒める", "誓約書"],
   "exam-2023-12": ["軌跡", "偏り", "矛盾", "誇張", "賄って", "軽率"],
   "exam-2023-07": ["騒然", "諭した", "秩序", "潜伏", "朗らかな", "振興"],
+  "exam-2016-12": ["人脈", "賢い", "顕著", "多岐", "廃れて", "相場"],
+  "exam-2015-12": ["興奮", "唱えた", "変遷", "値する", "随時", "励んで"],
 };
 
 const n1Vocabulary = [
@@ -1770,6 +1772,181 @@ const sortedN2Vocabulary = [...n2Vocabulary].sort((a, b) => b[0].length - a[0].l
 const sortedStudyVocabulary = [...n1Vocabulary, ...n2Vocabulary].sort((a, b) => b[0].length - a[0].length);
 
 const supplementalVocabAnswers = [
+  ["添付", "てんぷ", "đính kèm, gửi kèm tài liệu"],
+  ["保護", "ほご", "bảo vệ, che chở"],
+  ["本筋", "ほんすじ", "mạch chính, cốt truyện chính"],
+  ["伴奏", "ばんそう", "đệm nhạc"],
+  ["推理", "すいり", "suy luận"],
+  ["極めて", "きわめて", "cực kỳ, vô cùng"],
+  ["練る", "ねる", "trau chuốt, gọt giũa; xây dựng kỹ"],
+  ["締める", "しめる", "thắt, buộc; siết lại"],
+  ["円滑", "えんかつ", "trôi chảy, suôn sẻ"],
+  ["結束", "けっそく", "đoàn kết, gắn bó"],
+  ["まばら", "まばら", "thưa thớt, rải rác"],
+  ["丹念", "たんねん", "tỉ mỉ, cẩn thận"],
+  ["捗る", "はかどる", "tiến triển thuận lợi"],
+  ["見合わせる", "みあわせる", "trì hoãn, tạm hoãn"],
+  ["やむをえず", "やむをえず", "không còn cách nào khác, bất đắc dĩ"],
+  ["調達", "ちょうたつ", "điều phối, cung ứng, huy động"],
+  ["細心", "さいしん", "cẩn thận, tỉ mỉ"],
+  ["意地", "いじ", "tâm địa, tính khí; sự cố chấp"],
+  ["目先", "めさき", "trước mắt, lợi ích trước mắt"],
+  ["見落とす", "みおとす", "bỏ sót, nhìn sót"],
+  ["利益", "りえき", "lợi ích, lợi nhuận"],
+  ["逃れる", "のがれる", "thoát khỏi, tránh khỏi"],
+  ["考慮", "こうりょ", "xem xét, cân nhắc"],
+  ["遮る", "さえぎる", "chặn, che, cản ngang"],
+  ["根拠", "こんきょ", "căn cứ, cơ sở"],
+  ["肝心", "かんじん", "quan trọng, cốt yếu"],
+  ["ほこりまみれ", "ほこりまみれ", "phủ đầy bụi"],
+  ["弾む", "はずむ", "hào hứng, sôi nổi; nảy lên"],
+  ["実情", "じつじょう", "tình hình thực tế"],
+  ["逸材", "いつざい", "nhân tài xuất chúng"],
+  ["画期的", "かっきてき", "đột phá, mang tính bước ngoặt"],
+  ["もくろむ", "もくろむ", "dự tính, âm thầm lên kế hoạch"],
+  ["手がかり", "てがかり", "manh mối, gợi ý"],
+  ["にわかに", "にわかに", "đột ngột, ngay lập tức"],
+  ["重宝", "ちょうほう", "quý giá, hữu ích, tiện lợi"],
+  ["シビア", "シビア", "khắt khe, nghiêm ngặt"],
+  ["連携", "れんけい", "hợp tác, phối hợp"],
+  ["不服", "ふふく", "không hài lòng, bất mãn"],
+  ["かなう", "かなう", "đạt được, trở thành hiện thực"],
+  ["目覚ましい", "めざましい", "nổi bật, đáng chú ý"],
+  ["ほどける", "ほどける", "tháo ra, bung ra"],
+  ["互角", "ごかく", "ngang sức, ngang tài ngang sức"],
+  ["リード", "リード", "dẫn trước, dẫn đầu; vai trò dẫn dắt"],
+  ["人脈", "じんみゃく", "mạng lưới quan hệ, mối quan hệ xã hội"],
+  ["賢い", "かしこい", "thông minh, khôn ngoan"],
+  ["顕著", "けんちょ", "rõ rệt, nổi bật, dễ thấy"],
+  ["多岐", "たき", "nhiều mặt, nhiều phương diện"],
+  ["廃れて", "すたれて", "bị mai một, trở nên lỗi thời"],
+  ["廃れる", "すたれる", "mai một, lỗi thời, không còn thịnh hành"],
+  ["相場", "そうば", "giá thị trường, mức giá chung"],
+  ["要望", "ようぼう", "yêu cầu, nguyện vọng, điều mong muốn được đáp ứng"],
+  ["繁盛", "はんじょう", "buôn bán phát đạt, thịnh vượng"],
+  ["くじける", "くじける", "nản lòng, nhụt chí, gục tinh thần"],
+  ["侮って", "あなどって", "coi thường, xem nhẹ"],
+  ["諭した", "さとした", "đã khuyên bảo, giảng giải nhẹ nhàng"],
+  ["練って", "ねって", "trau chuốt, xây dựng kỹ, cân nhắc kỹ"],
+  ["鈍って", "にぶって", "trở nên kém đi, suy giảm, cùn đi"],
+  ["鈍る", "にぶる", "trở nên kém đi, cùn đi"],
+  ["漠然", "ばくぜん", "mơ hồ, không rõ ràng"],
+  ["閲覧", "えつらん", "xem, đọc, truy cập xem tài liệu"],
+  ["群衆", "ぐんしゅう", "đám đông, quần chúng"],
+  ["覆す", "くつがえす", "lật ngược, đảo ngược, bác bỏ"],
+  ["心地よい", "ここちよい", "dễ chịu, thoải mái"],
+  ["枠", "わく", "khung, phạm vi, giới hạn"],
+  ["網羅", "もうら", "bao quát toàn bộ, liệt kê đầy đủ"],
+  ["名誉", "めいよ", "danh dự, vinh dự"],
+  ["費やした", "ついやした", "đã tiêu tốn, bỏ ra thời gian/công sức"],
+  ["費やす", "ついやす", "tiêu tốn, bỏ ra thời gian/công sức"],
+  ["由緒", "ゆいしょ", "lai lịch, nguồn gốc lâu đời"],
+  ["巧妙", "こうみょう", "khéo léo, tinh vi"],
+  ["憩い", "いこい", "sự nghỉ ngơi, thư giãn"],
+  ["需要", "じゅよう", "nhu cầu"],
+  ["跡地", "あとち", "khu đất sau khi công trình bị dỡ bỏ, nền cũ"],
+  ["貫いた", "つらぬいた", "đã giữ vững, xuyên suốt, thực hiện đến cùng"],
+  ["貫く", "つらぬく", "giữ vững, xuyên suốt, thực hiện đến cùng"],
+  ["概略", "がいりゃく", "khái lược, tóm tắt đại ý"],
+  ["臨みたい", "のぞみたい", "muốn tham gia, muốn đối mặt/đón nhận"],
+  ["督促", "とくそく", "đôn đốc, nhắc thúc giục"],
+  ["漂い", "ただよい", "lan tỏa, phảng phất, trôi nổi"],
+  ["漂う", "ただよう", "lan tỏa, phảng phất, trôi nổi"],
+  ["厳正", "げんせい", "nghiêm chính, công bằng nghiêm ngặt"],
+  ["拒んで", "こばんで", "từ chối, khước từ, ngăn lại"],
+  ["拒む", "こばむ", "từ chối, khước từ, ngăn lại"],
+  ["慕われる", "したわれる", "được yêu mến, được ngưỡng mộ"],
+  ["破損", "はそん", "hư hỏng, bị phá hỏng"],
+  ["承諾", "しょうだく", "đồng ý, chấp thuận"],
+  ["淡い", "あわい", "nhạt, thoang thoảng, mờ nhẹ"],
+  ["樹木", "じゅもく", "cây cối"],
+  ["蓄えて", "たくわえて", "tích trữ, để dành"],
+  ["蓄える", "たくわえる", "tích trữ, để dành"],
+  ["陳列", "ちんれつ", "trưng bày"],
+  ["華やか", "はなやか", "rực rỡ, lộng lẫy"],
+  ["偏って", "かたよって", "thiên lệch, nghiêng về một phía"],
+  ["潤す", "うるおす", "làm ẩm, làm phong phú, đem lợi ích"],
+  ["殺菌", "さっきん", "diệt khuẩn"],
+  ["託された", "たくされた", "được giao phó, được ủy thác"],
+  ["託す", "たくす", "giao phó, ủy thác"],
+  ["傾斜", "けいしゃ", "độ nghiêng, sự nghiêng dốc"],
+  ["阻まれて", "はばまれて", "bị cản trở, bị ngăn lại"],
+  ["阻む", "はばむ", "cản trở, ngăn lại"],
+  ["暴露", "ばくろ", "phơi bày, tiết lộ"],
+  ["開拓", "かいたく", "khai phá, mở ra lĩnh vực mới"],
+  ["復興", "ふっこう", "phục hưng, khôi phục"],
+  ["了承", "りょうしょう", "hiểu và chấp thuận"],
+  ["指図", "さしず", "chỉ thị, sai bảo"],
+  ["巡り", "めぐり", "xoay quanh, liên quan đến"],
+  ["偽り", "いつわり", "giả dối, không thật"],
+  ["嫌悪感", "けんおかん", "cảm giác ghét, ác cảm"],
+  ["自粛", "じしゅく", "tự kiềm chế, tự hạn chế"],
+  ["戒めたい", "いましめたい", "muốn răn dạy, muốn cảnh báo"],
+  ["丘陵", "きゅうりょう", "đồi núi thấp, gò đồi"],
+  ["豪快", "ごうかい", "mạnh mẽ, phóng khoáng, sảng khoái"],
+  ["募って", "つのって", "ngày càng mạnh hơn; kêu gọi, chiêu mộ"],
+  ["募る", "つのる", "ngày càng mạnh hơn; kêu gọi, chiêu mộ"],
+  ["膨大", "ぼうだい", "khổng lồ, rất lớn"],
+  ["滞って", "とどこおって", "bị đình trệ, bị chậm lại"],
+  ["滞る", "とどこおる", "đình trệ, chậm lại"],
+  ["驚嘆", "きょうたん", "kinh ngạc, thán phục"],
+  ["猛烈", "もうれつ", "dữ dội, mãnh liệt"],
+  ["克服", "こくふく", "khắc phục, vượt qua"],
+  ["崩れやすい", "くずれやすい", "dễ sụp, dễ vỡ, dễ mất cân bằng"],
+  ["繁殖", "はんしょく", "sinh sôi, sinh sản"],
+  ["履歴", "りれき", "lịch sử, lý lịch, lịch sử thao tác"],
+  ["映える", "はえる", "nổi bật, trông đẹp lên"],
+  ["砕けて", "くだけて", "vỡ ra; trở nên thân mật, dễ hiểu"],
+  ["砕ける", "くだける", "vỡ ra; trở nên thân mật, dễ hiểu"],
+  ["執着", "しゅうちゃく", "chấp niệm, bám chặt, cố chấp"],
+  ["潔い", "いさぎよい", "dứt khoát, thẳng thắn, không luyến tiếc"],
+  ["干渉", "かんしょう", "can thiệp"],
+  ["粘って", "ねばって", "kiên trì, bám trụ"],
+  ["粘る", "ねばる", "kiên trì, bám trụ"],
+  ["遺憾", "いかん", "đáng tiếc, lấy làm tiếc"],
+  ["閉鎖", "へいさ", "đóng cửa, phong tỏa"],
+  ["心遣い", "こころづかい", "sự quan tâm, chu đáo"],
+  ["憤った", "いきどおった", "tức giận, phẫn nộ"],
+  ["憤る", "いきどおる", "tức giận, phẫn nộ"],
+  ["治癒", "ちゆ", "chữa lành, khỏi bệnh"],
+  ["尊い", "とうとい", "quý giá, đáng kính"],
+  ["慰めて", "なぐさめて", "an ủi, vỗ về"],
+  ["慰める", "なぐさめる", "an ủi, vỗ về"],
+  ["緊迫", "きんぱく", "căng thẳng, khẩn trương"],
+  ["勇敢", "ゆうかん", "dũng cảm"],
+  ["忠告", "ちゅうこく", "lời khuyên, lời cảnh báo"],
+  ["慕って", "したって", "yêu mến, ngưỡng mộ"],
+  ["慕う", "したう", "yêu mến, ngưỡng mộ"],
+  ["施錠", "せじょう", "khóa cửa"],
+  ["監督", "かんとく", "giám sát, đạo diễn, huấn luyện viên"],
+  ["派生", "はせい", "phát sinh, bắt nguồn"],
+  ["透けて", "すけて", "nhìn xuyên qua, lộ ra"],
+  ["透ける", "すける", "nhìn xuyên qua, lộ ra"],
+  ["恩恵", "おんけい", "ân huệ, lợi ích được hưởng"],
+  ["臨む", "のぞむ", "tham gia, đối mặt, bước vào"],
+  ["如実に", "にょじつに", "một cách rõ ràng, đúng như thực tế"],
+  ["釈明", "しゃくめい", "giải thích, biện minh"],
+  ["克明", "こくめい", "tỉ mỉ, chi tiết, rõ ràng"],
+  ["改革", "かいかく", "cải cách, đổi mới"],
+  ["愚か", "おろか", "ngu ngốc, dại dột"],
+  ["緩和", "かんわ", "làm dịu, nới lỏng, giảm bớt"],
+  ["趣旨が", "しゅし", "ý chính, mục đích chính"],
+  ["趣旨", "しゅし", "ý chính, mục đích chính"],
+  ["画一的", "かくいつてき", "đồng loạt, rập khuôn, thiếu khác biệt"],
+  ["鑑定", "かんてい", "giám định, thẩm định"],
+  ["怠った", "おこたった", "đã lơ là, sao nhãng"],
+  ["怠る", "おこたる", "lơ là, sao nhãng"],
+  ["回顧", "かいこ", "hồi tưởng, nhìn lại quá khứ"],
+  ["忍耐", "にんたい", "sự nhẫn nại, chịu đựng"],
+  ["債務", "さいむ", "nghĩa vụ nợ, khoản nợ phải trả"],
+  ["促した", "うながした", "đã thúc giục, khuyến khích"],
+  ["促す", "うながす", "thúc giục, khuyến khích"],
+  ["措置", "そち", "biện pháp xử lý"],
+  ["錯覚", "さっかく", "ảo giác, sự hiểu nhầm do cảm giác sai"],
+  ["枯渇", "こかつ", "cạn kiệt"],
+  ["沈下", "ちんか", "sụt lún, chìm xuống"],
+  ["頑丈", "がんじょう", "chắc chắn, bền chắc"], ["潜んで", "ひそんで", "ẩn nấp, tiềm ẩn"], ["潜む", "ひそむ", "ẩn nấp, tiềm ẩn"], ["行政", "ぎょうせい", "hành chính"], ["卓越", "たくえつ", "vượt trội, xuất sắc"], ["芳しくない", "かんばしくない", "không tốt, không khả quan"], ["管轄", "かんかつ", "thẩm quyền quản lý, phạm vi quản hạt"],
+  ["興奮", "こうふん", "phấn khích, hưng phấn"], ["唱えた", "となえた", "đã đề xướng, nêu ra"], ["唱える", "となえる", "đề xướng, nêu ra"], ["変遷", "へんせん", "sự biến đổi, thay đổi theo thời gian"], ["値する", "あたいする", "xứng đáng, đáng được"], ["随時", "ずいじ", "bất cứ lúc nào, tùy thời điểm"], ["励んで", "はげんで", "nỗ lực, chuyên tâm"], ["励む", "はげむ", "nỗ lực, chuyên tâm"],
   ["適応", "てきおう", "thích nghi"], ["掲げて", "かかげて", "đề ra, giương lên"], ["踏襲", "とうしゅう", "kế thừa, đi theo đường lối cũ"], ["足止め", "あしどめ", "bị kẹt lại, bị giữ chân"], ["へとへと", "へとへと", "kiệt sức"], ["払拭", "ふっしょく", "xóa tan, quét sạch"], ["とっさに", "とっさに", "ngay lập tức, theo phản xạ"],
   ["根底", "こんてい", "nền tảng, gốc rễ"], ["返上", "へんじょう", "trả lại; hy sinh/nghỉ mà vẫn làm"], ["取り次いで", "とりついで", "chuyển máy, nối liên lạc"], ["交錯", "こうさく", "đan xen, lẫn lộn"], ["難航", "なんこう", "gặp khó khăn, tiến triển trắc trở"], ["がやがや", "がやがや", "ồn ào tiếng người nói"], ["足手まとい", "あしでまとい", "vướng chân, gánh nặng cho người khác"],
   ["自立", "じりつ", "tự lập"], ["還元", "かんげん", "hoàn lại, trả lại lợi ích"], ["どんより", "どんより", "âm u, nặng nề"], ["ネック", "ネック", "điểm nghẽn, trở ngại"], ["発散", "はっさん", "giải tỏa, phát tán"], ["まぎらわしい", "まぎらわしい", "dễ nhầm lẫn"], ["行き届いて", "いきとどいて", "chu đáo, kỹ lưỡng đến từng chỗ"],
@@ -2076,11 +2253,24 @@ function n1EntriesForText(text, maxItems = 6) {
   const found = [];
   sortedN1Vocabulary.forEach(([word, reading, meaning]) => {
     if (found.length >= maxItems) return;
+    if (!isUsefulStudyEntry(word, reading, meaning)) return;
     if (source.includes(word) && !found.some((item) => item.word === word)) {
       found.push({ word, reading, meaning });
     }
   });
   return found;
+}
+
+function isUsefulStudyEntry(word, reading, meaning) {
+  const source = String(word || "");
+  const readingText = String(reading || "");
+  const note = String(meaning || "");
+  if (!source || !note) return false;
+  if (note.includes("⇔") || note.includes("đáp án đúng trong câu này") || note.includes("cách đọc trong câu là")) return false;
+  if (/^[ぁ-んァ-ンー]+$/.test(source) && source.length <= 3) return false;
+  if (/^[ぁ-んァ-ンー]+$/.test(source) && /^[ぁ-んァ-ンー]+$/.test(readingText) && readingText.length <= 3 && source.length <= 3) return false;
+  if (source === "かない") return false;
+  return true;
 }
 
 function highlightedTargetFromHtml(htmlPrompt) {
@@ -2114,8 +2304,8 @@ function fallbackN1EntryForQuestion(question) {
   let meaning = known?.meaning || "";
 
   if (number <= 6) {
-    reading = correct || reading;
-    meaning = meaning || `cách đọc trong câu là ${correct}`;
+    if (!meaning) return null;
+    reading = known?.reading || correct || reading;
   } else if (number <= 13) {
     reading = reading || target;
     meaning = meaning || `từ đúng trong ngữ cảnh là ${correct}`;
@@ -2135,6 +2325,7 @@ function studyEntriesForText(text, maxItems = 1) {
   const found = [];
   sortedStudyVocabulary.forEach(([word, reading, meaning]) => {
     if (found.length >= maxItems) return;
+    if (!isUsefulStudyEntry(word, reading, meaning)) return;
     if (source.includes(word) && !found.some((item) => item.word === word)) {
       found.push({ word, reading, meaning });
     }
@@ -2174,30 +2365,40 @@ function vocabAnswerForms(term) {
 function lookupVocabAnswer(term) {
   for (const form of vocabAnswerForms(term)) {
     const entry = entryForExactTerm(form) || sortedStudyVocabulary.find(([word]) => word === form);
-    if (entry) return { word: term, base: entry[0], reading: entry[1], meaning: entry[2] };
+    if (entry && isUsefulStudyEntry(entry[0], entry[1], entry[2])) return { word: term, base: entry[0], reading: entry[1], meaning: entry[2] };
   }
-  if (/^[ぁ-んァ-ンー]+$/.test(term)) return { word: term, base: term, reading: term, meaning: "đáp án đúng trong câu này" };
   return null;
+}
+
+function cleanMeaningText(meaning) {
+  return String(meaning || "")
+    .replace(/^[①②③④⑤⑥⑦⑧⑨⑩]\s*/u, "")
+    .replace(/\s+[①②③④⑤⑥⑦⑧⑨⑩]\s*/gu, "; ")
+    .trim();
+}
+
+function vocabNoteText(word, reading, meaning) {
+  return `${word}（${reading}）= ${cleanMeaningText(meaning)}`;
 }
 
 function termMeaning(term) {
   const entry = lookupVocabAnswer(term);
-  return entry ? `${entry.word}（${entry.reading}）= ${entry.meaning}` : `「${term}」`;
+  return entry ? vocabNoteText(entry.word, entry.reading, entry.meaning) : `「${term}」`;
 }
 
 function answerMeaningLine(term) {
   const entry = lookupVocabAnswer(term);
-  if (!entry) return `Đáp án đúng: 「${term}」.`;
+  if (!entry) return `Đáp án đúng: 「${term}」. Chưa có nghĩa tiếng Việt trong từ điển, cần bổ sung.`;
   const baseNote = entry.base !== term ? `, gốc: ${entry.base}` : "";
   const readingNote = entry.reading && entry.reading !== term && entry.reading !== entry.base ? `（${entry.reading}）` : "";
-  return `Đáp án đúng: 「${term}」${readingNote} = ${entry.meaning}${baseNote}.`;
+  return `Đáp án đúng: 「${term}」${readingNote} = ${cleanMeaningText(entry.meaning)}${baseNote}.`;
 }
 
 function optionMeanings(item) {
   const notes = (item.options || [])
     .map((option) => entryForExactTerm(option))
     .filter(Boolean)
-    .map(([word, reading, meaning]) => `${word}（${reading}）= ${meaning}`);
+    .map(([word, reading, meaning]) => vocabNoteText(word, reading, meaning));
   return notes.length >= 2 ? ` Các lựa chọn cần phân biệt: ${notes.join("; ")}.` : "";
 }
 
@@ -2221,6 +2422,7 @@ function phraseMeaningFallback(pattern) {
   const source = String(pattern || "").trim().replace(/[。、「」]/g, "");
   const direct = supplementalPhraseMeanings[source];
   if (direct) return direct;
+  if (source.includes("みたいなところがある")) return "có điểm/phần hơi giống như, có xu hướng giống như";
   if (source.includes("わけにはいか")) return "không thể làm vậy được vì hoàn cảnh/đạo lý không cho phép";
   if (source.includes("わけじゃない") || source.includes("わけではない")) return "không có nghĩa là, không hẳn là";
   if (source.includes("とは限らない")) return "không nhất thiết là, chưa chắc là";
@@ -2322,7 +2524,15 @@ function n1GrammarEntriesForText(text, maxItems = 5) {
 
 function vocabularyUsageExplanation(target, correctText) {
   const targetNote = target ? `${termMeaning(target)}. ` : "";
-  return `${targetNote}Đáp án/cách dùng đúng: 「${correctText}」.`;
+  return `${targetNote}Câu đúng dùng từ này tự nhiên nhất: 「${correctText}」.`;
+}
+
+function meaningfulRemoteExplanation(value) {
+  const text = String(value || "").trim();
+  if (!text) return "";
+  if (/^「[^」]+」$/.test(text)) return "";
+  if (!/[=、。,.]|[àáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ]/i.test(text)) return "";
+  return text;
 }
 
 function remoteTargetWord(item) {
@@ -2335,18 +2545,20 @@ function remoteTargetWord(item) {
   return "";
 }
 
-function n1NotesForQuestion(item, group = null) {
+function n1NotesForQuestion(item, group = null, baseExplanation = "") {
   const textParts = [item.text, item.textHtml, item.passage, group?.passage, ...(item.options || [])];
-  const entries = n1EntriesForText(textParts.join(" "), item.questionNumber >= 41 ? 6 : 4);
+  const entries = n1EntriesForText(textParts.join(" "), item.questionNumber >= 41 ? 6 : 4)
+    .filter((entry) => !baseExplanation.includes(vocabNoteText(entry.word, entry.reading, entry.meaning)));
   if (!entries.length) return "";
-  return `\nTừ N1 cần nhớ: ${entries.map((entry) => `${entry.word}（${entry.reading}）= ${entry.meaning}`).join("; ")}.`;
+  return `\nTừ N1 cần nhớ: ${entries.map((entry) => vocabNoteText(entry.word, entry.reading, entry.meaning)).join("; ")}.`;
 }
 
-function n2NotesForQuestion(item, group = null) {
+function n2NotesForQuestion(item, group = null, baseExplanation = "") {
   const textParts = [item.text, item.textHtml, item.passage, group?.passage, ...(item.options || [])];
-  const entries = n2EntriesForText(textParts.join(" "), item.questionNumber >= 41 ? 8 : 5);
+  const entries = n2EntriesForText(textParts.join(" "), item.questionNumber >= 41 ? 8 : 5)
+    .filter((entry) => !baseExplanation.includes(vocabNoteText(entry.word, entry.reading, entry.meaning)));
   if (!entries.length) return "";
-  return `\nTừ N2 cần nhớ: ${entries.map((entry) => `${entry.word}（${entry.reading}）= ${entry.meaning}`).join("; ")}.`;
+  return `\nTừ N2 cần nhớ: ${entries.map((entry) => vocabNoteText(entry.word, entry.reading, entry.meaning)).join("; ")}.`;
 }
 
 function n1GrammarNotesForQuestion(item, group = null) {
@@ -2357,7 +2569,7 @@ function n1GrammarNotesForQuestion(item, group = null) {
 }
 
 function withStudyNotes(baseExplanation, item, group = null) {
-  return `${baseExplanation}${n1GrammarNotesForQuestion(item, group)}${n1NotesForQuestion(item, group)}${n2NotesForQuestion(item, group)}`;
+  return `${baseExplanation}${n1GrammarNotesForQuestion(item, group)}${n1NotesForQuestion(item, group, baseExplanation)}${n2NotesForQuestion(item, group, baseExplanation)}`;
 }
 
 function compactText(value) {
@@ -2442,9 +2654,10 @@ function explanationForRemoteQuestion(exam, item, group) {
   let base = "";
 
   if (questionNumber <= 6) {
-    const target = remoteTargetWord(item);
-    const targetNote = target ? `Từ được hỏi: ${item.explanation || termMeaning(target)}. ` : "";
-    base = `Đáp án: ${item.correctAnswer}. ${targetNote}Cách đọc đúng: 「${correctText}」.`;
+    const target = kanjiTargets[exam.id]?.[questionNumber - 1] || remoteTargetWord(item);
+    const targetExplanation = meaningfulRemoteExplanation(item.explanation) || termMeaning(target);
+    const targetNote = target ? ` Từ được hỏi: ${targetExplanation}.` : "";
+    base = `Đáp án: ${item.correctAnswer}.${targetNote}`;
     return withStudyNotes(base, item, group);
   }
 
@@ -2461,7 +2674,7 @@ function explanationForRemoteQuestion(exam, item, group) {
   if (questionNumber <= 25) {
     const target = remoteTargetWord(item);
     base = `Đáp án: ${item.correctAnswer}. ${vocabularyUsageExplanation(target, correctText)}`;
-    return withStudyNotes(base, item, group);
+    return base;
   }
 
   if (questionNumber <= 35) {
@@ -2542,22 +2755,33 @@ function hasHighlightedPrompt(question) {
   return Boolean(question.htmlPrompt && question.htmlPrompt.includes('class="kanji-target"'));
 }
 
+function normalizeKanjiQuestionExplanation(question) {
+  const number = questionNumber(question);
+  if (number < 1 || number > 6 || !question.type?.startsWith("exam-")) return;
+  const target = question.targetWord || kanjiTargets[question.type]?.[number - 1] || highlightedTargetFromHtml(question.htmlPrompt) || targetFromQuestionText(question);
+  if (!target) return;
+  const targetExplanation = termMeaning(target);
+  if (targetExplanation.startsWith("「")) return;
+  question.explanation = `Đáp án: ${question.answer + 1}. Từ được hỏi: ${targetExplanation}.`;
+}
+
 function addN1NotesToExplanation(question) {
   if (!question.explanation || question.explanation.includes("Từ N1 cần nhớ:")) return;
-  const entries = n1EntriesForText(`${question.prompt} ${question.passage || ""} ${question.options.join(" ")}`, question.skill === "reading" ? 6 : 4);
+  const entries = n1EntriesForText(`${question.prompt} ${question.passage || ""} ${question.options.join(" ")}`, question.skill === "reading" ? 6 : 4)
+    .filter((entry) => !question.explanation.includes(vocabNoteText(entry.word, entry.reading, entry.meaning)));
   if (!entries.length) {
     const fallback = fallbackN1EntryForQuestion(question);
-    if (fallback) entries.push(fallback);
+    if (fallback && isUsefulStudyEntry(fallback.word, fallback.reading, fallback.meaning) && !question.explanation.includes(vocabNoteText(fallback.word, fallback.reading, fallback.meaning))) entries.push(fallback);
   }
   if (!entries.length) return;
-  question.explanation += `\nTừ N1 cần nhớ: ${entries.map((entry) => `${entry.word}（${entry.reading}）= ${entry.meaning}`).join("; ")}.`;
+  question.explanation += `\nTừ N1 cần nhớ: ${entries.map((entry) => vocabNoteText(entry.word, entry.reading, entry.meaning)).join("; ")}.`;
 }
 
 function addN2NotesToExplanation(question) {
   if (!question.explanation || question.explanation.includes("Từ N2 cần nhớ:")) return;
   const entries = n2EntriesForText(`${question.prompt} ${question.passage || ""} ${question.options.join(" ")}`, question.skill === "reading" ? 8 : 5);
   if (!entries.length) return;
-  question.explanation += `\nTừ N2 cần nhớ: ${entries.map((entry) => `${entry.word}（${entry.reading}）= ${entry.meaning}`).join("; ")}.`;
+  question.explanation += `\nTừ N2 cần nhớ: ${entries.map((entry) => vocabNoteText(entry.word, entry.reading, entry.meaning)).join("; ")}.`;
 }
 
 function addN1GrammarNotesToExplanation(question) {
@@ -2573,7 +2797,7 @@ function prependAnswerDetail(question) {
   const correctText = question.options?.[question.answer] || "";
   if (!correctText) return;
 
-  if (number >= 7 && number <= 25 && !question.explanation.includes("Đáp án đúng:")) {
+  if (number >= 7 && number <= 19 && !question.explanation.includes("Đáp án đúng:")) {
     question.explanation = `${answerMeaningLine(correctText)} ${question.explanation}`;
   }
 
@@ -2596,10 +2820,12 @@ function enhanceQuestion(question) {
       question.targetWord = target;
     }
   }
+  normalizeKanjiQuestionExplanation(question);
   if (question.skill === "reading" && (!question.explanation || !question.explanation.includes("Đáp án"))) {
     question.explanation = readingExplanationForLocalQuestion(question);
   }
   prependAnswerDetail(question);
+  if (questionNumber(question) >= 20 && questionNumber(question) <= 25) return question;
   addN1GrammarNotesToExplanation(question);
   addN1NotesToExplanation(question);
   addN2NotesToExplanation(question);
