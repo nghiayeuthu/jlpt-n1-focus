@@ -410,6 +410,13 @@ h1 {
   white-space: pre-line;
 }
 
+.passage-blank-focus {
+  font-weight: 900;
+  color: #b42318;
+  background: #fee4e2;
+  padding: 1px 4px;
+}
+
 .boki-source-image {
   display: block;
   width: 100%;

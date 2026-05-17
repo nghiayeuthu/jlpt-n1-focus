@@ -5487,7 +5487,7 @@ window.n1VocabularyExtra = [
   [
     "暴露",
     "ばくろ",
-    "trần, phơi bày ["
+    "phơi bày, tiết lộ"
   ],
   [
     "暴露記事",
@@ -5847,7 +5847,7 @@ window.n1VocabularyExtra = [
   [
     "欠如",
     "けっじょ",
-    "sót, khiếm khuyết ["
+    "thiếu hụt, khiếm khuyết"
   ],
   [
     "次期",
@@ -6091,8 +6091,8 @@ window.n1VocabularyExtra = [
   ],
   [
     "決める",
-    "ひどり",
-    "ngày"
+    "きめる",
+    "quyết định"
   ],
   [
     "決を採る",
