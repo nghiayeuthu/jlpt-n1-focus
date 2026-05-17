@@ -64,6 +64,7 @@ function skillFromLabel(label) {
 }
 
 
+const examDataVersion = 5;
 const remoteExams = [
   { path: "exam-202507.json", id: "exam-2025-07", title: "2025 tháng 7" },
   { path: "exam-202412.json", id: "exam-2024-12", title: "2024 tháng 12" },
@@ -2191,7 +2192,7 @@ function enhanceQuestions(list) {
 
 async function loadRemoteExams() {
   const remoteLoaded = await Promise.allSettled(remoteExams.map(async (exam) => {
-    const response = await fetch(`${exam.path}?v=4`);
+    const response = await fetch(`${exam.path}?v=${examDataVersion}`);
     if (!response.ok) throw new Error(`Không tải được đề ${exam.title}`);
     const data = await response.json();
     return convertRemoteExam(exam, data);
